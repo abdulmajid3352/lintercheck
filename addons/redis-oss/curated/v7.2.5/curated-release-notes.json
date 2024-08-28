@@ -1,0 +1,31 @@
+{
+    "addonName": "redis-oss",
+    "version": "7.2.5",
+    "releaseDate": "2024-05-19",
+    "notes": [
+        {
+            "label": ["kind/bug-fix", "impact/medium"],
+            "text": "Fixed an issue where a single-shard cluster left failed replicas in `CLUSTER SLOTS` and could not mark replicas as failed, and adjusted new cluster initialization to size 0 to reflect zero allocated slots."
+        },
+        {
+            "label": ["kind/bug-fix", "impact/medium"],
+            "text": "Fixed a crash in the `LSET` command when replacing small items and exceeding 4GB by splitting the quicklist node when `lpReplace()` fails, creating a new node to handle the replacement, and merging nodes to prevent exceeding the 4GB limit."
+        },
+        {
+            "label": ["kind/bug-fix", "impact/medium"],
+            "text": "Fixed a bug where blocking commands' timeouts were reset on reprocessing by adding a flag to prevent this, streamlining blocked command handling, and ensuring accurate error reporting and stats updates only after unblocking."
+        },
+        {
+            "label": ["kind/bug-fix", "impact/medium"],
+            "text": "Fixed a bug in Redis 7.2.0 where converting `lua_Number` to Redis args could fail due to improper handling of number formats, ensuring integers are correctly converted to avoid issues with scientific notation in contexts requiring integer values."
+        },
+        {
+            "label": ["kind/bug-fix", "impact/medium"],
+            "text": "Fixed a bug in `redis-cli` where the `--count` option for commands like `--scan` and `--bigkeys` was ignored unless `--pattern` was also specified, ensuring `--count` is applied correctly regardless of `--pattern`."
+        },
+        {
+            "label": ["kind/bug-fix", "impact/medium"],
+            "text": "Fixed a bug in `redis-check-aof` where it incorrectly identified valid AOF data as manifest format if the word 'file' appeared in the first 1024 lines. The updated logic stops checking after the first non-comment line, preventing false errors in AOF validation."
+        }
+    ]
+}
