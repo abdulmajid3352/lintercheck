@@ -11,6 +11,8 @@
       "text": "Added cluster role permissions for other sources, including RBAC for HTTPProxy, CRD source deployment, and RBAC for dnsendpoints in the Helm chart."
     },
     {
+      "label": [
+      ],
       "text": "Restored cluster role permissions to read services when Istio sources are enabled."
     },
     {
