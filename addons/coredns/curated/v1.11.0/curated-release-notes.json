@@ -5,8 +5,8 @@
   "notes": [
     {
       "label": [
-        "kind/fature",
-        "impact/madium"
+        "kind/feature",
+        "impact/medium"
       ],
       "text": "Made protocol parsing more flexible in DoH (DNS over HTTPS), allowing for protocols other than HTTPS to be specified while maintaining HTTPS as the default."
     },
