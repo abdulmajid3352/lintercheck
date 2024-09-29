@@ -1,19 +1,18 @@
 {
-  "addonName": "coredns",
+
   "version": "1.11.0",
   "releaseDate": "2023-11-08",
   "notes": [
     {
       "label": [
-        "kind/feature",
+        "kind/upgrade-considerations",
         "impact/medium"
       ],
       "text": "Made protocol parsing more flexible in DoH (DNS over HTTPS), allowing for protocols other than HTTPS to be specified while maintaining HTTPS as the default."
     },
     {
       "label": [
-        "kind/feature",
-        "impact/high"
+        "kind/feature"
       ],
       "text": "Added support for DoQ (DNS over QUIC) in the server, enabling faster and more efficient DNS queries with the advantages of QUIC, including reduced latency, built-in encryption, and streaming capabilities."
     },
