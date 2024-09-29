@@ -25,7 +25,6 @@ jobs:
               error_message="Error: $file is missing one or more required fields (addonName, version, releaseDate, notes)."
               error_list+=("$error_message")
               error_count=$((error_count + 1))
-              continue
             fi
             
             # Validate releaseDate using a regular expression for format YYYY-MM-DD
@@ -34,7 +33,6 @@ jobs:
               error_message="Error: Invalid date format in $file. Expected YYYY-MM-DD."
               error_list+=("$error_message")
               error_count=$((error_count + 1))
-              continue
             fi
             
             # Further validation using the date command to ensure it's a real date
@@ -42,7 +40,6 @@ jobs:
               error_message="Error: Invalid date in $file. Expected a valid date in YYYY-MM-DD format."
               error_list+=("$error_message")
               error_count=$((error_count + 1))
-              continue
             fi
 
             # Check if 'notes' contains both 'label' and 'text', and validate them
@@ -54,7 +51,6 @@ jobs:
                 error_message="Error: Note entry $i in $file has an empty 'label' or 'text' field."
                 error_list+=("$error_message")
                 error_count=$((error_count + 1))
-                continue
               fi
               
               # Check if label is in the allowed list
