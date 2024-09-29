@@ -12,56 +12,88 @@ jobs:
       - name: Validate JSON schema
         run: |
           error_count=0
+          error_list=()  # Array to collect all errors
           allowed_labels=("kind/bug-fix" "N/A" "kind/feature" "kind/upgrade-consideration" "kind/breaking-change" "kind/api-change" "kind/deprecation" "impact/high" "impact/medium")
-          error_log=()
+
+          # Validate curated-release-notes.json files
           for file in addons/**/curated/**/curated-release-notes.json; do
             echo "Validating $file"
             # Extract directory version from the file path
             dir_version=$(basename "$(dirname "$file")")
+            
             # Check if the JSON file contains required fields
             if ! jq -e '.addonName and .version and .releaseDate and .notes' "$file" > /dev/null; then
-              error_log+=("Error: $file is missing one or more required fields (addonName, version, releaseDate, notes).")
+              error_message="Error: $file is missing one or more required fields (addonName, version, releaseDate, notes)."
+              error_list+=("$error_message")
               error_count=$((error_count + 1))
-              continue
             fi
+            
             # Validate releaseDate using a regular expression for format YYYY-MM-DD
             release_date=$(jq -r '.releaseDate' "$file")
             if [[ ! "$release_date" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-              error_log+=("Error: Invalid date format in $file. Expected YYYY-MM-DD.")
+              error_message="Error: Invalid date format in $file. Expected YYYY-MM-DD."
+              error_list+=("$error_message")
               error_count=$((error_count + 1))
-              continue
             fi
+            
             # Further validation using the date command to ensure it's a real date
             if ! date -d "$release_date" +"%Y-%m-%d" > /dev/null 2>&1; then
-              error_log+=("Error: Invalid date in $file. Expected a valid date in YYYY-MM-DD format.")
+              error_message="Error: Invalid date in $file. Expected a valid date in YYYY-MM-DD format."
+              error_list+=("$error_message")
               error_count=$((error_count + 1))
-              continue
             fi
+
             # Check if 'notes' contains both 'label' and 'text', and validate them
             notes_count=$(jq '.notes | length' "$file")
             for i in $(seq 0 $((notes_count-1))); do
               note_label=$(jq -r ".notes[$i].label[]" "$file")
               note_text=$(jq -r ".notes[$i].text" "$file")
+
+              # Check if label or text is missing
               if [ -z "$note_label" ] || [ -z "$note_text" ]; then
-                error_log+=("Error: Note entry $i in $file has an empty 'label' or 'text' field.")
+                error_message="Error: Note entry $i in $file has an empty 'label' or 'text' field."
+                error_list+=("$error_message")
                 error_count=$((error_count + 1))
                 continue
               fi
-              # Check if label is in the allowed list
+
+              # Validate that both 'kind' and 'impact' labels are present
+              has_kind_label=false
+              has_impact_label=false
+              for label in $note_label; do
+                if [[ "$label" == kind/* ]]; then
+                  has_kind_label=true
+                elif [[ "$label" == impact/* ]]; then
+                  has_impact_label=true
+                fi
+              done
+
+              if [ "$has_kind_label" = false ] || [ "$has_impact_label" = false ]; then
+                error_message="Error: Note entry $i in $file is missing either 'kind' or 'impact' label. Both are required."
+                error_list+=("$error_message")
+                error_count=$((error_count + 1))
+              fi
+
+              # Check if each label is in the allowed list
               for label in $note_label; do
                 if [[ ! " ${allowed_labels[@]} " =~ " $label " ]]; then
-                  error_log+=("Error: Invalid label '$label' in note entry $i of $file. Allowed labels are: ${allowed_labels[*]}.")
+                  error_message="Error: Invalid label '$label' in note entry $i of $file. Allowed labels are: ${allowed_labels[*]}."
+                  error_list+=("$error_message")
                   error_count=$((error_count + 1))
                 fi
               done
             done
+            echo "$file passed all validation checks."
           done
+
+          # Validate raw-release-notes.txt files regardless of JSON errors
           for raw_file in addons/**/raw/**/raw-release-notes.txt; do
             echo "Validating $raw_file"
             # Check if the file contains a source line
             source_line=$(grep -E "^source: https?://.*" "$raw_file" || true)
             if [ -z "$source_line" ]; then
-              error_log+=("Error: $raw_file does not contain a valid 'source: <link>' line.")
+              error_message="Error: $raw_file does not contain a valid 'source: <link>' line."
+              error_list+=("$error_message")
               error_count=$((error_count + 1))
             else
               # Extract the link from the source line
@@ -72,20 +104,22 @@ jobs:
               effective_url=$(echo "$curl_output" | awk '{print $2}')
               error_message=$(echo "$curl_output" | awk '{$1=$2=""; print $0}' | xargs)
               if [ "$http_status" -ne 200 ]; then
-                error_log+=("Error: The link $source_link returned HTTP status $http_status. Effective URL: $effective_url. Error details: $error_message")
+                error_message="Error: The link $source_link returned HTTP status $http_status. Effective URL: $effective_url. Error details: $error_message"
+                error_list+=("$error_message")
                 error_count=$((error_count + 1))
               else
                 echo "The link $source_link is valid and returned HTTP status $http_status."
               fi
             fi
+            echo "$raw_file passed all validation checks."
           done
-          # Print all collected errors at the end
+
+          # Final error summary
           if [ $error_count -gt 0 ]; then
-            echo "Validation completed with errors:"
-            for error in "${error_log[@]}"; do
-              echo "$error"
+            echo "Validation complete. Found $error_count errors:"
+            for err in "${error_list[@]}"; do
+              echo "$err"
             done
-            echo "Total errors: $error_count"
             exit 1
           else
             echo "All files passed validation checks."
