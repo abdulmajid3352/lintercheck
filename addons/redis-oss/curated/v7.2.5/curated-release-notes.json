@@ -5,7 +5,7 @@
     "notes": [
         {
             "label": ["kind/bug-fix", "impact/medium"],
-            "text": "Fixed an issue where a single-shard cluster left failed replicas in `CLUSTER SLOTS` and could not mark replicas as failed, and adjusted new cluster initialization to size 0 to reflect zero allocated slots."
+            "text": "Fixed an issue where single-shard cluster left failed replicas in `CLUSTER SLOTS` and could not mark replicas as failed, and adjusted new cluster initialization to size 0 to reflect zero allocated slots."
         },
         {
             "label": ["kind/bug-fix", "impact/medium"],
