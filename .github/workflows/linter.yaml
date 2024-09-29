@@ -15,6 +15,7 @@ jobs:
           error_list=()  # Array to collect all errors
           allowed_labels=("kind/bug-fix" "N/A" "kind/feature" "kind/upgrade-consideration" "kind/breaking-change" "kind/api-change" "kind/deprecation" "impact/high" "impact/medium")
 
+          # Validate curated-release-notes.json files
           for file in addons/**/curated/**/curated-release-notes.json; do
             echo "Validating $file"
             # Extract directory version from the file path
@@ -47,13 +48,33 @@ jobs:
             for i in $(seq 0 $((notes_count-1))); do
               note_label=$(jq -r ".notes[$i].label[]" "$file")
               note_text=$(jq -r ".notes[$i].text" "$file")
+
+              # Check if label or text is missing
               if [ -z "$note_label" ] || [ -z "$note_text" ]; then
                 error_message="Error: Note entry $i in $file has an empty 'label' or 'text' field."
                 error_list+=("$error_message")
                 error_count=$((error_count + 1))
+                continue
               fi
-              
-              # Check if label is in the allowed list
+
+              # Validate that both 'kind' and 'impact' labels are present
+              has_kind_label=false
+              has_impact_label=false
+              for label in $note_label; do
+                if [[ "$label" == kind/* ]]; then
+                  has_kind_label=true
+                elif [[ "$label" == impact/* ]]; then
+                  has_impact_label=true
+                fi
+              done
+
+              if [ "$has_kind_label" = false ] || [ "$has_impact_label" = false ]; then
+                error_message="Error: Note entry $i in $file is missing either 'kind' or 'impact' label. Both are required."
+                error_list+=("$error_message")
+                error_count=$((error_count + 1))
+              fi
+
+              # Check if each label is in the allowed list
               for label in $note_label; do
                 if [[ ! " ${allowed_labels[@]} " =~ " $label " ]]; then
                   error_message="Error: Invalid label '$label' in note entry $i of $file. Allowed labels are: ${allowed_labels[*]}."
@@ -65,18 +86,7 @@ jobs:
             echo "$file passed all validation checks."
           done
 
-          # Output error list at the end
-          if [ $error_count -gt 0 ]; then
-            echo "Validation complete. Found $error_count errors:"
-            for err in "${error_list[@]}"; do
-              echo "$err"
-            done
-            exit 1
-          else
-            echo "All files passed validation checks."
-          fi
-
-          # Validate raw files
+          # Validate raw-release-notes.txt files regardless of JSON errors
           for raw_file in addons/**/raw/**/raw-release-notes.txt; do
             echo "Validating $raw_file"
             # Check if the file contains a source line
