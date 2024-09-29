@@ -26,6 +26,5 @@
         {
             "label": ["kind/bug-fix", "impact/medium"],
             "text": "Fixed a bug in `redis-check-aof` where it incorrectly identified valid AOF data as manifest format if the word 'file' appeared in the first 1024 lines. The updated logic stops checking after the first non-comment line, preventing false errors in AOF validation."
-        }
-    ]
+
 }
