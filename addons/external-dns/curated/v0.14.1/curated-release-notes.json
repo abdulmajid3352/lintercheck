@@ -1,0 +1,98 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.14.1",
+  "releaseDate": "2024-03-21",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support to configure revisionHistoryLimit on the Kubernetes Deployment resource."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Made the webhook httpapi reusable by providing access to handlers and the provider key, enabling custom setups and better integration with webhook plugins."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug allowing revisionHistoryLimit to be set to 0, setting the default to 10 and removing conditional logic for Helm."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Added an RBAC fix to include get, watch, and list permissions for each gateway-*route in namespaces."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue in AWS allowing alias records to be created when using the alias annotation."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added private zone and workload identity support for the OCI provider."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed configuration of revisionHistoryLimit on the Kubernetes Deployment resource."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in Helm to avoid unnecessary pod restarts on each Helm chart version update."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed Gateway API TLS TCP Route."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed the webhook metric name and added request gauges."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue to include Cloudflare errors in metrics and logs."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed GoDaddy rate limiter to add one token every second."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for DNS-over-TLS in RFC2136, with options to enable DNS-over-TLS, disable certificate checks, and ensure compliance with RFC9013 for TLS 1.3 and ALPN negotiation of `dot.`"
+    }
+  ]
+}

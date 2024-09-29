@@ -1,0 +1,59 @@
+source: https://github.com/kubernetes-sigs/external-dns/releases/tag/v0.13.1
+
+## What's Changed
+* Do not reschedule, if already scheduled in the next MinInterval by @claudiumocanu in https://github.com/kubernetes-sigs/external-dns/pull/2609
+* updates owners to add szuecs by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/2895
+* add target filters based on network by @tobikris in https://github.com/kubernetes-sigs/external-dns/pull/2693
+* Update All GitHub Actions to use Go 1.18 by @seanmalloy in https://github.com/kubernetes-sigs/external-dns/pull/2908
+* feat: Add support to configure dnsPolicy on the Helm chart deployment by @michelzanini in https://github.com/kubernetes-sigs/external-dns/pull/2902
+* Changed the Deployment strategy to 'Recreate' so multiple external-dns pods don't conflict with each other. by @mac-chaffee in https://github.com/kubernetes-sigs/external-dns/pull/2772
+* Updated Helm chart to use ExternalDNS v0.12.2 by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/2940
+* Update kustomization.yaml to v0.12.2 by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/2952
+* Infoblox - Correct GetObject query by @skalpin in https://github.com/kubernetes-sigs/external-dns/pull/2890
+* Fixed a minor typo in aws tutorial by @akshaykrjain in https://github.com/kubernetes-sigs/external-dns/pull/2955
+* support ExternalID in AWS Provider when assuming a role by @PG2000 in https://github.com/kubernetes-sigs/external-dns/pull/2818
+* bump govultr from v2.14.1 to v2.17.2 by @ddymko in https://github.com/kubernetes-sigs/external-dns/pull/2864
+* Bump several dependencies by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/2961
+* More dependabot updates by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/2965
+* Bump github.com/aliyun/alibaba-cloud-sdk-go from 1.61.1483 to 1.61.1742 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/2983
+* Ignore ambassador-hosts with invalid annotations by @olemarkus in https://github.com/kubernetes-sigs/external-dns/pull/3008
+* drop golint from linters by @szuecs in https://github.com/kubernetes-sigs/external-dns/pull/2989
+* Set logformat before logging config by @n-oden in https://github.com/kubernetes-sigs/external-dns/pull/2847
+* Bump github.com/cloudflare/cloudflare-go from 0.25.0 to 0.50.0 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3021
+* Add the provider for the Tencent Cloud. by @Hyzhou in https://github.com/kubernetes-sigs/external-dns/pull/2630
+* Fix/missing regions r53 by @luke-plausin-kidsloop in https://github.com/kubernetes-sigs/external-dns/pull/2758
+* feat: Add Plural DNS provider by @DavidSpek in https://github.com/kubernetes-sigs/external-dns/pull/2923
+* Add missing copyright header and gofumpt by @abursavich in https://github.com/kubernetes-sigs/external-dns/pull/3033
+* gateway-api: upgrade from v0.4.3 to v0.5.0 by @abursavich in https://github.com/kubernetes-sigs/external-dns/pull/2881
+* Bump dependencies for multiple packages by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3035
+* Bump k8s.io/client-go from 0.24.1 to 0.25.2 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3034
+* Documentation: Update aws.md by @mule-bob in https://github.com/kubernetes-sigs/external-dns/pull/3050
+* Don't create endpoint if attempting to create one with invalid dns name by @olemarkus in https://github.com/kubernetes-sigs/external-dns/pull/3017
+* Add a warning about releases v0.12.0 - v0.12.2 by @RichieSams in https://github.com/kubernetes-sigs/external-dns/pull/3071
+* Use registry.k8s.io in external-dns-deployment yml by @knkarthik in https://github.com/kubernetes-sigs/external-dns/pull/3079
+* Bump github.com/IBM-Cloud/ibm-cloud-cli-sdk from 0.11.0 to 1.0.0 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3066
+* Bump github.com/ans-group/sdk-go from 1.8.1 to 1.10.4 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3087
+* Fix a few high/critical vulns by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3098
+
+## Images
+
+```
+registry.k8s.io/external-dns/external-dns:v0.13.1
+```
+
+## New Contributors
+* @claudiumocanu made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2609
+* @tobikris made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2693
+* @michelzanini made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2902
+* @mac-chaffee made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2772
+* @skalpin made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2890
+* @akshaykrjain made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2955
+* @n-oden made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2847
+* @Hyzhou made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2630
+* @luke-plausin-kidsloop made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2758
+* @DavidSpek made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2923
+* @mule-bob made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3050
+* @RichieSams made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3071
+* @knkarthik made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3079
+
+**Full Changelog**: https://github.com/kubernetes-sigs/external-dns/compare/v0.12.2...v0.13.1

@@ -1,0 +1,77 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.13.2",
+  "releaseDate": "2023-01-14",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for synchronizing DNS records with a Pi-Hole Local DNS instance."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added Civo DNS as a new provider for external-dns."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Restored support for exclusion-only domain filters for the AWS provider."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue where DNS records for VirtualServices were not deleted when an error occurred."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug to support conversion between simple and other routing policies for the AWS provider."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/medium"
+      ],
+      "text": "Updated the ingress-nginx installation guide for Azure Private DNS."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Removed the deprecated hmac-md5 TSIG algorithm from the supported list in the RFC2136 provider."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added ability to customize the service account labels."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added secretConfiguration.subPath to mount specific files from secrets."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed AWS Route53 routing policy changes between simple and other policies."
+    }
+  ]
+}

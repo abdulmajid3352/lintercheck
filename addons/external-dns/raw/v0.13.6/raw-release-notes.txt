@@ -1,0 +1,102 @@
+source: https://github.com/kubernetes-sigs/external-dns/releases/tag/v0.13.6
+
+## Important notes
+
+- Users upgrading from versions < v0.12.0 with the txt registry (--registry=txt) to this release should run v0.13.5 at least once (--once) to avoid #3876
+- There was a change to the Docker image which is now built with `ko` and based on a distroless image.
+
+For other important info, please refer to the next section.
+
+## What's Changed
+* docs: Update deprecated apiVersions by @Antvirf in https://github.com/kubernetes-sigs/external-dns/pull/3646
+* Bump kustomize version to latest (v0.13.5) by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3642
+* Bump versions in docs for v0.13.5 by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3643
+* feat(chart): updated chart to ExternalDNS v0.13.5 by @GMartinez-Sisti in https://github.com/kubernetes-sigs/external-dns/pull/3661
+* build(deps): bump github.com/IBM-Cloud/ibm-cloud-cli-sdk from 1.0.0 to 1.1.0 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3666
+* Define Labels type and JSON tags for ProviderSpecific fields  by @aruneshpa in https://github.com/kubernetes-sigs/external-dns/pull/3456
+* Remove roadmap section from README.md by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3653
+* Remove unnecessary Route53 code by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3669
+* Simplify filter interfaces by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3660
+* Very minor typo Update to azure.md by @dmealo in https://github.com/kubernetes-sigs/external-dns/pull/3594
+* Upgrade ExternalDNS to go 1.20 by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/3673
+* refactor: use always fmt.Errorf("...: %w", err), instead of %s or %v by @szuecs in https://github.com/kubernetes-sigs/external-dns/pull/3677
+* Enable dependabot grouped updates by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3678
+* Improve registry documentation by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3652
+* Add johngmyers to reviewers by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3664
+* build(deps): bump the dev-dependencies group with 4 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3679
+* Manual grouped dependency upgrade by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3682
+* chore: Fixed gh workflow approve by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/3691
+* Provider GoDaddy fix domain update by @Nefelim4ag in https://github.com/kubernetes-sigs/external-dns/pull/3427
+* Update dependencies that has vulnerabilities by @szuecs in https://github.com/kubernetes-sigs/external-dns/pull/3693
+* Gloo: Add support for listener.metadataStatic by @Megum1n in https://github.com/kubernetes-sigs/external-dns/pull/3476
+* Add support for Traefik 2's IngressRoute, IngressRouteTCP and IngressRouteUDP by @ThomasK33 in https://github.com/kubernetes-sigs/external-dns/pull/3055
+* Replace deprecated command with environment file by @jongwooo in https://github.com/kubernetes-sigs/external-dns/pull/3698
+* feat(chart): comply with Pod Security Standards by @nrvnrvn in https://github.com/kubernetes-sigs/external-dns/pull/3689
+* Route53 update configuration of target health checks by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3674
+* fix: extdns crashes when virtual service points to nonexistent … by @rumstead in https://github.com/kubernetes-sigs/external-dns/pull/3686
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3701
+* Handle migration to the new TXT format: use ForceUpdate strategy  by @mcharriere in https://github.com/kubernetes-sigs/external-dns/pull/3635
+* build(deps): bump dev-dependencies group with 41 updates by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/3697
+* minor fixes to the scaleway provider by @Sh4d1 in https://github.com/kubernetes-sigs/external-dns/pull/2928
+* Add DynamoDB registry implementation by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3648
+* Update aws IAM policy example by @jalaziz in https://github.com/kubernetes-sigs/external-dns/pull/3723
+* create an alias when record in a zone another than the target by @epollia in https://github.com/kubernetes-sigs/external-dns/pull/3338
+* Document annotations by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3729
+* Fix bug in the civo provider to avoid infinite record creation by @alejandrojnm in https://github.com/kubernetes-sigs/external-dns/pull/3687
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3730
+* Add no-change info log for cloudflare provider by @aoz-turk in https://github.com/kubernetes-sigs/external-dns/pull/3629
+* Refactor some Service code by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3728
+* fix: scaleway documentation, remove SCW_DEFAULT_ORGANIZATION_ID by @gugdewescale in https://github.com/kubernetes-sigs/external-dns/pull/3282
+* Added traefik-proxy rules to helm chart by @ThomasK33 in https://github.com/kubernetes-sigs/external-dns/pull/3325
+* [AWS] Adjust TTL for alias records by @Sewci0 in https://github.com/kubernetes-sigs/external-dns/pull/3738
+* Suppress dependabot updates for OpenShift by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3739
+* helm: Don't suppress configuration for registries other than TXT by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3736
+* support cnames and aaaa for default-targets by @cgroschupp in https://github.com/kubernetes-sigs/external-dns/pull/3745
+* use only tags with prefix v for version determination by @cgroschupp in https://github.com/kubernetes-sigs/external-dns/pull/3760
+* Remove flags and documentation for removed contour-ingressroute source by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3764
+* fix: update plural client that includes license by @DavidSpek in https://github.com/kubernetes-sigs/external-dns/pull/3779
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3777
+* Add serialization/deserialization support to DomainFilter by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3758
+* Refactor Provider to require DomainFilter by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3711
+* fix img dir by @liupeng0518 in https://github.com/kubernetes-sigs/external-dns/pull/3786
+* Fix domain filter to fix build by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3804
+* chore(ci): fix storage use, go version and lint job by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/3829
+* always use tcp for rfc2136 by @Protryon in https://github.com/kubernetes-sigs/external-dns/pull/3837
+* fix clean apk cache directory by @fougner in https://github.com/kubernetes-sigs/external-dns/pull/3656
+* fix: pdns logging by @M0NsTeRRR in https://github.com/kubernetes-sigs/external-dns/pull/3811
+* Tagget parameter TXTEncryptAESKey as secure by @HansK-p in https://github.com/kubernetes-sigs/external-dns/pull/3791
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3831
+* Update Dockerfile for libssl3 and libcrypto3 CVE's by @nshelke777 in https://github.com/kubernetes-sigs/external-dns/pull/3783
+* doc: Add example of setting up traefik IngressRoute with externalDNS annotations by @anthonycorbacho in https://github.com/kubernetes-sigs/external-dns/pull/3853
+* build(deps): bump dependencies (26 updates) by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/3824
+* helm: support initContainers by @calvinbui in https://github.com/kubernetes-sigs/external-dns/pull/3838
+* [TXT Registry] Fix handling of records produced by `toNewTXTName` in `toEndpoint` by @Sewci0 in https://github.com/kubernetes-sigs/external-dns/pull/3724
+* Remove PropertyValuesEqual method from Provider interface by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3702
+* Migrate metadata from TXT to DynamoDB registries by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3726
+* Fix reconciliation of provider-specific properties by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3863
+* fix(infoblox): set view and zone query parameters by @cronik in https://github.com/kubernetes-sigs/external-dns/pull/3560
+* feat(ovh): add cache based on DNS zone SOA value by @rbeuque74 in https://github.com/kubernetes-sigs/external-dns/pull/3026
+* Bump the timeout for golangci-lint by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3865
+* exoscale provider: migrate to exoscale API v2 by @kobajagi in https://github.com/kubernetes-sigs/external-dns/pull/2917
+* Add AWS API gateway endpoint zoneId mappings by @avi-08 in https://github.com/kubernetes-sigs/external-dns/pull/3826
+* feat: add support for ingress backed istio gateways by @DP19 in https://github.com/kubernetes-sigs/external-dns/pull/3842
+* fix!: align PDNS provider by removing MatchParent by @matusf in https://github.com/kubernetes-sigs/external-dns/pull/3869
+* loop through all hosted zones to match the domain record by @allurisravanth in https://github.com/kubernetes-sigs/external-dns/pull/3695
+* Build image with ko by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3835
+* Fixes to staging image build by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3899
+* aws: add ap-southeast-4 region by @jwitrick in https://github.com/kubernetes-sigs/external-dns/pull/3897
+* fix: remove useless warning log messages for instrumented_http.Transport by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/3870
+* Update Azure SDK and remove deprecated autorest dependency by @phillebaba in https://github.com/kubernetes-sigs/external-dns/pull/3040
+* Update aws.go for issue #3833 by @shreyas-3 in https://github.com/kubernetes-sigs/external-dns/pull/3834
+* Remove DomainFilterInterface by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3860
+* Use common EndpointKey type by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3862
+* Document the Ingress source by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3806
+* feat(azure): add support for workload identity using azidentity by @weisdd in https://github.com/kubernetes-sigs/external-dns/pull/3906
+* Make TLS enabled by default for PowerDNS provider by @matusf in https://github.com/kubernetes-sigs/external-dns/pull/3839
+
+## Docker image
+
+```
+registry.k8s.io/external-dns/external-dns:v0.13.6
+```
+**Full Changelog**: https://github.com/kubernetes-sigs/external-dns/compare/v0.13.5...v0.13.6

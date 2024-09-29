@@ -1,0 +1,77 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.14.0",
+  "releaseDate": "2023-11-07",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added webhook support in v1.14.0, marking the first release to officially support the new WebHook provider, allowing for the extension of ExternalDNS."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Filtered out entire endpoints if they end up without targets after filtering in targetFilterSource."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed planning for multi-cluster dual stack record types."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for --exclude-record-types."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for --label-filter for node source."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the external_dns_controller_last_reconcile_timestamp_seconds metric."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in the Linode provider to prevent the creation of duplicate TXT records, skipping existing records."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug by filtering peering zones in the Google provider."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed opt-out of service account token automounting."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for external IP in the Ambassador host source."
+    }
+  ]
+}

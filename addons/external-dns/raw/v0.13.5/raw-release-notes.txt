@@ -1,0 +1,49 @@
+source: https://github.com/kubernetes-sigs/external-dns/releases/tag/v0.13.5
+
+## What's Changed
+* Update kustomize and all tutorials to v0.13.4 by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3505
+* Fix docs for `--managed-record-types` by @Sewci0 in https://github.com/kubernetes-sigs/external-dns/pull/3511
+* Add gateway-api RBAC to helm chart clusterrole by @michaelvl in https://github.com/kubernetes-sigs/external-dns/pull/3499
+* [helm] Add support for namespaced scope by @jkroepke in https://github.com/kubernetes-sigs/external-dns/pull/3403
+* Add RBAC to be able to handle F5 VirtualServer source by @mikejoh in https://github.com/kubernetes-sigs/external-dns/pull/3503
+* feat(chart): Updated chart to ExternalDNS v0.13.4 by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/3516
+* Allow multiple records per A record in OpenStack Designate Provider by @hikhvar in https://github.com/kubernetes-sigs/external-dns/pull/3049
+* updated relative link for external-dns logo by @kundan2707 in https://github.com/kubernetes-sigs/external-dns/pull/3508
+* OCI provider: add support for instance principal authentication by @ericrrath in https://github.com/kubernetes-sigs/external-dns/pull/1701
+* Adding missing gateway-httproute cluster role permission by @nicon89 in https://github.com/kubernetes-sigs/external-dns/pull/3541
+* [AWS] Include DnsEndpoint example with AWS provider specifics by @froblesmartin in https://github.com/kubernetes-sigs/external-dns/pull/2661
+* Add support for AAAA records by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/2461
+* CRD source: add event-handler support by @ericrrath in https://github.com/kubernetes-sigs/external-dns/pull/2220
+* build(deps): bump go.etcd.io/etcd/client/v3 from 3.5.5 to 3.5.8 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3547
+* Simplify planner's data structure by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3546
+* Fix incorrect arg in Oracle OCI tutorial by @ericrrath in https://github.com/kubernetes-sigs/external-dns/pull/3558
+* OCI provider: bump oci-go-sdk from 24.3.0 to 65.35.0 by @jrosinsk in https://github.com/kubernetes-sigs/external-dns/pull/3556
+* Updated new annotation : ingressClassName: nginx by @HoussemDellai in https://github.com/kubernetes-sigs/external-dns/pull/3459
+* feat: resolve LB-type Service hostname to create A/AAAA instead of CNAME by @cxuu in https://github.com/kubernetes-sigs/external-dns/pull/3554
+* cloudflare: support reading API token from file by @cxuu in https://github.com/kubernetes-sigs/external-dns/pull/3552
+* chore(chart): Reverted chart changes to args by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/3569
+* Add the right query params on infoblox by @rikatz in https://github.com/kubernetes-sigs/external-dns/pull/3301
+* Added video tutorial in azure.md for using Azure DNS by @HoussemDellai in https://github.com/kubernetes-sigs/external-dns/pull/3583
+* If an error propagates all the way out, bail execution by @olemarkus in https://github.com/kubernetes-sigs/external-dns/pull/3009
+* docs: add example for provider specific config by @morremeyer in https://github.com/kubernetes-sigs/external-dns/pull/3525
+* (V2) Support filtering ingresses on ingressClassName as well as deprecated kubernetes.io/ingress.class annotation by @alefray in https://github.com/kubernetes-sigs/external-dns/pull/3589
+* Support filtering ingresses on `ingressClassName` as well as deprecated kubernetes.io/ingress.class annotation by @dsalisbury in https://github.com/kubernetes-sigs/external-dns/pull/2054
+* Try #3: Support encrypted DNS txt records by @vsychov in https://github.com/kubernetes-sigs/external-dns/pull/1828
+* build(deps): bump alpine from 3.17 to 3.18 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3597
+* IPv6 internal node IPs are usable externally by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3588
+* feat(service): allow using target annotation by @GMartinez-Sisti in https://github.com/kubernetes-sigs/external-dns/pull/3590
+* Add support for MX records in Azure, GCP and AWS by @Sewci0 in https://github.com/kubernetes-sigs/external-dns/pull/3519
+* Refactor route53 tests by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3607
+* Add Canonical Hosted Zone IDs for ELB/NLB in eu-south-2 (Spain) AWS region by @baziliolg in https://github.com/kubernetes-sigs/external-dns/pull/3604
+* Allow multiple hostnames in internal annotation for pods by @Pluggi in https://github.com/kubernetes-sigs/external-dns/pull/3603
+* Remove UpdateOld changeset for Azure by @sfc-gh-jelsesiy in https://github.com/kubernetes-sigs/external-dns/pull/3611
+* Support AAAA records from headless services by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3600
+* fix(gandi): allow grandi provider to support multiple TXT rsetvalues by @tommy31 in https://github.com/kubernetes-sigs/external-dns/pull/3342
+* chore(deps): bump libcrypto3 and libssl3 3.0.8-r4 by @nitrocode in https://github.com/kubernetes-sigs/external-dns/pull/3626
+
+## Images
+
+```
+registry.k8s.io/external-dns/external-dns:v0.13.5
+```
+**Full Changelog**: https://github.com/kubernetes-sigs/external-dns/compare/v0.13.4...v0.13.5

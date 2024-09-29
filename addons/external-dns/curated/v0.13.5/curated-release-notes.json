@@ -1,0 +1,113 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.13.5",
+  "releaseDate": "2023-05-29",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added gateway-api RBAC to the Helm chart clusterrole."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for namespaced scope in the Helm chart."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added RBAC to handle F5 VirtualServer source."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed multiple records per A record in the OpenStack Designate Provider."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for instance principal authentication in the OCI provider."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added missing gateway-httproute cluster role permission."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for AAAA records."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature to resolve LB-type Service hostnames to create A/AAAA records instead of CNAME."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Added support for filtering ingresses based on ingressClassName and the deprecated kubernetes.io/ingress.class annotation."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added event-handler support to the CRD source."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for MX records in Azure, GCP, and AWS."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added Canonical Hosted Zone IDs for ELB/NLB in the eu-south-2 (Spain) AWS region."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed multiple hostnames in internal annotations for pods."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for AAAA records from headless services."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed the Grandi provider to support multiple TXT rset values."
+    }
+  ]
+}

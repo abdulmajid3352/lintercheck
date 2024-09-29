@@ -1,0 +1,117 @@
+source: https://github.com/kubernetes-sigs/external-dns/releases/tag/v0.14.1
+
+## What's Changed
+* docs: add reference to adguard webhook provider by @muhlba91 in https://github.com/kubernetes-sigs/external-dns/pull/4030
+* Update azure.md by @sesoldi in https://github.com/kubernetes-sigs/external-dns/pull/4009
+* add initial support for gw apis 1.0.0 GA by @larivierec in https://github.com/kubernetes-sigs/external-dns/pull/4019
+* build(deps): bump the dev-dependencies group with 3 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4028
+* add stackit webhook to readme by @PatrickKoss in https://github.com/kubernetes-sigs/external-dns/pull/4029
+* Add org.opencontainers.image.source label to container image by @robinschneider in https://github.com/kubernetes-sigs/external-dns/pull/4022
+* bump kustomize version to v0.14.0 by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/4024
+* OCI Provider private zone and workload identity support by @anders-swanson in https://github.com/kubernetes-sigs/external-dns/pull/3995
+* RFC2136: Allow multiple zones by @CRASH-Tech in https://github.com/kubernetes-sigs/external-dns/pull/3976
+* chore(chart): Updated GH workflows by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/4010
+* fix: dynamodb registry when statements over 25 by @danie1sullivan in https://github.com/kubernetes-sigs/external-dns/pull/4021
+* Allow to configure revisionHistoryLimit on the K8s Deployment resource by @arnisoph in https://github.com/kubernetes-sigs/external-dns/pull/4008
+* chore: Bump kingpin/v2 dep by @mrueg in https://github.com/kubernetes-sigs/external-dns/pull/4033
+* Update all image versions in documentation by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/4037
+* updated various broken link in ultradns tutorial by @kundan2707 in https://github.com/kubernetes-sigs/external-dns/pull/3794
+* Make --ignore-hostname-annotation flag more consistent by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3964
+* service source uses externalIPs in ExternalName type if available by @dromie in https://github.com/kubernetes-sigs/external-dns/pull/4007
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4046
+* fix(google): ensure trailing dot for SRV records by @siliconsheep in https://github.com/kubernetes-sigs/external-dns/pull/4048
+* oracle provider: dns zone cache by @anders-swanson in https://github.com/kubernetes-sigs/external-dns/pull/4049
+* fix(httpProxy): drop status==valid filter by @nefelim4ag in https://github.com/kubernetes-sigs/external-dns/pull/3978
+* doc: added --infoblox-view argument to Infoblox documentation by @tanerm in https://github.com/kubernetes-sigs/external-dns/pull/4036
+* fix: regression on scaleway provider in 0.14.0 by @M0NsTeRRR in https://github.com/kubernetes-sigs/external-dns/pull/4039
+* Add GleSYS to the readme for webhooks by @glesys-andreas in https://github.com/kubernetes-sigs/external-dns/pull/4054
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4057
+* feat: make webhook httpapi reusable by @mrueg in https://github.com/kubernetes-sigs/external-dns/pull/4065
+* Make routegroup client IPv6 compatible by @mikkeloscar in https://github.com/kubernetes-sigs/external-dns/pull/4068
+* doc: fix link to ionos webhook provider by @akrieg-ionos in https://github.com/kubernetes-sigs/external-dns/pull/4031
+* feat(chart): Added complex provider support by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/4085
+* chore: update 45 go modules dependancies by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/4088
+* webhook: Move httpapi into own package by @mrueg in https://github.com/kubernetes-sigs/external-dns/pull/4084
+* doc: Add netcup webhook provider by @mrueg in https://github.com/kubernetes-sigs/external-dns/pull/4095
+* build(deps): bump the dev-dependencies group with 3 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4097
+* update to add il-central-1 by @theloneexplorerquest in https://github.com/kubernetes-sigs/external-dns/pull/4093
+* Add readme bizflycloud webhook provider by @huyduong2792 in https://github.com/kubernetes-sigs/external-dns/pull/4079
+* fix: Allow revisionHistoryLimit to be set to 0 by @bodgit in https://github.com/kubernetes-sigs/external-dns/pull/4053
+* helm: Avoid unnecessary pod restart on each helm chart version by @jkroepke in https://github.com/kubernetes-sigs/external-dns/pull/4103
+* Correct typo from 'Kuberntes' to 'Kubernetes' by @jongwooo in https://github.com/kubernetes-sigs/external-dns/pull/4118
+* build(deps): bump golang.org/x/crypto from 0.16.0 to 0.17.0 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4123
+* cleanup: remove dead code (`(Create|Update|Delete)Records` functions in AWS, Google, DNSimple) by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/4129
+* ci: remove `confusing-naming` property by @PascalBourdier in https://github.com/kubernetes-sigs/external-dns/pull/4116
+* chore: fix code comment by @tanujd11 in https://github.com/kubernetes-sigs/external-dns/pull/4131
+* fix: include cloudflare error in metrics and logs by @danie1sullivan in https://github.com/kubernetes-sigs/external-dns/pull/4082
+* gateway-api: fix wildcard matching by @abursavich in https://github.com/kubernetes-sigs/external-dns/pull/4124
+* build(deps): bump the dev-dependencies group with 23 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4134
+* Hetzner webhook provider readme link by @mconfalonieri in https://github.com/kubernetes-sigs/external-dns/pull/4051
+* Fix timeout for traefik-proxy source by @k8r-io in https://github.com/kubernetes-sigs/external-dns/pull/4076
+* build(deps): bump the dev-dependencies group with 7 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4144
+* fix: remove useless functions by @PascalBourdier in https://github.com/kubernetes-sigs/external-dns/pull/4115
+* fix(ambassador): don't resolve LB hostname by @fad3t in https://github.com/kubernetes-sigs/external-dns/pull/4092
+* doc(azure): shows how to use userAssignedIdentityID with clientId in azure.json by @thesse1 in https://github.com/kubernetes-sigs/external-dns/pull/4133
+* build(deps): bump the dev-dependencies group with 4 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4146
+* webhook: Fix metric name and add request gauges by @mrueg in https://github.com/kubernetes-sigs/external-dns/pull/4078
+* build(deps): bump the dev-dependencies group with 2 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4145
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4154
+* fix: heritage txt record was not able to be created for txt record by @tanujd11 in https://github.com/kubernetes-sigs/external-dns/pull/4140
+* build(deps): bump the dev-dependencies group with 9 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4155
+* fix(istio): support for ExternalIPs in Istio resources by @KarstenSiemer in https://github.com/kubernetes-sigs/external-dns/pull/4094
+* Update rfc2136 provider to split out changes per zone by @gregsidelinger in https://github.com/kubernetes-sigs/external-dns/pull/4107
+* Exoscale provider optimization by @kobajagi in https://github.com/kubernetes-sigs/external-dns/pull/4071
+* fix: godaddy - rate limiter add one token every second by @nefelim4ag in https://github.com/kubernetes-sigs/external-dns/pull/4087
+* feat(helm-chart): Allow configuration of ipFamilyPolicy by @dongjiang1989 in https://github.com/kubernetes-sigs/external-dns/pull/4153
+* chore(chart): Deprecated secretConfiguration by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/4161
+* feat: support webhook provider in Chart by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/4032
+* feat(helm-chart): Released chart for v0.14.0 by @appkins in https://github.com/kubernetes-sigs/external-dns/pull/4073
+* chore(chart): Fixed chart changelog by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/4168
+* fix(pdns): provider implicitly changes CNAME to ALIAS by @tmaroschik in https://github.com/kubernetes-sigs/external-dns/pull/4162
+* fix(chart): Fix webhook install failure by @gabe565 in https://github.com/kubernetes-sigs/external-dns/pull/4173
+* fix: provide possibility to have a soft error mode by @szuecs in https://github.com/kubernetes-sigs/external-dns/pull/4166
+* [helm] Allow tpl in provider again by @jkroepke in https://github.com/kubernetes-sigs/external-dns/pull/4180
+* Fix args for webhook deployment by @webwurst in https://github.com/kubernetes-sigs/external-dns/pull/4202
+* add RBAC fix to namespaces - get, watch, list to each gateway-*route by @orenlevi111 in https://github.com/kubernetes-sigs/external-dns/pull/4205
+* chore: Released chart v1.14.3 by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/4208
+* build(deps): bump the dev-dependencies group with 24 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4227
+* Fix "workload identity" spelling by @gdubicki in https://github.com/kubernetes-sigs/external-dns/pull/4201
+* feat(aws-provider): create flag to support sub-domains match parent by @thiagoluiznunes in https://github.com/kubernetes-sigs/external-dns/pull/4236
+* Change coredns testing to fix failing tests by @pascalgn in https://github.com/kubernetes-sigs/external-dns/pull/4245
+* Validate AWS record values size during batch set generation by @megum1n in https://github.com/kubernetes-sigs/external-dns/pull/4126
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4222
+* build(deps): bump the dev-dependencies group with 13 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4246
+* Update link to current workshop by @AndrewCharlesHay in https://github.com/kubernetes-sigs/external-dns/pull/4170
+* cleanup: Drop additional docker files by @mrueg in https://github.com/kubernetes-sigs/external-dns/pull/4182
+* chore: update the slack channel URL into the github support template by @angegar in https://github.com/kubernetes-sigs/external-dns/pull/3815
+* add soft error by @jeanfrancoislelezec in https://github.com/kubernetes-sigs/external-dns/pull/4199
+* Fix Gateway API TLS TCP Route by @zs-ko in https://github.com/kubernetes-sigs/external-dns/pull/4213
+* Update the OCI Provider to incorporate SoftError to avoid CrashLoopBackoff by @jrosinsk in https://github.com/kubernetes-sigs/external-dns/pull/4229
+* Add Gcore provider on readme by @kokizzu in https://github.com/kubernetes-sigs/external-dns/pull/4256
+* feat: enable Azure subscription ID override by @pascalgn in https://github.com/kubernetes-sigs/external-dns/pull/4186
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4254
+* feat: allow setting dnsConfig by @davhdavh in https://github.com/kubernetes-sigs/external-dns/pull/4265
+* build(deps): bump the dev-dependencies group with 17 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4270
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4269
+* build(deps): bump the dev-dependencies group with 6 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4279
+* docs: 📝 add Azure DNS w/workload identity blog post to readme by @krukowskid in https://github.com/kubernetes-sigs/external-dns/pull/4248
+* feat(gandi): add support for personal access token by @deadlybore in https://github.com/kubernetes-sigs/external-dns/pull/4249
+* RFC2136: Add support for DNS-over-TLS by @iteratee in https://github.com/kubernetes-sigs/external-dns/pull/3974
+* Fixing NAPTR support by @jstudler in https://github.com/kubernetes-sigs/external-dns/pull/4212
+* doc: explain how to use Azure internal load balancer by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/4252
+* fix(aws): allow alias records to be created when using the alias annotation by @papayakiwi in https://github.com/kubernetes-sigs/external-dns/pull/4178
+* fix(service): omit nil endpoints and prefer endpointsForHostname() by @yurrriq in https://github.com/kubernetes-sigs/external-dns/pull/4293
+* chore: update maintainers by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/4304
+* build(deps): bump the dev-dependencies group with 21 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4307
+* build(deps): bump the dev-dependencies group with 6 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4312
+* feat(ambassador): add support for provider specific annotations by @fad3t in https://github.com/kubernetes-sigs/external-dns/pull/4120
+* build(deps): bump the dev-dependencies group with 8 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4313
+* build(deps): bump the dev-dependencies group with 2 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4314
+* build(deps): bump the dev-dependencies group with 14 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4321
+
+## Docker image
+
+```
+registry.k8s.io/external-dns/external-dns:v0.14.1
+```
+**Full Changelog**: https://github.com/kubernetes-sigs/external-dns/compare/v0.14.0...v0.14.1

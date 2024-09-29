@@ -1,0 +1,63 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.14.2",
+  "releaseDate": "2024-05-16",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added dnsendpoint CRD to the Helm chart."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug to support recognizing short and long IPv6 addresses as equal."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature to allow WebhookProvider to return a SoftError for response status codes greater than or equal to 500."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a zone name filter for Azure Private DNS."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed syntax issue on Cloudflare ExternalDNS."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Added support for the AWS ca-west-1 region."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added IPv6 AAAA record support to the PiHole provider."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a soft error handling issue for Cloudflare rate limits."
+    }
+  ]
+}

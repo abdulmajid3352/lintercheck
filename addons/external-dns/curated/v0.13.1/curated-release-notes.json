@@ -1,0 +1,49 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.13.1",
+  "releaseDate": "2022-10-20",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue preventing rescheduling of reconciliations if already scheduled within cfg.MinEventSyncInterval, avoiding delays in busy clusters."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for filtering discovered targets by network using --target-net-filter or --exclude-target-net, allowing control over which IPs are published in DNS."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support to configure dnsPolicy in the Helm chart deployment, allowing the option to set it to Default and skip in-cluster DNS for improved performance."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a bug by changing the Deployment strategy to 'Recreate' to prevent conflicts between multiple external-dns pods."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for ExternalID in the AWS provider when assuming a role."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Prevented creation of endpoints with invalid or overly long DNS names, ensuring backward compatibility and avoiding issues with invalid DNS labels."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.12.0",
+  "releaseDate": "2022-05-26",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a bug where deleted resources triggered the deletion of TXT records, potentially impacting deletions but not additions when upgrading from any version prior to v0.12.0. If issues occur, the records may need to be manually recreated or downgraded."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the shareProcessNamespace field to the deployment."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support to specify the target as NodeExternalIP or via annotation."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for Gateway API Route Sources."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed the Helm chart installation command line."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Restricted the RFC2136 Kerberos password from being exposed in logs."
+    }
+  ]
+}

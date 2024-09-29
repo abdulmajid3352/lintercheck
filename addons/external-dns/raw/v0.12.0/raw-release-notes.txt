@@ -1,0 +1,68 @@
+source: https://github.com/kubernetes-sigs/external-dns/releases/tag/v0.12.0
+
+## IMPORTANT NOTE
+
+There is a bug affecting this release when deleted resources trigger a deletion of TXT records. This could impact deletions, but not additions when upgrading from any previous version to v0.12.0. In case you have problems, you can either create the records manually or downgrade. A fix is being worked in https://github.com/kubernetes-sigs/external-dns/pull/2811. 
+
+## What's Changed
+* update kustomization.yaml for v0.11.0 by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/2663
+* bump ukfast sdk version by @0x4c6565 in https://github.com/kubernetes-sigs/external-dns/pull/2666
+* feat[chart]: Release v1.8.0 by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/2571
+* Fix documentation for Azure TTL by @kvendingoldo in https://github.com/kubernetes-sigs/external-dns/pull/2647
+* Fix CI release notes generation by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/2671
+* Update to golangci-lint v1.45.2 by @seanmalloy in https://github.com/kubernetes-sigs/external-dns/pull/2695
+* bluecat docs: JSON configuration file is not deprecated by @seanmalloy in https://github.com/kubernetes-sigs/external-dns/pull/2694
+* OpenShift route source: better use of route status by @alebedev87 in https://github.com/kubernetes-sigs/external-dns/pull/2579
+* fix the helm chart installation command line by @kartikeymittal in https://github.com/kubernetes-sigs/external-dns/pull/2612
+* ADD: added node source doc by @pbertera in https://github.com/kubernetes-sigs/external-dns/pull/2645
+* Bump go.etcd.io/etcd/client/v3 from 3.5.0 to 3.5.2 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/2601
+* Bump google.golang.org/api from 0.66.0 to 0.74.0 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/2676
+* extract bluecat api code into its own package by @vinny-sabatini in https://github.com/kubernetes-sigs/external-dns/pull/2696
+* Publish v1.8.0 Helm chart by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/2689
+* Use Go 1.17 in CI by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/2708
+* Registry record type by @k0da in https://github.com/kubernetes-sigs/external-dns/pull/2157
+* migration to infoblox-go-client/v2 by @skudriavtsev in https://github.com/kubernetes-sigs/external-dns/pull/2670
+* feat: restrict rfc2136 kerberos password from being exposed in logs by @scottd018 in https://github.com/kubernetes-sigs/external-dns/pull/2703
+* Update to ExternalDNS v0.11.0 by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/2690
+* provider/bluecat: remove named returns by @vinny-sabatini in https://github.com/kubernetes-sigs/external-dns/pull/2722
+* feat[chart]: Add shareProcessNamespace field to deployment by @wolffberg in https://github.com/kubernetes-sigs/external-dns/pull/2715
+* Workflow for automatic documentation creation and publishing by @renehernandez in https://github.com/kubernetes-sigs/external-dns/pull/2652
+* istio-gateway: Add debug logging when endpoints missing by @mcwarman in https://github.com/kubernetes-sigs/external-dns/pull/2538
+* Revert "Workflow for automatic documentation creation and publishing" by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/2727
+* Headless service: allow to specify target as NodeExternalIP or by annotation by @alfredkrohmer in https://github.com/kubernetes-sigs/external-dns/pull/2115
+* Update to stable GSS-TSIG API by @bodgit in https://github.com/kubernetes-sigs/external-dns/pull/2719
+* Updated tutorial to support Kubernetes 1.22 by @JohanRyberg in https://github.com/kubernetes-sigs/external-dns/pull/2728
+* Revert "Revert "Workflow for automatic documentation creation and publishing"" by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/2738
+* Bump github.com/projectcontour/contour from 1.20.0 to 1.20.1 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/2698
+* Bump golang crypto package by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/2741
+* Istio: Use existing VirtualService informer by @abursavich in https://github.com/kubernetes-sigs/external-dns/pull/2215
+* Azure provider doc refresh by @darkn3rd in https://github.com/kubernetes-sigs/external-dns/pull/2745
+* Fix ingress formal error by @lou-lan in https://github.com/kubernetes-sigs/external-dns/pull/2749
+* [Docs] Clarify registry feature description in FAQ by @jgoldschrafe in https://github.com/kubernetes-sigs/external-dns/pull/2574
+* Infoblox provider: fix for target value duplication by @skudriavtsev in https://github.com/kubernetes-sigs/external-dns/pull/2755
+* Add Support for Gateway API Route Sources by @abursavich in https://github.com/kubernetes-sigs/external-dns/pull/2292
+* Add IBM Cloud provider by @hughhuangzh in https://github.com/kubernetes-sigs/external-dns/pull/2707
+* Bump yaml.v3 to fix vulnerability by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/2771
+
+## Images
+
+```
+k8s.gcr.io/external-dns/external-dns:v0.12.0
+```
+
+## New Contributors
+* @0x4c6565 made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2666
+* @kvendingoldo made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2647
+* @kartikeymittal made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2612
+* @pbertera made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2645
+* @skudriavtsev made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2670
+* @wolffberg made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2715
+* @renehernandez made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2652
+* @bodgit made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2719
+* @JohanRyberg made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2728
+* @darkn3rd made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2745
+* @lou-lan made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2749
+* @jgoldschrafe made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2574
+* @hughhuangzh made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2707
+
+**Full Changelog**: https://github.com/kubernetes-sigs/external-dns/compare/v0.11.1...v0.12.0

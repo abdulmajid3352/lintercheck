@@ -1,0 +1,77 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.13.6",
+  "releaseDate": "2023-09-06",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Users upgrading from versions earlier than v0.12.0 with the txt registry should run v0.13.5 at least once with the --once flag to avoid a regression where text registry migration is broken."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Added support for Traefik 2's IngressRoute, IngressRouteTCP, and IngressRouteUDP."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added serialization and deserialization support to DomainFilter."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added AWS API Gateway endpoint zone ID mappings."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in the Civo provider to avoid infinite record creation."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed handling of records produced by toNewTXTName in toEndpoint."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Migrated metadata from TXT to DynamoDB registries."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added cache based on DNS zone SOA value."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for ingress-backed Istio gateways."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Added support for workload identity using azidentity."
+    }
+  ]
+}

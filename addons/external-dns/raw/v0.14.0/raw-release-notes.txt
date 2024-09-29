@@ -1,0 +1,63 @@
+source: https://github.com/kubernetes-sigs/external-dns/releases/tag/v0.14.0
+
+## Important changes
+
+This is the first release to officially support the new `WebHook` provider that will allow to extend ExternalDNS in a new way out of tree. Please refer to https://github.com/kubernetes-sigs/external-dns/blob/v0.14.0/docs/tutorials/webhook-provider.md for more information .
+
+## What's Changed
+* feat(helm-chart): Released chart for v0.13.6 by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/3917
+* update kustomization.yaml with v0.13.6 by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3923
+* fix(linode): don't try to create existing records by @wbh1 in https://github.com/kubernetes-sigs/external-dns/pull/3903
+* build(deps): bump the dev-dependencies group with 2 updates by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3914
+* feat: upgrade ExternalDNS to go 1.21 by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/3922
+* Add johngmyers as approver by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3931
+* build(deps): bump the dev-dependencies group with 1 update by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3932
+* fix: nodePort #2704 - publish ready endpoints by @nefelim4ag in https://github.com/kubernetes-sigs/external-dns/pull/3447
+* fix: filter peering zones in google provider by @itspngu in https://github.com/kubernetes-sigs/external-dns/pull/3690
+* Filter out entire endpoint if it ends up without targets after filtering in targetFilterSource by @BadLiveware in https://github.com/kubernetes-sigs/external-dns/pull/3451
+* Allow annotation target override on gateway by @BadLiveware in https://github.com/kubernetes-sigs/external-dns/pull/3452
+* Fix planning for multi-cluster dual stack record types by @cronik in https://github.com/kubernetes-sigs/external-dns/pull/3747
+* chore(providers): allow AdjustEndpoints to return error by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3911
+* [TXT Registry] Fix `Records()` case handling by @Sewci0 in https://github.com/kubernetes-sigs/external-dns/pull/3912
+* Support GoDaddy domains with PENDING_DNS_ACTIVE status by @m-adawi in https://github.com/kubernetes-sigs/external-dns/pull/3889
+* feat(azure): add AAAA records support by @jbpaux in https://github.com/kubernetes-sigs/external-dns/pull/3908
+* Document the Service source by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3913
+* Gandi provider: refactor tests to be more readable, robusts, and extensible; and minor fixes by @gfaugere in https://github.com/kubernetes-sigs/external-dns/pull/3893
+* Add support for multiple gloo namespaces in one External DNS instance by @Megum1n in https://github.com/kubernetes-sigs/external-dns/pull/3480
+* Move seanmalloy to emeritus_approvers by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3935
+* Represent AWS Alias records as record type A by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3910
+* Document the Gateway sources by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3936
+* Add --exclude-record-types flag by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3748
+* Refactor setting the "resource" label into endpointsForHostname by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3762
+* Remove dependency on dnscontrol by @TomOnTime in https://github.com/kubernetes-sigs/external-dns/pull/3941
+* Document where OWNERS file should be synced by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3937
+* Webhook provider by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3063
+* Use ServiceIP for ClusterIP Services with internal-hostname annotation by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3938
+* Support --label-filter for node source by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3940
+* Add --webhook-server flag for running as a webhook server by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3957
+* Implement target annotation for more sources by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3944
+* Clarified documentation for Pi-hole DNS provider by @hotspoons in https://github.com/kubernetes-sigs/external-dns/pull/3963
+* Refactor getTTLFromAnnotations() to not return error by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3939
+* AWSSD: Utilize DiscoverInstances instead of ListInstances by @voro015 in https://github.com/kubernetes-sigs/external-dns/pull/2506
+* document there are four ways of configuring access by @femnad in https://github.com/kubernetes-sigs/external-dns/pull/3969
+* fix: parentheses typo on cli help by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/3968
+* Add external_dns_controller_last_reconcile_timestamp_seconds metric by @gozer in https://github.com/kubernetes-sigs/external-dns/pull/3340
+* fix(azure): sovereign cloud support by @jbpaux in https://github.com/kubernetes-sigs/external-dns/pull/3942
+* Remove the --run-aws-provider-as-webhook flag by @johngmyers in https://github.com/kubernetes-sigs/external-dns/pull/3962
+* build(deps): bump golang.org/x/net from 0.12.0 to 0.17.0 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3984
+* fix case of userAssignedIdentityID field by @femnad in https://github.com/kubernetes-sigs/external-dns/pull/3989
+* Add support for NS records in the Linode provider by @julsemaan in https://github.com/kubernetes-sigs/external-dns/pull/3987
+* [TXT Registry] Make the nonce stable when generating delete records by @Sewci0 in https://github.com/kubernetes-sigs/external-dns/pull/3901
+* Add mloiseleur to reviewer group by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3700
+* Allow opt-out of service account token automounting by @gilles-gosuin in https://github.com/kubernetes-sigs/external-dns/pull/3983
+* Update Scaleway provider to support config files by @bakhtin in https://github.com/kubernetes-sigs/external-dns/pull/4002
+* build(deps): bump google.golang.org/grpc from 1.56.2 to 1.56.3 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/4004
+* feat: add support for external IP in ambassador host source by @fad3t in https://github.com/kubernetes-sigs/external-dns/pull/3734
+* docs: Inform the situation on webhook provider by @mloiseleur in https://github.com/kubernetes-sigs/external-dns/pull/3991
+
+## Docker image
+
+```
+registry.k8s.io/external-dns/external-dns:v0.14.0
+```
+**Full Changelog**: https://github.com/kubernetes-sigs/external-dns/compare/v0.13.6...v0.14.0

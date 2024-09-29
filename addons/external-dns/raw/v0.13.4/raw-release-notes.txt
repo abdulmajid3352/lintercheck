@@ -1,0 +1,57 @@
+source: https://github.com/kubernetes-sigs/external-dns/releases/tag/v0.13.4
+
+## What's Changed
+* updates kustomize with newly released version by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3323
+* Update cloudflare-go to 0.58.1 by @arturhoo in https://github.com/kubernetes-sigs/external-dns/pull/3288
+* Improve Azure tutorials by @zioproto in https://github.com/kubernetes-sigs/external-dns/pull/3201
+* Route53: retry single changes in a batch if the batch fails by @alfredkrohmer in https://github.com/kubernetes-sigs/external-dns/pull/1209
+* Added automation to run GH actions on PRs with ok-to-test by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/3331
+* Use HasPrefix to check for ownerID by @sepulworld in https://github.com/kubernetes-sigs/external-dns/pull/2709
+* Add Osaka (ap-northeast-3) Hosted Zone ID for AWS Network Load Balancers by @brunoleite in https://github.com/kubernetes-sigs/external-dns/pull/3344
+* Fixed bad syntax in GH action workflow approval by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/3350
+* build(deps): bump helm/chart-releaser-action from 1.4.1 to 1.5.0 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3299
+* Bump helm/kind-action from 1.4.0 to 1.5.0 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3240
+* Bump azure/setup-helm from 3.4 to 3.5 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3231
+* Bump mindsers/changelog-reader-action from 2.1.1 to 2.2.2 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3188
+* Only update PiHole entries when they have actually changed  by @sfleener in https://github.com/kubernetes-sigs/external-dns/pull/3297
+* feat[chart]: Updated to v0.13.2 by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/3371
+* specify --regex-domain-filter, alibaba provider cannot get any records by @stan-chen in https://github.com/kubernetes-sigs/external-dns/pull/3073
+* [helm] Add support for relabelings and metricRelabelings at serviceMonitor by @jkroepke in https://github.com/kubernetes-sigs/external-dns/pull/3366
+* chore: Fixed GH action workflow approval by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/3354
+* Replace all versions of docker images with latest in tutorial by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3368
+* chore: Fixed GH workflow approval by @stevehipwell in https://github.com/kubernetes-sigs/external-dns/pull/3389
+* Force updating libcrypto3 and libssl3 in docker image by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3390
+* enabled zurich endpoint by @jgourmelen in https://github.com/kubernetes-sigs/external-dns/pull/3383
+* build(deps): bump github.com/dnsimple/dnsimple-go from 0.71.1 to 1.0.1 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3425
+* build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/privatedns from 1.0.550 to 1.0.599 by @dependabot in https://github.com/kubernetes-sigs/external-dns/pull/3426
+* Fix a minor typo in AWS tutorial by @fenggw-fnst in https://github.com/kubernetes-sigs/external-dns/pull/3428
+* Added name~ regex match to infoblox with --infoblox-name-regex argument by @craigapple in https://github.com/kubernetes-sigs/external-dns/pull/3392
+* cloudflare - customizable pagination when listing DNS records by @arturhoo in https://github.com/kubernetes-sigs/external-dns/pull/3364
+* Use right version for exoscale/egoscale by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3461
+* Add AWS VPC endpoint canonical hosted zone IDs by @jwenz723 in https://github.com/kubernetes-sigs/external-dns/pull/3433
+* Fix dnscontrol by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3467
+* Add F5 Networks VirtualServer source by @mikejoh in https://github.com/kubernetes-sigs/external-dns/pull/3162
+* docker buildx and tester by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3472
+* Fix prow CI build by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3485
+* Force use of buildx by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3486
+* updated icon image path by @kundan2707 in https://github.com/kubernetes-sigs/external-dns/pull/3494
+* Bump libcrypto and libssl by @Raffo in https://github.com/kubernetes-sigs/external-dns/pull/3500
+* Actions Updates - yaml & json validation by @GrantBirki in https://github.com/kubernetes-sigs/external-dns/pull/3501
+## Images
+
+```
+registry.k8s.io/external-dns/external-dns:v0.13.4
+```
+
+## New Contributors
+* @arturhoo made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3288
+* @sepulworld made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/2709
+* @brunoleite made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3344
+* @sfleener made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3297
+* @stan-chen made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3073
+* @jgourmelen made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3383
+* @craigapple made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3392
+* @jwenz723 made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3433
+* @GrantBirki made their first contribution in https://github.com/kubernetes-sigs/external-dns/pull/3501
+
+**Full Changelog**: https://github.com/kubernetes-sigs/external-dns/compare/v0.13.2...v0.13.4

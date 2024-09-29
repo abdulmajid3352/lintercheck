@@ -1,0 +1,42 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.13.4",
+  "releaseDate": "2023-03-27",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a retry mechanism in Route53 for failed batch changes, with failed changes queued and resubmitted in batches to ensure consistency."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug to ensure PiHole entries are only updated when they have actually changed."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for relabelings and metricRelabelings in the Helm chart's serviceMonitor."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added AWS VPC endpoint canonical hosted zone IDs."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Added Osaka (ap-northeast-3) Hosted Zone ID for AWS Network Load Balancers."
+    }
+  ]
+}

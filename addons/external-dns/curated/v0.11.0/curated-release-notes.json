@@ -1,0 +1,59 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.11.0",
+  "releaseDate": "2022-22-21",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-considerations",
+        "impact/high"
+      ],
+      "text": "Added cluster role permissions for other sources, including RBAC for HTTPProxy, CRD source deployment, and RBAC for dnsendpoints in the Helm chart."
+    },
+    {
+      "text": "Restored cluster role permissions to read services when Istio sources are enabled."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for NS records to the rfc2136 provider."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the canonical hosted zone for CloudFront."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added Istio-gateway permissions on source Istio-virtualservice."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added txtSuffix value to Helm chart."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for TopologySpreadConstraints to the Helm chart."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added quotes to the TTL example to enforce string context."
+    }
+  ]
+}

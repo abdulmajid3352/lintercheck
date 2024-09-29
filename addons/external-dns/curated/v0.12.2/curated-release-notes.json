@@ -1,0 +1,49 @@
+{
+  "addonName": "external-dns",
+  "version": "v0.12.2",
+  "releaseDate": "2022-07-27",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the requirement for the --txt-wildcard-replacement flag for the Azure DNS provider."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug to prefer IP addresses as 'less' when comparing endpoints."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue where additionalPermissions was incorrectly treated as an object instead of an array."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug by removing the split of host and port. The refactor introduced in v0.12.0 changed the methodology for creating the handle, eliminating the need to separate the hostname from the port."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Explicitly set Helm chart resource namespaces and added support for common labels."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for proxying wildcard records in the Cloudflare provider by updating the shouldBeProxied validation to allow wildcard records, following Cloudflare's availability of wildcard proxying across all tiers."
+    }
+  ]
+}
