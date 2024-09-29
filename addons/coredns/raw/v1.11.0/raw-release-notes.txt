@@ -1,4 +1,4 @@
-source: https://github.com/coredns/coredns/releases/tag/v1.11.99
+source: https://github.com/coredns/coredns/releases/tag/v1.11.0
 
 ## Release Highlights
 
