@@ -5,7 +5,7 @@
     {
       "label": ["kind/feature", "impact/medium"],
       "text": "Passed the CILIUM_FAST_START_NAMESPACES environment variable to cilium-cni."
-    }
+    },
     {
       "label": ["kind/feature", "impact/medium"],
       "text": "Implemented a Cilium watchdog for improved monitoring and handling of Cilium processes."
