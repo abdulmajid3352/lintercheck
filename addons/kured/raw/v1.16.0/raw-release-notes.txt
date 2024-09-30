@@ -1,0 +1,35 @@
+source: https://github.com/kubereboot/kured/releases/tag/1.16.0
+## Documentation
+
+- add best practices badge (#927)
+
+
+## Build and Testing
+
+- bump x/net dependency (#925)
+- bump kubernetes-versions to 0.29.x (#926)
+- build(deps): bump aquasecurity/trivy-action from 0.18.0 to 0.19.0
+- build(deps): bump github.com/prometheus/common from 0.48.0 to 0.52.3 (#921)
+- build(deps): bump github.com/prometheus/common from 0.52.3 to 0.53.0 (#922)
+- build(deps): bump helm/kind-action from 1.9.0 to 1.10.0
+- build(deps): bump lycheeverse/lychee-action from 1.9.3 to 1.10.0
+- build(deps): bump github.com/prometheus/client_golang (#932)
+- build(deps): bump alpine from 3.19.1 to 3.20.0
+- build(deps): bump aquasecurity/trivy-action from 0.19.0 to 0.21.0
+- build(deps): bump github.com/prometheus/common from 0.53.0 to 0.54.0
+- build(deps): bump github.com/spf13/viper from 1.18.2 to 1.19.0
+- build(deps): bump aquasecurity/trivy-action from 0.21.0 to 0.22.0
+- build(deps): bump docker/build-push-action from 5 to 6
+- build(deps): bump github.com/spf13/cobra from 1.8.0 to 1.8.1
+- build(deps): bump aquasecurity/trivy-action from 0.22.0 to 0.23.0
+- build(deps): bump alpine from 3.20.0 to 3.20.1
+- build(deps): bump github.com/prometheus/common from 0.54.0 to 0.55.0
+- build(deps): bump aquasecurity/trivy-action from 0.23.0 to 0.24.0 (#953)
+- build(deps): bump alpine from 3.20.1 to 3.20.2
+
+
+## Kubernetes Version Compatibility
+
+The daemon image contains a 1.29.x k8s.io/{client-go,kubectl} for the purposes of maintaining the lock and draining worker nodes. Kubernetes aims to provide forwards & backwards compatibility of one minor version between client and server, so this should work on 1.28.x, 1.29.x and 1.30.x
+
+Thanks a lot to everyone who contributed to kured since 1.15.1.
