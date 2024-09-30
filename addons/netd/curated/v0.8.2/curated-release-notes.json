@@ -1,0 +1,14 @@
+{
+  "addonName": "netd",
+  "version": "v0.8.2",
+  "releaseDate": "2024-05-14",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Handled RUN_CNI_WATCHDOG from all exit paths."
+    }
+  ]
+}
