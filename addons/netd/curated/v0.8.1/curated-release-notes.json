@@ -1,0 +1,21 @@
+{
+  "addonName": "netd",
+  "version": "v0.8.1",
+  "releaseDate": "2024-04-26",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Handled multiple default routes correctly."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Correctly initialized with an IPv6 API server endpoint."
+    }
+  ]
+}

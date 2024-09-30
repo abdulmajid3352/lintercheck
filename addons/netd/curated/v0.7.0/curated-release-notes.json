@@ -1,0 +1,14 @@
+{
+  "addonName": "netd",
+  "releaseDate": "2024-13-07",
+  "notes": [
+    {
+      "label": ["kind/feature", "impact/madium"],
+      "text": "Passed the CILIUM_FAST_START_NAMESPACES environment variable to cilium-cni."
+    },
+    {
+      "label": ["kind/feature", "impact/medium"],
+      "text": "Implemented a Cilium watchdog for improved monitoring and handling of Cilium processes."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+source: https://github.com/GoogleCloudPlatform/netd/releases/tag/v0.7.0
+
+## What's Changed
+* Pass CILIUM_FAST_START_NAMESPACES env var over into cilium-cni by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/277
+* Split `make test` in `script/` for faster partial testing during dev by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/279
+* Fix #277: add CILIUM_FAST_START_NAMESPACES to cleanup_env in test by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/280
+* Implement Cilium watchdog by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/278
+* Set GOTOOLCHAIN=local on the go command inside Makefile by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/285
+* Bump to k8s 1.29.2 and google.golang.org/protobuf 1.33.0 by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/284
+* Bump to distroless-iptables:v0.5.2 by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/282
+* Followup #277: add dpv2- prefix to fast-start-namespaces by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/283
+* Bump golang.org/x/sys from 0.15.0 to 0.18.0 by @dependabot in https://github.com/GoogleCloudPlatform/netd/pull/286
+
+
+**Full Changelog**: https://github.com/GoogleCloudPlatform/netd/compare/v0.6.28...v0.7.0

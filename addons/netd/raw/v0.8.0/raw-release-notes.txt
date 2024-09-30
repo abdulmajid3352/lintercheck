@@ -1,0 +1,13 @@
+source: https://github.com/GoogleCloudPlatform/netd/releases/tag/v0.8.0
+
+## What's Changed
+* Bump k8s.io/client-go from 0.29.2 to 0.29.3 by @dependabot in https://github.com/GoogleCloudPlatform/netd/pull/288
+* Bump distroless-iptables to 0.5.3 by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/296
+* Add an extra delay CILIUM_WATCHDOG_FAST_START_WAIT by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/297
+* go get golang.org/x/net@v0.23.0 by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/298
+* Add support for IPv6 pod range. by @marqc in https://github.com/GoogleCloudPlatform/netd/pull/269
+* Bump golang.org/x/sys from 0.18.0 to 0.19.0 by @dependabot in https://github.com/GoogleCloudPlatform/netd/pull/295
+* Fix install-cni v2 template test cases broken by #297 by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/299
+
+
+**Full Changelog**: https://github.com/GoogleCloudPlatform/netd/compare/v0.7.0...v0.8.0
