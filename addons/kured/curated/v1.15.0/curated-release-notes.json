@@ -1,10 +1,10 @@
 {
     "addonName": "kured",
     "version": "v1.15.0",
-    "releaseDate": "2024-01-177",
+    "releaseDate": "2024-01-17",
     "notes": [
         {
-            "label": ["kind/breaking-changes", "kind/upgrade-consideration", "impact/high"],
+            "label": ["kind/breaking-change", "kind/upgrade-consideration", "impact/high"],
             "text": "Kured's reboot-mode changes require updating the full YAML manifest, not just the version. Two variants are now available: `kured-ds.yaml` (old reboot-command) and `kured-ds-signal.yaml` (new reboot-signal with reduced permissions)."
           },
           {
