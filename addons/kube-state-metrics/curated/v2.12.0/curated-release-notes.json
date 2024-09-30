@@ -1,0 +1,35 @@
+{
+  "addonName": "kube-state-metrics",
+  "version": "v2.12.0",
+  "releaseDate": "2024-04-02",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "v2.12.0 release addressed a critical issue where scraping the exposition data for certain types caused metrics-backends to crash."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug by falling back to the gauge metric type for protofmt-based negotiations."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added kube_pod_container_status_last_terminated_timestamp."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed prefixing expandable paths and wildcard labelsFromPath."
+    }
+  ]
+}

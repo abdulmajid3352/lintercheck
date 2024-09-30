@@ -1,0 +1,49 @@
+{
+  "addonName": "kube-state-metrics",
+  "version": "v2.13.0",
+  "releaseDate": "2024-07-18",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in pod autosharding mode by transitioning from LabelSelector to FieldSelector, ensuring proper shard updates by targeting the owner StatefulSet by its name."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added automatic detection of memory limits."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Added a readyz endpoint to discourage using /metrics for probes and to secure exposition data."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Added a livez endpoint to identify network outages, helping restart the binary in such cases."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added kube_persistentvolume_volume_mode metric."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Added read and write timeouts to prevent kube-state-metrics from locking up and becoming unresponsive in large clusters, with server-read-timeout and server-write-timeout flags introduced to configure these timeouts."
+    }
+  ]
+}

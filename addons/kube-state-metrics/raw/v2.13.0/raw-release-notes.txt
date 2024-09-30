@@ -1,0 +1,68 @@
+source: https://github.com/kubernetes/kube-state-metrics/releases/tag/v2.13.0
+
+# Note
+This release builds with Golang v1.22.5.
+This release builds with k8s.io/client-go: v0.30.3.
+This release adds read and write timeouts for requests. The defaults might have an impact on scrapes that take a long time.
+
+# New changes and fixes
+[BUGFIX] Pod autosharding: transition from labelselector to fieldselector by @pkoutsovasilis in https://github.com/kubernetes/kube-state-metrics/pull/2347
+[ENHANCEMENT] Add automatic detection of memory limits by @SuperQ in https://github.com/kubernetes/kube-state-metrics/pull/2447
+
+[FEATURE] Add readyz endpoint by @rexagod in https://github.com/kubernetes/kube-state-metrics/pull/2442
+[FEATURE] Add livez endpoint by @rexagod in https://github.com/kubernetes/kube-state-metrics/pull/2418
+[FEATURE] Add kube_persistentvolume_volume_mode metric by @ricardoapl in https://github.com/kubernetes/kube-state-metrics/pull/2370
+[FEATURE] Add read and write timeouts by @Pokom in https://github.com/kubernetes/kube-state-metrics/pull/2412
+
+# Full Change log
+## What's Changed
+* chore: Sync `release-2.12` with `main` by @rexagod in https://github.com/kubernetes/kube-state-metrics/pull/2360
+* chore: Replace VERSION file with data.yaml by @mrueg in https://github.com/kubernetes/kube-state-metrics/pull/2361
+* docs: reorganize documentation directory structure by @ovidiutirla in https://github.com/kubernetes/kube-state-metrics/pull/2358
+* chore: use string verb to format logging messages in tests  by @ovidiutirla in https://github.com/kubernetes/kube-state-metrics/pull/2363
+* build(deps): Bump github.com/prometheus/client_model from 0.6.0 to 0.6.1 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2364
+* build(deps): Bump github.com/prometheus/common from 0.51.1 to 0.52.2 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2365
+* chore: Build with go 1.22 by @mrueg in https://github.com/kubernetes/kube-state-metrics/pull/2362
+* build(deps): Bump github.com/prometheus/common from 0.52.2 to 0.52.3 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2369
+* build(deps): Bump github.com/prometheus/common from 0.52.3 to 0.53.0 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2378
+* feat: add kube_persistentvolume_volume_mode metric by @ricardoapl in https://github.com/kubernetes/kube-state-metrics/pull/2370
+* feat: Support k8s 1.30 by @mrueg in https://github.com/kubernetes/kube-state-metrics/pull/2379
+* build(deps): Bump github.com/prometheus/client_golang from 1.19.0 to 1.19.1 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2389
+* build: bump deps to fix CVEs by @jwilder in https://github.com/kubernetes/kube-state-metrics/pull/2385
+* build(deps): Bump the k8s-dependencies group with 5 updates by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2394
+* chore: pin dependencies in GitHub Actions by hash by @ricardoapl in https://github.com/kubernetes/kube-state-metrics/pull/2396
+* build(deps): Bump amannn/action-semantic-pull-request from 5.4.0 to 5.5.2 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2401
+* build(deps): Bump github.com/hairyhenderson/gomplate/v3 from 3.11.7 to 3.11.8 in /tools by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2409
+* build(deps): Bump github.com/spf13/viper from 1.18.2 to 1.19.0 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2410
+* fix(pod autosharding): transition from labelselector to fieldselector by @pkoutsovasilis in https://github.com/kubernetes/kube-state-metrics/pull/2347
+* docs: add policy for consuming and upgrading dependencies by @ricardoapl in https://github.com/kubernetes/kube-state-metrics/pull/2402
+* build(deps): Bump github.com/prometheus/common from 0.53.0 to 0.54.0 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2416
+* ci: generate sbom on release by @ricardoapl in https://github.com/kubernetes/kube-state-metrics/pull/2381
+* ci: least privileged GITHUB_TOKEN permissions by @ricardoapl in https://github.com/kubernetes/kube-state-metrics/pull/2395
+* build(deps): Bump the k8s-dependencies group with 6 updates by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2422
+* fix(server): Add read and write timeouts by @Pokom in https://github.com/kubernetes/kube-state-metrics/pull/2412
+* build(deps): Bump github.com/spf13/cobra from 1.8.0 to 1.8.1 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2423
+* build(deps): Bump actions/checkout from 4.1.3 to 4.1.7 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2425
+* build(deps): Bump kubernetes-sigs/release-actions from 0.1.4 to 0.2.0 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2426
+* ci: publish openvex on release by @ricardoapl in https://github.com/kubernetes/kube-state-metrics/pull/2398
+* build(deps): Bump k8s.io/klog/v2 from 2.130.0 to 2.130.1 in the k8s-dependencies group by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2430
+* feat: add `livez` endpoint by @rexagod in https://github.com/kubernetes/kube-state-metrics/pull/2418
+* docs: Add SSF Best practices badge and community section by @mrueg in https://github.com/kubernetes/kube-state-metrics/pull/2411
+* build(deps): Bump amannn/action-semantic-pull-request from 5.5.2 to 5.5.3 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2437
+* build(deps): Bump github.com/prometheus/common from 0.54.0 to 0.55.0 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2438
+* build(deps): Bump actions/setup-go from 5.0.1 to 5.0.2 by @dependabot in https://github.com/kubernetes/kube-state-metrics/pull/2448
+* fix: add `readyz` endpoint by @rexagod in https://github.com/kubernetes/kube-state-metrics/pull/2442
+* perf: Add automatic detection of memory limits by @SuperQ in https://github.com/kubernetes/kube-state-metrics/pull/2447
+* chore: add kustomization to standard example by @sanadhis in https://github.com/kubernetes/kube-state-metrics/pull/2444
+* chore: Prep release v2.13.0 by @mrueg in https://github.com/kubernetes/kube-state-metrics/pull/2419
+
+## New Contributors
+* @ovidiutirla made their first contribution in https://github.com/kubernetes/kube-state-metrics/pull/2358
+* @ricardoapl made their first contribution in https://github.com/kubernetes/kube-state-metrics/pull/2370
+* @jwilder made their first contribution in https://github.com/kubernetes/kube-state-metrics/pull/2385
+* @pkoutsovasilis made their first contribution in https://github.com/kubernetes/kube-state-metrics/pull/2347
+* @Pokom made their first contribution in https://github.com/kubernetes/kube-state-metrics/pull/2412
+* @SuperQ made their first contribution in https://github.com/kubernetes/kube-state-metrics/pull/2447
+* @sanadhis made their first contribution in https://github.com/kubernetes/kube-state-metrics/pull/2444
+
+**Full Changelog**: https://github.com/kubernetes/kube-state-metrics/compare/v2.12.0...v2.13.0

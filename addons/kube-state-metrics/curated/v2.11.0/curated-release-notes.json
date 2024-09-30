@@ -1,0 +1,62 @@
+{
+  "addonName": "kube-state-metrics",
+  "version": "v2.11.0",
+  "releaseDate": "2024-03-044",
+  "notes": [
+    {
+      "label": [
+        "kind/feature"
+      ],
+      "text": "Added restartPolicy to kube_pod_init_container_info metric."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added kube_node_status_addresses metric."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added namespace label to endpointslice metrics."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added opt-in kube_persistentvolume_csi_attributes metric."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added new kube_pod_scheduler metric."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Supported filtering annotations allow-list by *."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Supported scraping pod metrics that are still in scheduling status and have no assigned nodes."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added backend resource info for kube_ingress_path."
+    }
+  ]
+}
