@@ -1,0 +1,44 @@
+source: https://github.com/kubereboot/kured/releases/tag/1.15.0
+## :warning:  Important notice
+
+Due to the changes made for the new `signal` reboot-mode to reduce needed permissions of kured, the default
+sentinel path and its mounting have changed. If you are using our YAML-Manifests instead of the helm-chart
+please ensure to update the full manifest instead of only increasing the version-number.
+There are two manifest-variants in the repo available now: `kured-ds.yaml` with the "old" reboot-command mechanism and the new
+`kured-ds-signal.yaml` manifest which uses the new reboot-signal mechanism with non-privileged permissions.
+
+
+## Features and Improvements
+
+- Add signal-reboot (#814)
+- add drain delay (#852)
+
+
+## Build and Testing
+
+- update k8s deps
+- update k8s image versions
+- update k8s test matrix (#883)
+- bump aquasecurity/trivy-action from 0.15.0 to 0.16.0
+- bump github/codeql-action from 2 to 3
+- bump docker/metadata-action from 5.3.0 to 5.4.0
+- bump github.com/spf13/viper from 1.18.1 to 1.18.2
+- bump github.com/prometheus/client_golang
+- bump aquasecurity/trivy-action from 0.16.0 to 0.16.1
+- bump docker/metadata-action from 5.4.0 to 5.5.0
+- bump lycheeverse/lychee-action from 1.8.0 to 1.9.0
+- bump kubereboot/kured from 1.13.2 to 1.14.2 (#877)
+- bump docker/setup-buildx-action from 2 to 3 (#879)
+- bump nick-invision/retry from 2.8.3 to 2.9.0 (#880)
+- bump docker/setup-qemu-action from 2 to 3
+- bump actions/setup-go from 4 to 5 (#882)
+- bump actions/checkout from 3 to 4
+- bump lycheeverse/lychee-action from 1.9.0 to 1.9.1
+- bump github.com/prometheus/common from 0.45.0 to 0.46.0 (#885)
+
+
+## Kubernetes Version Compatibility
+
+The daemon image contains a 1.28.x k8s.io/{client-go,kubectl} for the purposes of maintaining the lock and draining worker nodes. Kubernetes aims to provide forwards & backwards compatibility of one minor version between client and server, so this should work on 1.27.x, 1.28.x and 1.29.x
+
+Thanks a lot to everyone who contributed to kured since 1.14.2.
