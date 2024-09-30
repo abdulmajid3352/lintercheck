@@ -1,4 +1,4 @@
-source: https://github.com/kubereboot/kured/releases/tag/1.15.5
+source: https://github.com/kubereboot/kured/releases/tag/1.15.0
 ## :warning:  Important notice
 
 Due to the changes made for the new `signal` reboot-mode to reduce needed permissions of kured, the default

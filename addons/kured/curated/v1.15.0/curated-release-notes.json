@@ -10,7 +10,7 @@
           {
             "label": ["kind/feature", "impact/high"],
             "text": "Introduced a feature with a `--reboot-method` flag, offering 'command' and 'signal' options, enabling non-privileged mode for kured pods using signals to reboot nodes."
-          }
+          },
           {
             "label": ["kind/feature", "impact/medium"],
             "text": "Introduced a `--drain-delay` flag to delay node draining, allowing time for load balancer controllers to remove nodes from traffic flow before draining begins."
