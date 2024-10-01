@@ -1,0 +1,21 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.7.1",
+  "releaseDate": "2024-079-04",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Handled HttpRoute and GrpcRoute conflicts by ensuring that if both attempt to attach to the same parent, the HttpRoute is ignored, with its Accepted condition set to false and the reason set to RouteReasonConflicted."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug by removing the empty shortnames field from the ExternalWorkload CRD, which caused tools like ArgoCD to report applications as out of sync. The empty field was removed entirely from the CRD manifest."
+    }
+  ]
+}

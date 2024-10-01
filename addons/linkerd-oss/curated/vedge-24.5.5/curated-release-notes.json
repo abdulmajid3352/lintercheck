@@ -1,0 +1,14 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.5.5",
+  "releaseDate": "2024-05-31",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Disabled IPv6 by default for the entire control plane, including the Linkerd CNI plugin, in edge-24.5.5. Set disableIPv6 to false to enable it."
+    }
+  ]
+}

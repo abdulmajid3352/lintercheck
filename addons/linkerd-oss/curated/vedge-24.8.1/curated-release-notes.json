@@ -1,0 +1,28 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.8.1",
+  "releaseDate": "2024-08-02",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Made GRPCRoute optional in edge-24.8.1, allowing Linkerd to run without GRPCRoute functionality if the CRD is not installed, instead of failing to start."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Improved the status text when an HTTPRoute was incorrectly configured with parentRef pointing to a headless service, making it easier to debug."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Ensured that trace-level logs honored the proxy.logHTTPHeaders setting."
+    }
+  ]
+}

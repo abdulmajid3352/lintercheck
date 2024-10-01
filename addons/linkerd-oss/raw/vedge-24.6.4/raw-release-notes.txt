@@ -1,0 +1,28 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.6.4
+
+
+Overall status: RECOMMENDED
+Cautions
+It's no longer possible or necessary to explicitly set proxy-init's resource requests or limits; see the Changes section for more information.
+
+Changes
+This release changes the proxy-init container to always request the same amount of memory and CPU as the proxy itself, and removes the ability to explicitly set proxy-init's requests because there's now no need to do so. (This doesn't increase the resources required for the pod as a whole, because the proxy-init container completes before the proxy starts, letting the proxy reuse resources requested by the proxy-init container.) It also continues work on upcoming GRPCRoute support. Finally, if proxy.logHTTPHeaders is somehow empty, it correctly defaults to "off".
+
+What's Changed
+build(deps): bump proc-macro2 from 1.0.85 to 1.0.86 by @dependabot in #12760
+Manage GrpcRoute resource status by @adleong in #12748
+Make logHTTPHeaders optional by @adleong in #12747
+feat(helm): default proxy-init resource requests to proxy values by @mateiidavid in #12741
+build(deps): bump tj-actions/changed-files from 44.5.3 to 44.5.4 by @dependabot in #12768
+build(deps): bump cc from 1.0.99 to 1.0.100 by @dependabot in #12765
+build(deps): bump lazy_static from 1.4.0 to 1.5.0 by @dependabot in #12766
+Bump linkerd-extension-init to v0.1.1 by @alpeb in #12771
+build(deps): bump tj-actions/changed-files from 44.5.4 to 44.5.5 by @dependabot in #12773
+Refactor outbound index to prepare for grpc by @adleong in #12775
+Add support for grpcroute to outbound policy by @adleong in #12761
+proxy: v2.238.0 by @l5d-bot in #12780
+build(deps): bump github.com/prometheus/common from 0.54.0 to 0.55.0 by @dependabot in #12783
+build(deps): bump tinyvec from 1.6.0 to 1.6.1 by @dependabot in #12779
+build(deps): bump either from 1.12.0 to 1.13.0 by @dependabot in #12778
+build(deps): bump serde_json from 1.0.117 to 1.0.118 by @dependabot in #12777
+build(deps): bump cc from 1.0.100 to 1.0.101 by @dependabot in #12776

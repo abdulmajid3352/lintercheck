@@ -1,0 +1,28 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.5.5
+
+
+Overall status: RECOMMENDED
+Cautions
+In this release, IPv6 is off by default for the entire control plane. To use IPv6, you'll need to explicitly set it -- see the Changes section below.
+
+Changes
+This release switches IPv6 off by default for the entire control plane, including the Linkerd CNI plugin. Set disableIPv6 to false to enable IPv6.
+
+What's Changed
+build(deps): bump helm.sh/helm/v3 from 3.15.0 to 3.15.1 by @dependabot in #12645
+build(deps): bump schemars from 0.8.20 to 0.8.21 by @dependabot in #12644
+build(deps): bump tj-actions/changed-files from 44.5.0 to 44.5.1 by @dependabot in #12655
+build(deps): bump serde from 1.0.202 to 1.0.203 by @dependabot in #12654
+build(deps-dev): bump @babel/core from 7.24.5 to 7.24.6 in /web/app by @dependabot in #12646
+build(deps): bump @babel/eslint-plugin from 7.24.5 to 7.24.6 in /web/app by @dependabot in #12647
+build(deps-dev): bump @babel/runtime from 7.24.5 to 7.24.6 in /web/app by @dependabot in #12648
+build(deps-dev): bump sinon from 17.0.2 to 18.0.0 in /web/app by @dependabot in #12650
+build(deps): bump parking_lot from 0.12.2 to 0.12.3 by @dependabot in #12651
+build(deps): bump proc-macro2 from 1.0.83 to 1.0.84 by @dependabot in #12652
+build(deps): bump zeroize from 1.7.0 to 1.8.1 by @dependabot in #12653
+build(deps-dev): bump @babel/eslint-parser from 7.24.5 to 7.24.6 in /web/app by @dependabot in #12649
+IPv6/dual-stack integration tests by @alpeb in #12575
+build(deps): bump backtrace from 0.3.71 to 0.3.72 by @dependabot in #12659
+Make IPv6 support opt-in in linkerd-cni by @alpeb in #12663
+build(deps): bump tj-actions/changed-files from 44.5.1 to 44.5.2 by @dependabot in #12667
+build(deps): bump tokio from 1.37.0 to 1.38.0 by @dependabot in #12666

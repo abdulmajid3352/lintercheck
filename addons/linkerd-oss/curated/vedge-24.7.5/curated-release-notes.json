@@ -1,0 +1,49 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.7.5",
+  "releaseDate": "2024-07-27",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Added a server-scoped default policy, where server resources included an accessPolicy field that overrode the default inbound policy for any traffic associated with that server. The default accessPolicy was set to deny compatibility with previous releases."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Introduced policy audit mode, allowing the default inbound policy and server accessPolicy to be set to audit, which allowed traffic while logging anything that would be denied."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Supported the Gateway API GRPCRoute resource starting from edge-24.7.5, with the option to install or remove the grpcroute.gateway.networking.k8s.io CRD."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed the use of the retry.linkerd.io/http annotation on Service or HTTPRoute resources to enable HTTP retries, and retry.linkerd.io/grpc annotation on Service or GRPCRoute resources to enable gRPC retries."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for counted retries with the retry.linkerd.io/limit and retry.linkerd.io/timeout annotations to set the maximum retries and timeout limits."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed timeouts to be configured on Service, HTTPRoute, and GRPCRoute resources using annotations for request, response, and idle timeouts."
+    }
+  ]
+}

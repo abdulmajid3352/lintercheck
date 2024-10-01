@@ -1,0 +1,42 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.5.1",
+  "releaseDate": "2024-05-02",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed issues with native sidecars by iterating over both init and regular containers to locate the proxy, resolving Destination API failures with opaque ports and injector detection issues."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Configured default HTTP/2 server keep-alives."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added meshed HTTP/2 keep-alive settings."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Introduced a bug in edge-24.5.1 that prevents Linkerd from functioning on GKE with the default configuration; edge-24.5.5 is recommended instead."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Renamed the patchs metric introduced in edge-24.3.4 to patches."
+    }
+  ]
+}

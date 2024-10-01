@@ -1,0 +1,21 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.3.5",
+  "releaseDate": "2024-03-29",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added metrics to the queue of HTTPRoute status updates and made the ExternalWorkload resource's status a subresource."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Corrected the scope of the proxy-injector, tap-injector, and jaeger-injector mutating webhook rules to Namespaced."
+    }
+  ]
+}

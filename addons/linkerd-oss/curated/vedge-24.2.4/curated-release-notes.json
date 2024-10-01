@@ -1,0 +1,21 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.2.4",
+  "releaseDate": "2024-02-21",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Updated the ExternalWorkload CRD to v1beta1, renaming the meshTls field to meshTLS."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Updated the proxy to address logging and metrics inconsistencies."
+    }
+  ]
+}

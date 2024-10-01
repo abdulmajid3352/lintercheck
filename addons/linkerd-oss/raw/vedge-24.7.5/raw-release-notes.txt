@@ -1,0 +1,35 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.7.5
+
+
+Overall status: RECOMMENDED
+Cautions
+N/A
+
+Changes
+This release supports Server-scoped default policy, policy audit mode, GRPCRoute, and new retry and timeout configuration (including for Gateway API resources)!
+
+Server-scoped default policy
+Server resources now have an accessPolicy field that will override the default inbound policy for any traffic associated with that Server. (The default accessPolicy is deny, for compatibility with previous releases.)
+
+Policy audit mode
+Both default inbound policy and Server accessPolicy can now be set to audit in order to allow traffic to flow, but log anything that would be denied. In the proxy's logs, you'll see INFO level logs with the tag authz.name=audit. In metrics (such as request_total) you'll see the label authz_name=audit.
+
+GRPCRoute
+edge-24.7.5 includes support for the Gateway API GRPCRoute resource. Remember that starting with edge-24.5.2, if you don't set enableHttpRoutes to false when installing, Linkerd will install the grpcroute.gateway.networking.k8s.io CRD into your cluster and remove it when Linkerd is uninstalled.
+
+Retries
+Starting in this release, you can use the retry.linkerd.io/http annotation on Service or HTTPRoute resources to enable HTTP retries. The value of this annotation is a comma-separated list of HTTP statuses to retry on (for example "502-504,511"). "5xx" is shorthand for any of the 5xx status codes, and gateway-error is shorthand for "502-504".
+
+You can also use the retry.linkerd.io/grpc annotation on Service or GRPCRoute resources to enable gRPC retries. The value of this annotation is a comma-separated list of gRPC results to retry on (for example "cancelled,deadline-exceeded").
+
+These are counted retries, unlike Linkerd's typical budgeted retries. Use the retry.linkerd.io/limit annotation to set the maximum number of retries, and the retry.linkerd.io/timeout annotation to set how long Linkerd will give a request before cancelling it and retrying.
+
+Timeouts
+Finally, you can configure timeouts on Service, HTTPRoute, and GRPCRoute with annotations. timeout.linkerd.io/request and timeout.linkerd.io/response set timeouts for processing the request and receiving the response; timeout.linkerd.io/idle sets the idle timeout. All currently allow values similar to GEP-2257 Duration strings, but allowing only a single unit (for example, 1500ms or 90s are allowed, but 1s500ms and 1m30s are not).
+
+What's Changed
+build(deps): bump anstyle from 1.0.7 to 1.0.8 by @dependabot in #12894
+build(deps): bump clap_lex from 0.7.1 to 0.7.2 by @dependabot in #12892
+proxy: v2.244.0 by @l5d-bot in #12896
+Add support for retries and timeouts by @adleong in #12888
+Audit access policy implementation by @alpeb in #12846

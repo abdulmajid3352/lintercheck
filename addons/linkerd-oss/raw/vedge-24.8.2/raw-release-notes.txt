@@ -1,0 +1,13 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.8.2
+
+
+Overall status: RECOMMENDED
+Cautions
+N/A
+
+Changes
+This release makes certain that Linkerd won't attempt to bind to IPv6 addresses at all unless IPv6 is enabled.
+
+What's Changed
+build(deps): bump actions/upload-artifact from 4.3.4 to 4.3.5 by @dependabot in #12937
+Only bind to IPv6 addresses when disableIPv6=false by @alpeb in #12938

@@ -1,0 +1,22 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.5.3
+
+
+Overall status: RECOMMENDED, but see Cautions
+Cautions
+If you use the Linkerd CNI plugin on GKE, you will need to disable IPv6 or use edge-24.5.5 instead.
+
+Changes
+This release removes an internal limit on the number of concurrent gRPC streams to the control plane, leaving available memory as the only constraint.
+
+Changelog
+build(deps): bump thiserror from 1.0.59 to 1.0.60 by @dependabot in #12585
+build(deps): bump github.com/prometheus/client_golang from 1.19.0 to 1.19.1 by @dependabot in #12586
+build(deps-dev): bump sinon from 17.0.1 to 17.0.2 in /web/app by @dependabot in #12587
+chore(ci): Remove conditional integration testing by @olix0r in #12591
+build(deps): bump github.com/fatih/color from 1.16.0 to 1.17.0 by @dependabot in #12590
+build(deps): bump tj-actions/changed-files from 44.3.0 to 44.4.0 by @dependabot in #12588
+Remove stream concurrency limits by @mateiidavid in #12598
+proxy: v2.232.0 by @l5d-bot in #12594
+build(deps): bump rustversion from 1.0.16 to 1.0.17 by @dependabot in #12595
+build(deps): bump google-github-actions/auth from 2.1.2 to 2.1.3 by @dependabot in #12597
+build(deps): bump codecov/codecov-action from 4.3.1 to 4.4.0 by @dependabot in #12596

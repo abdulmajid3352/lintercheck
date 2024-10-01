@@ -1,0 +1,30 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.6.3
+
+
+Overall status: RECOMMENDED
+Cautions
+N/A
+
+Changes
+This release adds the linkerd.io/control-plane-ns label to the ext-namespace-metadata-linkerd-config Role, for parity with the other resources created when installing Linkerd.
+
+What's Changed
+build(deps): bump k8s.io/klog/v2 from 2.120.1 to 2.130.0 by @dependabot in #12740
+build(deps): bump github.com/spf13/cobra from 1.8.0 to 1.8.1 by @dependabot in #12739
+build(deps-dev): bump @babel/runtime from 7.24.6 to 7.24.7 in /web/app by @dependabot in #12738
+build(deps-dev): bump css-loader from 7.1.1 to 7.1.2 in /web/app by @dependabot in #12737
+build(deps): bump @fortawesome/react-fontawesome from 0.2.0 to 0.2.2 in /web/app by @dependabot in #12736
+build(deps-dev): bump @babel/preset-react from 7.24.6 to 7.24.7 in /web/app by @dependabot in #12735
+build(deps-dev): bump webpack from 5.91.0 to 5.92.0 in /web/app by @dependabot in #12734
+build(deps): bump k8s.io/apiextensions-apiserver from 0.30.1 to 0.30.2 by @dependabot in #12728
+build(deps): bump github.com/gorilla/websocket from 1.5.1 to 1.5.3 by @dependabot in #12726
+build(deps): bump actions/checkout from 4.1.6 to 4.1.7 by @dependabot in #12718
+build(deps): bump ws from 7.5.5 to 7.5.10 in /web/app by @dependabot in #12745
+build(deps): bump httparse from 1.9.3 to 1.9.4 by @dependabot in #12744
+build(deps): bump miniz_oxide from 0.7.3 to 0.7.4 by @dependabot in #12743
+Add missing linkerd.io/control-plane-ns label by @klingerf in #12742
+proxy: v2.237.0 by @l5d-bot in #12752
+build(deps): bump url from 2.5.1 to 2.5.2 by @dependabot in #12750
+build(deps): bump tj-actions/changed-files from 44.5.2 to 44.5.3 by @dependabot in #12759
+build(deps): bump softprops/action-gh-release from 2.0.5 to 2.0.6 by @dependabot in #12758
+build(deps): bump k8s.io/klog/v2 from 2.130.0 to 2.130.1 by @dependabot in #12757

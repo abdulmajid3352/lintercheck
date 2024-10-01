@@ -1,0 +1,39 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.3.3
+
+Overall Status: NOT RECOMMENDED; use edge-24.3.4 instead
+Cautions
+We recommend edge-24.3.4 instead of this release since edge-24.3.4 contains an important bugfix.
+
+Changes
+This edge release allows configuring the pod disruption budget via Helm (issue 11321, thanks Cemal Y. Dalar!).
+
+What's Changed
+Add test for inbound policy index deletion by @adleong in #12143
+build(deps): bump tokio from 1.35.1 to 1.36.0 by @dependabot in #12217
+Parameterize PodDisruptionBudget config for Linkerd Control Plane components by @cdalar in #11687
+build(deps): bump bumpalo from 3.15.3 to 3.15.4 by @dependabot in #12226
+build(deps): bump socket2 from 0.5.5 to 0.5.6 by @dependabot in #12227
+build(deps): bump log from 0.4.20 to 0.4.21 by @dependabot in #12228
+build(deps): bump futures from 0.3.28 to 0.3.30 by @dependabot in #12230
+build(deps): bump chrono from 0.4.34 to 0.4.35 by @dependabot in #12229
+build(deps): bump github.com/prometheus/common from 0.49.0 to 0.50.0 by @dependabot in #12225
+build(deps): bump tj-actions/changed-files from 42.0.6 to 42.1.0 by @dependabot in #12243
+build(deps): bump cc from 1.0.83 to 1.0.90 by @dependabot in #12237
+build(deps): bump softprops/action-gh-release from 1 to 2 by @dependabot in #12242
+build(deps): bump prometheus-client from 0.22.1 to 0.22.2 by @dependabot in #12241
+build(deps): bump github.com/go-openapi/spec from 0.20.15 to 0.21.0 by @dependabot in #12239
+build(deps): bump rustix from 0.38.28 to 0.38.31 by @dependabot in #12238
+build(deps-dev): bump eslint-plugin-react from 7.33.2 to 7.34.0 in /web/app by @dependabot in #12236
+build(deps-dev): bump @babel/core from 7.23.9 to 7.24.0 in /web/app by @dependabot in #12235
+build(deps): bump crc32fast from 1.3.2 to 1.4.0 by @dependabot in #12240
+build(deps): bump softprops/action-gh-release from 2.0.2 to 2.0.3 by @dependabot in #12247
+build(deps): bump thiserror from 1.0.57 to 1.0.58 by @dependabot in #12246
+build(deps): bump proc-macro2 from 1.0.78 to 1.0.79 by @dependabot in #12245
+build(deps): bump anyhow from 1.0.80 to 1.0.81 by @dependabot in #12244
+ci: Ensure integration status is set by @olix0r in #12257
+build(deps): bump helm.sh/helm/v3 from 3.14.2 to 3.14.3 by @dependabot in #12258
+build(deps): bump follow-redirects from 1.15.4 to 1.15.6 in /web/app by @dependabot in #12261
+build(deps): bump tj-actions/changed-files from 42.1.0 to 43.0.0 by @dependabot in #12259
+build(deps): bump softprops/action-gh-release from 2.0.3 to 2.0.4 by @dependabot in #12252
+ci: Retry failed integration tests by @olix0r in #12260
+build(deps): bump actions/checkout from 4.1.1 to 4.1.2 by @dependabot in #12251

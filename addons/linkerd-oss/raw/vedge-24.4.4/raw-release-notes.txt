@@ -1,0 +1,12 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.4.4
+
+
+Overall Status: RECOMMENDED
+Cautions
+None.
+
+Changes
+This edge release fixes a metrics naming regression introduced in edge-24.4.3, restoring the outbound_http_... metrics to their correct names instead of duplicating http.
+
+What's Changed
+proxy: v2.227.1 by @l5d-bot in #12464
