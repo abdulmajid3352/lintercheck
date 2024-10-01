@@ -1,0 +1,9 @@
+source: https://github.com/GoogleCloudPlatform/netd/releases/tag/v0.8.4
+
+## What's Changed
+* chore(deps): update alpine docker tag to v3.20 by @renovate-bot in https://github.com/GoogleCloudPlatform/netd/pull/328
+* Bump base image to distroless-iptables:v0.5.4 by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/330
+* Watch node object for podCIDR instead of crash + wait for restart by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/329
+
+
+**Full Changelog**: https://github.com/GoogleCloudPlatform/netd/compare/v0.8.3...v0.8.4

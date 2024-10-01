@@ -1,0 +1,11 @@
+source: https://github.com/GoogleCloudPlatform/netd/releases/tag/v0.8.1
+
+## What's Changed
+* Add marqc as reviewer by @marqc in https://github.com/GoogleCloudPlatform/netd/pull/307
+* Handle multiple default routes correctly by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/308
+* Correctly initialize with an IPv6 API server endpoint. by @krzykwas in https://github.com/GoogleCloudPlatform/netd/pull/302
+
+## New Contributors
+* @krzykwas made their first contribution in https://github.com/GoogleCloudPlatform/netd/pull/302
+
+**Full Changelog**: https://github.com/GoogleCloudPlatform/netd/compare/v0.8.0...v0.8.1
