@@ -17,9 +17,15 @@ jobs:
         with:
           go-version: '1.20'
 
+      - name: Initialize Go module
+        run: |
+          cd .github/workflows
+          go mod init github.com/lintercheck  # Use the repo name without any username
+          go mod tidy  # Fetch any necessary dependencies
+
       - name: Build linter
         run: |
-          cd .github/workflows  # Go to the directory where Go code is located
+          cd .github/workflows
           go build -o validate-release-notes .
 
       - name: Run linter
