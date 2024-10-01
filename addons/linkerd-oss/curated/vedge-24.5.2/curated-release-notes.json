@@ -52,6 +52,6 @@
         "impact/medium"
       ],
       "text": "Set backend_not_found route status when any backends are not found."
-    }
+    },
   ]
 }
