@@ -1,0 +1,66 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.3.4
+
+
+Overall Status: RECOMMENDED
+Cautions
+None.
+
+Changes
+This edge release fixes the first of two issues where policy.linkerd.io HTTPRoutes could be endlessly patched even when they weren't changing (issue 12104), and another where the destination controller could generate large numbers of unnecessary endpoint updates when a Server changed. It also adds default values to generated docs for the proxy-*-connect-timeout annotations (thanks Akshay Dongaonkar!), fixes excessive logging in the injector webhook (issue 12186, thanks Adarsh Jaiswal!), and cleans up an unneeded error message from the destination controller (thanks [Hirotaka Tagawa]!).
+
+Finally, this edge release fixes an issue that could mistakenly turn off local traffic policy when an endpoint is removed (issue 12311), adds a timeout to HTTPRoute status patches, continues work on upcoming IPv6 support, and stops unnecessarily checking about injecting the kube-system namespace when running in HA mode.
+
+What's Changed
+Add default values to proxy-*-connect-timeout annotations docs by @doubletooth in #12155
+build(deps): bump tokio-stream from 0.1.14 to 0.1.15 by @dependabot in #12264
+build(deps): bump tokio-test from 0.4.3 to 0.4.4 by @dependabot in #12265
+build(deps): bump docker/setup-buildx-action from 3.1.0 to 3.2.0 by @dependabot in #12266
+ci: Use ubuntu-22.04 runners by @olix0r in #12270
+Remove kube-system injection check by @adleong in #12263
+Update version parsing to work with build info by @klingerf in #12255
+build(deps): bump k8s.io/endpointslice from 0.29.2 to 0.29.3 by @dependabot in #12287
+build(deps): bump clap from 4.5.2 to 4.5.3 by @dependabot in #12282
+build(deps): bump unsafe-libyaml from 0.2.10 to 0.2.11 by @dependabot in #12281
+build(deps): bump async-trait from 0.1.77 to 0.1.78 by @dependabot in #12280
+build(deps): bump h2 from 0.3.24 to 0.3.25 by @dependabot in #12279
+build(deps): bump serde_yaml from 0.9.32 to 0.9.33 by @dependabot in #12278
+build(deps): bump date-fns from 3.3.1 to 3.5.0 in /web/app by @dependabot in #12277
+build(deps-dev): bump eslint-webpack-plugin from 4.0.1 to 4.1.0 in /web/app by @dependabot in #12276
+build(deps-dev): bump webpack-dev-server from 4.15.1 to 5.0.3 in /web/app by @dependabot in #12274
+build(deps): bump k8s.io/apiextensions-apiserver from 0.29.2 to 0.29.3 by @dependabot in #12286
+build(deps-dev): bump eslint-plugin-react from 7.34.0 to 7.34.1 in /web/app by @dependabot in #12275
+ci: Retry policy test failures by @olix0r in #12272
+build(deps): bump k8s.io/kube-aggregator from 0.29.2 to 0.29.3 by @dependabot in #12283
+ci: Update Go workflow to always run by @olix0r in #12273
+update governance to introduce a director role by @wmorgan in #12262
+ci: Ensure repo is checked out before comparing files by @olix0r in #12292
+Don't patch httproute status if it hasn't changed by @adleong in #12215
+Add IPv6 support for the policy controller, expand clusterNetworks by @alpeb in #12291
+Don't send endpoint profile updates from Server updates when opaqueness doesn't change by @adleong in #12013
+build(deps): bump github.com/docker/docker from 24.0.7+incompatible to 24.0.9+incompatible by @dependabot in #12301
+build(deps): bump rustix from 0.38.31 to 0.38.32 by @dependabot in #12300
+build(deps): bump aho-corasick from 1.1.2 to 1.1.3 by @dependabot in #12299
+ci: Automatically sync new proxy releases by @olix0r in #12304
+ci: Only rerun integrations on test failure by @olix0r in #12305
+proxy: v2.223.0 by @l5d-bot in #12306
+ci: Fix integration-ok when build fails by @olix0r in #12307
+build(deps): bump smallvec from 1.13.1 to 1.13.2 by @dependabot in #12308
+build(deps): bump tj-actions/changed-files from 43.0.0 to 43.0.1 by @dependabot in #12309
+ci: Print verbose outputs in testing by @olix0r in #12314
+Add timeout and metrics to HttpRoute status patching by @adleong in #12250
+ci: Relax version validation in git-commit-proxy-version by @olix0r in #12315
+ci: Update sync-proxy workflow to honor tag prefix by @olix0r in #12316
+ci: Use the PAT when syncing proxy versions by @olix0r in #12317
+ci: Fix PAT configuration in sync-proxy by @olix0r in #12318
+ci: Use rust-cache in policy test workflow by @olix0r in #12297
+ci: Replace git-commit-proxy-version with sync-proxy by @olix0r in #12321
+build(deps): bump webpack-dev-middleware from 7.0.0 to 7.1.1 in /web/app by @dependabot in #12320
+ci: Update fetch-proxy to lookup versions by name by @olix0r in #12322
+ci: Use nextest for policy tests by @olix0r in #12323
+ci: Enable verbose test output in multicluster tests by @olix0r in #12324
+Refactor IPv4-only functions to also work for IPv6 by @alpeb in #12303
+build(deps): bump github.com/prometheus/common from 0.50.0 to 0.51.0 by @dependabot in #12327
+build(deps): bump backtrace from 0.3.69 to 0.3.70 by @dependabot in #12326
+Removes should not change local traffic policy by @adleong in #12325
+[fixed] : Excessive logging when encountering "unimplemented resource type" errors in injector webhook by @Adarsh-jaiss in #12254
+fix: change log level when err is http.ErrServerClosed by @wafuwafu13 in #12167

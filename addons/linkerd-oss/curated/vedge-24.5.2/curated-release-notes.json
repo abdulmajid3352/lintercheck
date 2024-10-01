@@ -1,0 +1,57 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.5.2",
+  "releaseDate": "2024-05-14",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "If using edge-24.5.2 with the Linkerd CNI plugin on GKE, you must explicitly disable IPv6 or use edge-24.5.5 instead."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Installing this release without setting enableHttpRoutes to false will install the grpcroute.gateway.networking.k8s.io CRD, which will be removed when Linkerd is uninstalled."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added IPv6 support for the destination controller."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added inbound policy index metrics with size gauges for each resource index."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed linkerd dg endpoints to work with IPv6."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/medium"
+      ],
+      "text": "Reverted the fix for the destination staleness issue with EndpointSlices."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Set backend_not_found route status when any backends are not found."
+    },
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.6.1",
+  "releaseDate": "2024-06-10",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for JSON output to linkerd install and related commands."
+    }
+  ]
+}

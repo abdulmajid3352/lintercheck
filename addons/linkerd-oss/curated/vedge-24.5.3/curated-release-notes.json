@@ -1,0 +1,21 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.5.3",
+  "releaseDate": "2024-05-16",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-considerations",
+        "impact/highs"
+      ],
+      "text": "If using edge-24.5.3 with the Linkerd CNI plugin on GKE, you must disable IPv6 or use edge-24.5.5 instead."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Removed the internal limit on the number of concurrent gRPC streams to the control plane, with available memory as the only constraint."
+    }
+  ]
+}

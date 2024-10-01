@@ -1,0 +1,14 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.7.4",
+  "releaseDate": "2024-07-25",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Correctly supported IPv6 in the Linkerd CNI network-validator and repair-controller containers in edge-24.7.4, and continued work on authorization policy and upcoming GRPCRoute support."
+    }
+  ]
+}

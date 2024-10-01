@@ -1,0 +1,42 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.6.2",
+  "releaseDate": "2024-06-14",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Disabled the proxy's /shutdown endpoint by default in edge-24.6.2, which can be reenabled with --set proxy.enableShutdownEndpoint=true."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added config to disable the proxy /shutdown admin endpoint."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added JSON output support to the link, unlink, allow, and allow-scrapes CLI commands."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Added a nil check when reading the endpoint hostname."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added control for logging HTTP headers in debug output, supported JSON output for several CLI commands."
+    }
+  ]
+}

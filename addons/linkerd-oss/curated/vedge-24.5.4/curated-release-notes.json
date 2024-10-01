@@ -1,0 +1,56 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.5.4",
+  "releaseDate": "2024-05-24",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Release edge-24.5.4 is not recommended; use edge-24.5.5 instead."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added --token flag to the diagnostics policy command."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added JSON output format support to the linkerd profile command."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed control plane components to specify concurrency."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue where the initial outbound policy did not contain producer routes."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Reindexed outbound policy backends when a service changed."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for JSON output in inject and uninject commands."
+    }
+  ]
+}

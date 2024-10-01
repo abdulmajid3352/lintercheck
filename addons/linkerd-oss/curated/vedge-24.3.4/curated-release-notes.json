@@ -1,0 +1,42 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.3.4",
+  "releaseDate": "2024-03-22",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed 2 issues in Linkerd: one where policy.linkerd.io HTTPRoutes could be endlessly patched, and another where the destination controller generated unnecessary endpoint updates when a Server changed."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added default values to generated docs for the proxy *-connect-timeout annotations."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue that could mistakenly disable local traffic policy when an endpoint was removed."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a timeout to HTTPRoute status patches and continued work on IPv6 support."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature to stop unnecessary checks for injecting the kube-system namespace in HA mode."
+    }
+  ]
+}

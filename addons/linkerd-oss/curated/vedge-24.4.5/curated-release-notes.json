@@ -1,0 +1,35 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.4.5",
+  "releaseDate": "2024-04-26",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed support for native sidecars in the Linkerd CNI plugin."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Replaced kubectl's --prune-whitelist with --prune-allowlist."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for arbitrary proxy parameters from Helm."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed setting revisionHistoryLimit in the Helm chart to remove old accumulated values, with a default value of 10."
+    }
+  ]
+}

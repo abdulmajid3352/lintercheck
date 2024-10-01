@@ -1,0 +1,42 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.4.2",
+  "releaseDate": "2024-04-12",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Release edge-24.4.4 contains an important fix for a Gateway API issue and is recommended over edge-24.4.2."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a panic issue with the service mirror controller when listing mirror services and continued work on upcoming IPv6 support."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed setting policy controller resources via Helm, separate from the destination controller."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled relabeling metrics to customize handling of high-cardinality metrics."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the linkerd diagnostics profile command for visibility into which ServiceProfile is attached to a given address."
+    }
+  ]
+}

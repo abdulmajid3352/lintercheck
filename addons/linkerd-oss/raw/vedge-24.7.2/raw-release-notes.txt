@@ -1,0 +1,33 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.7.2
+
+
+Overall status: RECOMMENDED
+Cautions
+N/A
+
+Changes
+This release bumps dependencies but has no functional changes from edge-24.7.1.
+
+What's Changed
+build(deps): bump serde_json from 1.0.119 to 1.0.120 by @dependabot in #12795
+build(deps): bump pest from 2.7.10 to 2.7.11 by @dependabot in #12799
+build(deps): bump google.golang.org/grpc from 1.64.0 to 1.65.0 by @dependabot in #12801
+build(deps): bump pest_derive from 2.7.10 to 2.7.11 by @dependabot in #12798
+build(deps): bump zerocopy from 0.7.34 to 0.7.35 by @dependabot in #12800
+build(deps): bump windows_i686_gnullvm from 0.52.5 to 0.52.6 by @dependabot in #12804
+build(deps-dev): bump eslint-plugin-promise from 6.2.0 to 6.4.0 in /web/app by @dependabot in #12807
+build(deps): bump golang.org/x/net from 0.26.0 to 0.27.0 by @dependabot in #12809
+build(deps): bump actions/download-artifact from 4.1.7 to 4.1.8 by @dependabot in #12811
+build(deps): bump actions/upload-artifact from 4.3.3 to 4.3.4 by @dependabot in #12812
+build(deps): bump golang.org/x/tools from 0.22.0 to 0.23.0 by @dependabot in #12810
+build(deps): bump cc from 1.0.104 to 1.0.106 by @dependabot in #12813
+build(deps): bump tinyvec from 1.6.1 to 1.8.0 by @dependabot in #12814
+build(deps): bump serde from 1.0.203 to 1.0.204 by @dependabot in #12815
+build(deps): bump clap from 4.5.8 to 4.5.9 by @dependabot in #12816
+build(deps): bump async-trait from 0.1.80 to 0.1.81 by @dependabot in #12822
+build(deps): bump darling from 0.20.9 to 0.20.10 by @dependabot in #12818
+proxy: v2.240.0 by @l5d-bot in #12823
+build(deps): bump cc from 1.0.106 to 1.1.0 by @dependabot in #12820
+build(deps): bump actions/setup-go from 5.0.1 to 5.0.2 by @dependabot in #12829
+build(deps): bump helm.sh/helm/v3 from 3.15.2 to 3.15.3 by @dependabot in #12828
+build(deps): bump thiserror from 1.0.61 to 1.0.62 by @dependabot in #12831

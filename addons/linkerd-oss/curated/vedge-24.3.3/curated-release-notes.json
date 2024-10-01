@@ -1,0 +1,21 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.3.3",
+  "releaseDate": "2024-03-15",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/medium"
+      ],
+      "text": "Release edge-24.3.4 is recommended instead of edge-24.3.3, as it contains an important bug fix."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed configuring the pod disruption budget via Helm."
+    }
+  ]
+}

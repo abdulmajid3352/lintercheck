@@ -1,0 +1,14 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.3.2",
+  "releaseDate": "2024-03-07",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Used the correct resources attribute values for the repair-controller."
+    }
+  ]
+}

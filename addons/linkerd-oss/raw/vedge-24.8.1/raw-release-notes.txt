@@ -1,0 +1,33 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.8.1
+
+Overall status: RECOMMENDED
+Cautions
+If you don't have the GRPCRoute CRD installed at all, Linkerd will run without GRPCRoute support. If you add the CRD after starting Linkerd, you'll need to restart the control plane for Linkerd to be able to use GRPCRoutes.
+
+Changes
+This release makes GRPCRoute optional: if you don't have the GRPCRoute CRD installed, Linkerd will run without any GRPCRoute functionality rather than failing to start. It also improves the status text when an HTTPRoute is incorrectly configured with parentRef pointing to a headless service, to make this situation easier to debug, and makes certain that trace-level logs honor proxy.logHTTPHeaders.
+
+What's Changed
+build(deps): bump tokio from 1.39.1 to 1.39.2 by @dependabot in #12907
+build(deps-dev): bump eslint-plugin-promise from 6.5.1 to 7.0.0 in /web/app by @dependabot in #12898
+build(deps-dev): bump @babel/runtime from 7.24.8 to 7.25.0 in /web/app by @dependabot in #12899
+build(deps-dev): bump chai from 4.4.1 to 4.5.0 in /web/app by @dependabot in #12900
+build(deps-dev): bump @babel/eslint-parser from 7.24.8 to 7.25.0 in /web/app by @dependabot in #12902
+build(deps): bump windows_x86_64_gnu from 0.52.5 to 0.52.6 by @dependabot in #12904
+build(deps): bump version_check from 0.9.4 to 0.9.5 by @dependabot in #12906
+build(deps): bump windows_aarch64_msvc from 0.52.5 to 0.52.6 by @dependabot in #12905
+build(deps): bump windows_i686_gnu from 0.52.5 to 0.52.6 by @dependabot in #12908
+build(deps): bump cc from 1.1.6 to 1.1.7 by @dependabot in #12909
+build(deps-dev): bump @babel/preset-env from 7.24.8 to 7.25.0 in /web/app by @dependabot in #12901
+build(deps): bump clap from 4.5.10 to 4.5.11 by @dependabot in #12910
+build(deps): bump object from 0.36.1 to 0.36.2 by @dependabot in #12911
+build(deps): bump serde_json from 1.0.120 to 1.0.121 by @dependabot in #12912
+build(deps): bump ppv-lite86 from 0.2.17 to 0.2.19 by @dependabot in #12919
+feat(proxy): Disable all header and request logging by @adleong in #12903
+Make GrpcRoute watches optional by @adleong in #12917
+proxy: v2.245.0 by @l5d-bot in #12920
+build(deps): bump github.com/docker/docker from 25.0.5+incompatible to 26.1.4+incompatible by @dependabot in #12915
+build(deps): bump google.golang.org/grpc/cmd/protoc-gen-go-grpc from 1.4.0 to 1.5.1 by @dependabot in #12913
+proxy: v2.246.0 by @l5d-bot in #12925
+downgrade away from yanked version of ppv-lite86 by @adleong in #12926
+add status message when attempting to attach to headless service by @adleong in #12918

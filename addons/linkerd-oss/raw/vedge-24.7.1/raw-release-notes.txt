@@ -1,0 +1,26 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.7.1
+
+
+Overall status: RECOMMENDED
+Cautions
+N/A
+
+Changes
+This release continues work on upcoming GRPCRoute support and removes the empty shortnames fields from the ExternalWorkload CRD.
+
+What's Changed
+handle httproute grpcroute conflicts by @adleong in #12782
+build(deps-dev): bump eslint-plugin-react from 7.34.2 to 7.34.3 in /web/app by @dependabot in #12762
+build(deps): bump cc from 1.0.101 to 1.0.103 by @dependabot in #12790
+build(deps): bump object from 0.36.0 to 0.36.1 by @dependabot in #12789
+build(deps-dev): bump eslint-plugin-jsx-a11y from 6.7.1 to 6.9.0 in /web/app by @dependabot in #12763
+build(deps-dev): bump webpack from 5.92.0 to 5.92.1 in /web/app by @dependabot in #12764
+build(deps): bump github.com/go-test/deep from 1.1.0 to 1.1.1 by @dependabot in #12767
+Remove empty shortnames from ExternalWorkload by @siggy in #12793
+build(deps): bump clap from 4.5.7 to 4.5.8 by @dependabot in #12788
+build(deps): bump serde_json from 1.0.118 to 1.0.119 by @dependabot in #12787
+build(deps): bump log from 0.4.21 to 0.4.22 by @dependabot in #12786
+Refactor inbound policy index in preparation for grpc support by @adleong in #12784
+build(deps): bump cc from 1.0.103 to 1.0.104 by @dependabot in #12794
+proxy: v2.239.0 by @l5d-bot in #12802
+Add gprcroute support to inbound policy API by @adleong in #12785

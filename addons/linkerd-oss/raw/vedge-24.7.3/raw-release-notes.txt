@@ -1,0 +1,28 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.7.3
+
+
+Overall status: RECOMMENDED
+Cautions
+N/A
+
+Changes
+Updates the documentation on what networkValidator.connectAddr in the Helm chart means (thanks, @djryanj!) and continues ongoing authorization policy work.
+
+What's Changed
+Clarifies documentation on connectAddr (helm chart) by @djryanj in #12827
+build(deps): bump bytes from 1.6.0 to 1.6.1 by @dependabot in #12840
+build(deps): bump cc from 1.1.0 to 1.1.5 by @dependabot in #12841
+build(deps-dev): bump @babel/runtime from 7.24.7 to 7.24.8 in /web/app by @dependabot in #12835
+build(deps-dev): bump eslint-plugin-react from 7.34.3 to 7.34.4 in /web/app by @dependabot in #12836
+build(deps-dev): bump @babel/eslint-parser from 7.24.7 to 7.24.8 in /web/app by @dependabot in #12837
+build(deps-dev): bump @babel/preset-env from 7.24.7 to 7.24.8 in /web/app by @dependabot in #12839
+build(deps-dev): bump @babel/core from 7.24.7 to 7.24.9 in /web/app by @dependabot in #12843
+build(deps): bump tokio from 1.38.0 to 1.38.1 by @dependabot in #12850
+proxy: v2.241.0 by @l5d-bot in #12849
+New "audit" value for default inbound policy by @alpeb in #12844
+build(deps): bump security-framework-sys from 2.11.0 to 2.11.1 by @dependabot in #12842
+build(deps): bump softprops/action-gh-release from 2.0.6 to 2.0.7 by @dependabot in #12859
+build(deps): bump prometheus-client from 0.22.2 to 0.22.3 by @dependabot in #12857
+build(deps): bump thiserror from 1.0.62 to 1.0.63 by @dependabot in #12856
+build(deps): bump k8s.io/kube-aggregator from 0.30.2 to 0.30.3 by @dependabot in #12855
+build(deps): bump k8s.io/apiextensions-apiserver from 0.30.2 to 0.30.3 by @dependabot in #12851

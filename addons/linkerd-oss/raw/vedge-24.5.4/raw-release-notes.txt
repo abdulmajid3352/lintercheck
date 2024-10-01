@@ -1,0 +1,48 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.5.4
+
+
+Overall status: NOT RECOMMENDED; use edge-24.5.5 instead
+Cautions
+In this release, IPv6 support is off by default for most of the control plane, but it is mistakenly on by default in the Linkerd CNI plugin. We recommend using edge-24.5.5 instead, which has the fix for that error.
+
+Changes
+This release adds support for JSON output to the linkerd inject, linkerd uninject and linkerd profile commands, and a --token flag to linkerd diagnostics policy that allows specifying the context token to use so that you can see how specific clients will see policies. It also adds support for setting the group ID for the control plane (thanks, Nico Feulner!), switches IPv6 to off by default for the control plane, adds support for several proxy settings to the linkerd-control-plane chart, allows overriding how many cores control-plane components can use, correctly supports Gateway API producer routes, fixes a race conditions around EndpointSlice updates, and fixes intermittent routing failures with HTTPRoute (issue 12610).
+
+What's Changed
+fix(ci): Disable arm64 install in release workflow by @olix0r in #12599
+build(deps): bump serde from 1.0.201 to 1.0.202 by @dependabot in #12603
+build(deps): bump helm.sh/helm/v3 from 3.14.4 to 3.15.0 by @dependabot in #12605
+build(deps): bump darling from 0.20.8 to 0.20.9 by @dependabot in #12601
+build(deps): bump serde_derive_internals from 0.29.0 to 0.29.1 by @dependabot in #12602
+build(deps): bump k8s.io/endpointslice from 0.30.0 to 0.30.1 by @dependabot in #12604
+build(deps): Update linkerd-await v0.2.9 by @olix0r in #12612
+build(deps): bump k8s.io/apiextensions-apiserver from 0.30.0 to 0.30.1 by @dependabot in #12615
+build(deps): bump libc from 0.2.154 to 0.2.155 by @dependabot in #12623
+Add --token flag to diagnostics policy command by @adleong in #12613
+build(deps): bump prost-types from 0.12.4 to 0.12.6 by @dependabot in #12622
+build(deps): bump cc from 1.0.97 to 1.0.98 by @dependabot in #12621
+build(deps): bump either from 1.11.0 to 1.12.0 by @dependabot in #12616
+build(deps): bump actions/checkout from 4.1.5 to 4.1.6 by @dependabot in #12617
+build(deps): bump linux-raw-sys from 0.4.13 to 0.4.14 by @dependabot in #12614
+build(deps): bump k8s.io/kube-aggregator from 0.30.0 to 0.30.1 by @dependabot in #12606
+chore(ci): Increase test-viz timeout by @olix0r in #12626
+build(deps): bump codecov/codecov-action from 4.4.0 to 4.4.1 by @dependabot in #12633
+build(deps): bump tj-actions/changed-files from 44.4.0 to 44.5.0 by @dependabot in #12632
+build(deps): bump instant from 0.1.12 to 0.1.13 by @dependabot in #12631
+build(deps): bump anyhow from 1.0.83 to 1.0.86 by @dependabot in #12630
+build(deps): bump crc32fast from 1.4.0 to 1.4.2 by @dependabot in #12629
+build(deps): bump schemars from 0.8.19 to 0.8.20 by @dependabot in #12628
+build(deps): bump proc-macro2 from 1.0.82 to 1.0.83 by @dependabot in #12627
+Add support for json output in inject and uninject commands by @adleong in #12600
+Add json output format support to linkerd profile command by @adleong in #12611
+Refactor ES addition logic in Destination by @alpeb in #12625
+proxy: v2.233.0 by @l5d-bot in #12639
+build(deps): Bump miniz_oxide from 0.7.1 to 0.7.3 by @dependabot in #12638
+build(deps): Bump thiserror from 1.0.60 to 1.0.61 by @dependabot in #12637
+build(deps): Bump openssl-src from 300.2.3+3.2.1 to 300.3.0+3.3.0 by @dependabot in #12636
+build(deps): bump google.golang.org/grpc from 1.63.2 to 1.64.0 by @dependabot in #12593
+Fix path filter in helm.yml workflow by @alpeb in #12640
+Allow control plane components to specify concurrency by @mateiidavid in #12643
+Fix issue where initial outbound policy did not contain producer routes by @adleong in #12619
+feat: make group ID configurable by @nico151999 in #11924
+Reindex outbound policy backends when a service changes by @adleong in #12635

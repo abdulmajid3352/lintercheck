@@ -1,0 +1,21 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.3.1",
+  "releaseDate": "2024-03-01",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Changed the Helm charts versioning scheme in edge-24.3.1 to match the release version, with charts now versioned as 2024.3.1."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "The -edge suffix was dropped, so the --devel flag is no longer needed for Helm installs or upgrades."
+    }
+  ]
+}

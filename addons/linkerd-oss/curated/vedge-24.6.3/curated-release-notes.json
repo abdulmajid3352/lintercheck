@@ -1,0 +1,14 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.6.3",
+  "releaseDate": "2024-06-21",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the linkerd.io/control-plane-ns label to the ext-namespace-metadata-linkerd-config Role for consistency with other resources created during Linkerd installation."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.4.3
+
+
+Overall Status: NOT RECOMMENDED; use edge-24.4.4 instead
+Cautions
+This release introduced a metrics-naming regression which is fixed in edge-24.4.4. We recommend edge-24.4.4 instead.
+
+Changes
+This edge release fixes the second of two issues where where policy.linkerd.io HTTPRoutes could be endlessly patched even when they weren't changing (issue 12310).
+
+What's Changed
+build(deps): bump either from 1.10.0 to 1.11.0 by @dependabot in #12436
+build(deps): bump cc from 1.0.92 to 1.0.94 by @dependabot in #12438
+build(deps): bump allocator-api2 from 0.2.16 to 0.2.18 by @dependabot in #12437
+build(deps): bump proc-macro2 from 1.0.79 to 1.0.80 by @dependabot in #12435
+build(deps): bump azure/setup-kubectl from 3.2 to 4 by @dependabot in #12426
+build(deps): bump async-trait from 0.1.79 to 0.1.80 by @dependabot in #12425
+build(deps-dev): bump css-loader from 6.10.0 to 7.1.1 in /web/app by @dependabot in #12430
+build(deps-dev): bump @babel/core from 7.24.3 to 7.24.4 in /web/app by @dependabot in #12431
+build(deps): bump @fortawesome/free-regular-svg-icons from 6.5.1 to 6.5.2 in /web/app by @dependabot in #12432
+build(deps-dev): bump @babel/runtime from 7.24.1 to 7.24.4 in /web/app by @dependabot in #12433
+build(deps-dev): bump @babel/preset-env from 7.24.3 to 7.24.4 in /web/app by @dependabot in #12434
+build(deps): bump chrono from 0.4.37 to 0.4.38 by @dependabot in #12440
+build(deps): bump tj-actions/changed-files from 44.0.1 to 44.1.0 by @dependabot in #12460
+build(deps): bump serde_json from 1.0.115 to 1.0.116 by @dependabot in #12449
+build(deps): bump proc-macro2 from 1.0.80 to 1.0.81 by @dependabot in #12447
+proxy: v2.227.0 by @l5d-bot in #12450
+Add port to route status parent ref by @adleong in #12454
+build(deps): bump serde from 1.0.197 to 1.0.198 by @dependabot in #12448

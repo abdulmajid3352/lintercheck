@@ -1,0 +1,11 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.7.2",
+  "releaseDate": "2024-07-15",
+  "notes": [
+    {
+      "label": ["N/A"],
+      "text": "N/A"
+    }
+  ]
+}

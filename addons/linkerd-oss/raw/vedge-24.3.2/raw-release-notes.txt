@@ -1,0 +1,39 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.3.2
+
+What's Changed
+build(deps): bump github.com/prometheus/common from 0.48.0 to 0.49.0 by @dependabot in #12184
+Use the correct resources attribute values for repair-controller by @relu in #12180
+build(deps): bump darling from 0.20.6 to 0.20.8 by @dependabot in #12177
+build(deps): bump num-traits from 0.2.17 to 0.2.18 by @dependabot in #12176
+build(deps): bump ryu from 1.0.16 to 1.0.17 by @dependabot in #12185
+build(deps): bump actions/download-artifact from 4.1.3 to 4.1.4 by @dependabot in #12192
+build(deps): bump pin-project from 1.1.3 to 1.1.4 by @dependabot in #12178
+build(deps): bump tj-actions/changed-files from 42.0.4 to 42.0.5 by @dependabot in #12163
+build(deps): bump query-string from 8.2.0 to 9.0.0 in /web/app by @dependabot in #12190
+build(deps-dev): bump eslint from 8.56.0 to 8.57.0 in /web/app by @dependabot in #12144
+identity: tweak token validation log levels by @zaharidichev in #12187
+build(deps): bump golang.org/x/tools from 0.18.0 to 0.19.0 by @dependabot in #12203
+build(deps): bump github.com/go-openapi/spec from 0.20.14 to 0.20.15 by @dependabot in #12202
+build(deps): bump mio from 0.8.10 to 0.8.11 by @dependabot in #12196
+build(deps): bump pest from 2.7.7 to 2.7.8 by @dependabot in #12198
+build(deps): bump http from 0.2.11 to 0.2.12 by @dependabot in #12197
+build(deps): bump ring from 0.17.7 to 0.17.8 by @dependabot in #12200
+build(deps): bump dyn-clone from 1.0.16 to 1.0.17 by @dependabot in #12199
+build(deps): bump ahash from 0.8.7 to 0.8.11 by @dependabot in #12207
+build(deps): bump pest_meta from 2.7.7 to 2.7.8 by @dependabot in #12208
+build(deps): bump EmbarkStudios/cargo-deny-action from 1.5.15 to 1.6.0 by @dependabot in #12211
+build(deps): bump google.golang.org/grpc from 1.62.0 to 1.62.1 by @dependabot in #12205
+build(deps-dev): bump webpack from 5.90.2 to 5.90.3 in /web/app by @dependabot in #12145
+build(deps-dev): bump @babel/preset-env from 7.23.9 to 7.24.0 in /web/app by @dependabot in #12189
+build(deps-dev): bump @babel/runtime from 7.23.9 to 7.24.0 in /web/app by @dependabot in #12188
+build(deps): bump pkg-config from 0.3.28 to 0.3.30 by @dependabot in #12206
+build(deps): bump pest_derive from 2.7.7 to 2.7.8 by @dependabot in #12209
+build(deps): bump google.golang.org/protobuf from 1.32.0 to 1.33.0 by @dependabot in #12204
+build(deps): bump cpufeatures from 0.2.11 to 0.2.12 by @dependabot in #12210
+build(deps): bump pin-project from 1.1.4 to 1.1.5 by @dependabot in #12219
+build(deps): bump anyhow from 1.0.79 to 1.0.80 by @dependabot in #12221
+build(deps): bump tj-actions/changed-files from 42.0.5 to 42.0.6 by @dependabot in #12222
+build(deps): bump EmbarkStudios/cargo-deny-action from 1.6.0 to 1.6.1 by @dependabot in #12223
+build(deps): bump hermit-abi from 0.3.8 to 0.3.9 by @dependabot in #12220
+build(deps): bump clap from 4.4.11 to 4.5.2 by @dependabot in #12218
+build(deps): bump github.com/golang/protobuf from 1.5.3 to 1.5.4 by @dependabot in #12216
