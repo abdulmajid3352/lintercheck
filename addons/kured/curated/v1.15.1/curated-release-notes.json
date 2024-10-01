@@ -1,0 +1,11 @@
+{
+    "addonName": "kured",
+    "version": "v1.15.1",
+    "releaseDate": "2024-03-24",
+    "notes": [
+        {
+            "label": ["kind/upgrade-consideration", "impact/high"],
+            "text": "The daemon image uses k8s.io/{client-go, kubectl} version 1.28.x for locking and draining nodes, compatible with Kubernetes versions 1.27.x to 1.29.x."
+          }
+    ]
+}
