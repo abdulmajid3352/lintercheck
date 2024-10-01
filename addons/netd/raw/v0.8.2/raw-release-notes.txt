@@ -1,0 +1,13 @@
+source: https://github.com/GoogleCloudPlatform/netd/releases/tag/v0.8.2
+
+## What's Changed
+* Configure Renovate by @renovate-bot in https://github.com/GoogleCloudPlatform/netd/pull/305
+* Fix lint failures caused by koalaman/shellcheck@4f81dbe by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/313
+* renovate: disable updating tools/ and go+toolchain in go.mod by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/314
+* fix(deps): update kubernetes packages to v0.30.0 by @renovate-bot in https://github.com/GoogleCloudPlatform/netd/pull/310
+* Handle RUN_CNI_WATCHDOG from all exit paths by @jingyuanliang in https://github.com/GoogleCloudPlatform/netd/pull/322
+
+## New Contributors
+* @renovate-bot made their first contribution in https://github.com/GoogleCloudPlatform/netd/pull/305
+
+**Full Changelog**: https://github.com/GoogleCloudPlatform/netd/compare/v0.8.1...v0.8.2
