@@ -1,0 +1,77 @@
+{
+  "addonName": "coredns",
+  "version": "v1.11.3",
+  "releaseDate": "2024-07-29",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Enhanced the tls plugin in CoreDNS to respect the path specified by the root plugin when accessing files."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the DialKeepAliveTime parameter to the etcd client in the CoreDNS etcd plugin to improve connection handling when the etcd node network is unavailable, such as during an abnormal shutdown."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Corrected the root domain name usage in the proxy plugin's TestHealthX tests to prevent corrupt DNS messages."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the ability to handle UDP response overflows by setting the Truncation (TC) bit, ensuring that oversized DNS responses are properly flagged for retry over TCP."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a concurrency issue in the CNAME rewrite plugin where multiple simultaneous requests could overwrite each other's state, leading to unpredictable behavior."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Improved the CoreDNS rewrite plugin to convert SERVER-FAIL responses into SUCCESS responses with empty records, resolving performance issues in restricted environments like Kubernetes and Docker behind firewalls."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Fixed the CoreDNS dnstap plugin to support an “extra” field in the dnstap payload, allowing users to include additional metadata or context in DNS logs."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a parsing issue in the CoreDNS cache plugin where the keepttl argument was incorrectly validated, causing an error message and preventing configurations with keepttl and zone lists from being parsed correctly."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed an issue in the CoreDNS DNS64 plugin where a configuration without a next plugin would cause a nil pointer dereference, resulting in a server crash."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled support for Prometheus native histograms in CoreDNS by adding the NativeHistogramBucketFactor parameter to NewHistogramVec."
+    }
+  ]
+}
