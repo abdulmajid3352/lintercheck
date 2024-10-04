@@ -1,0 +1,21 @@
+{
+  "addonName": "coredns",
+  "version": "v1.11.1",
+  "releaseDate": "2023-08-15",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for the \"extra\" field in the dnstap plugin payload. This feature allows customization of the \"extra\" field in dnstap messages by setting it in the Corefile configuration, supporting the addition of metadata values from other plugins."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Resolved an issue in the cache plugin where the keepttl option would cause a parsing error when used with a . zone."
+    }
+  ]
+}

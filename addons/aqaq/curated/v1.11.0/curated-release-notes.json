@@ -1,0 +1,128 @@
+{
+  "addonName": "coredns",
+  "version": "1.11.0",
+  "releaseDate": "2023-11-08",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/medium"
+      ],
+      "text": "Made protocol parsing more flexible in DoH (DNS over HTTPS), allowing for protocols other than HTTPS to be specified while maintaining HTTPS as the default."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for DoQ (DNS over QUIC) in the server, enabling faster and more efficient DNS queries with the advantages of QUIC, including reduced latency, built-in encryption, and streaming capabilities."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Corrected the behavior of the DNSSEC plugin to properly sign DS records or generate NSEC records proving the absence of DS at delegation points, as specified in RFC 4035 (Section 3.1.4)."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added TLS support for outgoing connections in the dnstap plugin."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enhanced the forward plugin to continue waiting for valid responses from upstream after receiving malformed responses."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Restored backward compatibility for forward metrics in the forward plugin. This update addresses issues caused by previous changes that broke monitoring for the forward plugin, allowing users to specify an isolated metrics collector for the plugin and ensuring metrics are correctly reported."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for the fallthrough option in the k8s_external plugin. This enhancement allows DNS queries not handled by the k8s_external plugin to be passed to the next plugin in the Corefile, providing flexibility in DNS resolution by enabling fallback to other plugins for unhandled queries."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Updated the kubernetes plugin to filter out queries for ExternalName services when the query targets subdomains of subdomains (e.g., *.*.service.namespace.svc.cluster.local). This prevents unintended matches, such as resolving queries like www.google.com.default.svc.cluster.local that could incorrectly match an ExternalName service."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Resolved panics in the kubernetes plugin when querying headless services or endpoints while endpoints are disabled. This fix ensures that listers for all objects are always created, even when certain objects like Endpoints are disabled, preventing nil lister errors. Additionally, tests and benchmarks were corrected to ensure proper initialization and consistency, enhancing the reliability of test results."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Resolved a panic in CoreDNS related to invalid memory address or nil pointer dereference when handling ports, specifically within the Kubernetes plugin. This fix ensures that such errors are avoided, improving the stability and reliability of the plugin."
+    },
+    {
+      "label": [
+        "kind/deprecation",
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Removed support for watching Endpoint and EndpointSlice v1beta in the Kubernetes plugin. CoreDNS now exclusively watches EndpointSlices v1, aligning with Kubernetes changes since version 1.19."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for rewriting CNAME targets in DNS responses in the rewrite plugin. This enhancement allows users to modify CNAME target values dynamically, providing greater control over DNS responses."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Modified the auto plugin to defer sending notifies until all zones are loaded."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Resolved an issue in the forward plugin where the fail counter of a proxy could overflow, causing failed proxies to be mistakenly re-added to the forward list."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Prevented panics when using DoHWriter by removing the embedding of nonwriter and directly implementing the dns.ResponseWriter interface. This approach aligns with the existing implementation of gRPCResponse for DNS over gRPC."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added ability to run CoreDNS as non-root."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for using Unix sockets with gRPC."
+    }
+  ]
+}
