@@ -1,0 +1,49 @@
+name: Validate Metadata Files 
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-file-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Validate Metadata Files
+        run: | 
+            error=false
+            for addondir in addons/*; do
+                # Check if metadata.json exists in the addons directory
+                metadata_file="$addondir/metadata.json"
+                if [ -f "$metadata_file" ]; then
+                    length=$(jq '.Sources | length' "$metadata_file")
+                    # Iterate through the Sources list 
+                    for ((i = 0; i < length; i++)); do
+                        
+                        # Extract the title and link from the source list
+                        title=$(jq -r ".Sources[$i].title // empty" "$metadata_file")
+                        link=$(jq -r ".Sources[$i].link // empty" "$metadata_file")
+                        
+                        # If the title field is empty, print out the addon name
+                        if [ -z "$title" ]; then
+                            echo "The title field is empty for the addon: $addondir"
+                            error=true
+                        fi
+                          # If the link field is empty, print out the addon name
+                        if [[ -z "$link" ]]; then
+                            echo "The link field is empty for the addon: $addondir"
+                            error=true
+                        fi
+                    done
+                    else
+                      echo "No Metadata file in $addondir"
+                      error=true
+                fi
+            done 
+    
+            if [ "$error" = true ]; then
+                exit 1
+            fi
