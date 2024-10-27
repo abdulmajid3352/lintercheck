@@ -1,7 +1,7 @@
 name: Validate Curated Release Notes
 on:
   pull_request:
-    types: [opened]  # Trigger only when a new PR is opened
+    types: [opened, synchronize, reopened]  # Trigger on new PRs, changes to existing PRs, and reopened PRs
     branches:
       - main
 jobs:
@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Validate JSON schema
         run: |
           # Initialize error count and error list
@@ -22,7 +23,7 @@ jobs:
           # Validate curated-release-notes.json files
           for file in addons/**/curated/**/curated-release-notes.json; do
             # Check JSON structure and collect errors but continue to validate other issues
-            json_valid=true
+            json_valid=true  # Assume JSON is valid initially
             if ! jq empty "$file" 2>/dev/null; then
               error_message="Error: $file contains invalid JSON syntax. Please fix the JSON structure."
               error_list+=("$error_message")
