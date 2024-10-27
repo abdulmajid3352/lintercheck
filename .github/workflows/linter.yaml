@@ -28,7 +28,7 @@ jobs:
               error_list+=("$error_message")
               error_count=$((error_count + 1))
               json_valid=false
-            fi
+            f
             
             # Skip further validations if JSON is invalid, but continue to next file
             if [ "$json_valid" = true ]; then
