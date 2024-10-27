@@ -1,0 +1,14 @@
+{
+  "addonName": "envoy",
+  "version": "v1.27.7",
+  "releaseDate": "2024-06-29",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where additional cookie attributes were not sent properly to clients, ensuring that all specified cookie attributes are correctly included in the response."
+    }
+  ]
+}

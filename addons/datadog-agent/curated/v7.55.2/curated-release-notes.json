@@ -1,0 +1,14 @@
+{
+  "addonName": "datadog-agent",
+  "version": "v7.55.2",
+  "releaseDate": "2024-07-29",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug introduced in version 7.55.0 where container metrics (CPU, memory, limits, etc.) could be incorrect and not reflect actual resource usage in some rare cases."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "addonName": "envoy",
+  "version": "v1.29.5",
+  "releaseDate": "2024-06-05",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added an option in the async HTTP client to disable response body buffering for mirror requests. Introduced a 32MB cap for the response buffer, which can be adjusted via the runtime flag http.async_response_buffer_limit based on product needs."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in decompression where Envoy would enter an endless loop when using the Brotli decompressor if the input stream contained redundant data."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Applied two QUICHE patches to address crash bugs in QuicSpdyStream during OnDataAvailable() and OnInitialHeaderComplete()."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash bug in QUIC that occurred when a QUIC downstream stream was read-closed and then timed out."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a timing issue in the router where upstream requests were empty during data decoding, causing a local reply. This behavior is controlled by the runtime flag envoy_reloadable_features_send_local_reply_when_no_buffer_and_upstream_request."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/medium"
+      ],
+      "text": "Modified WebSocket behavior to consider only a 101 status code as a successful response for a WebSocket handshake in HTTP/1.1. Envoy will now proxy the response header from upstream to downstream and close the request if any other status is received. This behavior can be reverted by setting the runtime flag envoy_reloadable_features_check_switch_protocol_websocket_handshake."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "addonName": "envoy",
+  "version": "v1.27.3",
+  "releaseDate": "2024-02-09",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Updated the access log behavior in Envoy when emitting gRPC logs to use both downstream and upstream filter states, rather than only downstream filter state. This change ensures that keys configured in filter_state_objects_to_log are found more reliably."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed crash when HTTP request idle and per try timeouts occur within the backoff interval."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed recursion when an HTTP connection is disconnected due to a high number of premature resets."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash when Envoy is configured for PROXY protocol on both a listener and cluster, and the listener receives a PROXY protocol header with address type LOCAL (typically used for health checks)."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash due to an uncaught exception when the operating system does not support an address type (such as IPv6) that is received in a proxy protocol header. Connections will instead be dropped/reset."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where TLVs with non-UTF8 characters were inserted as protobuf values into filter metadata, circumventing ext_authz checks when failure_mode_allow is set to true."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash due to an uncaught exception when the operating system does not support an address type (such as IPv6) that is received in an mTLS client cert IP SAN. These SANs will be ignored. This applies only when using formatter %DOWNSTREAM_PEER_IP_SAN%."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug that caused the Datadog tracing extension to drop traces that should be kept due to an extracted sampling decision."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where Datadog spans tagged as errors would not have the appropriate error property set."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where child spans produced by the Datadog tracer would have an incorrect operation name."
+    }
+  ]
+}

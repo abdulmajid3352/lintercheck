@@ -1,0 +1,23 @@
+{
+  "addonName": "envoy",
+  "version": "v1.29.3",
+  "releaseDate": "2024-04-05",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "kind/deprecation",
+        "impact/medium"
+      ],
+      "text": "Removed the hop-by-hop TE header from downstream request headers unless it is set to trailers; otherwise, it is kept. This change can be temporarily reverted by setting envoy.reloadable_features.sanitize_te to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Simplified integration with the codec in HTTP/2 by removing the translation between nghttp2 callbacks and Http2VisitorInterface events. This change is guarded by envoy.reloadable_features.http2_skip_callback_visitor."
+    }
+  ]
+}

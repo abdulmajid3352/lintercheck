@@ -1,0 +1,337 @@
+{
+  "addonName": "envoy",
+  "version": "v1.26.0",
+  "releaseDate": "2023-04-18",
+  "notes": [
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Added a new admin stats format option html-active, which displays a periodically updated list of the top most frequently changed stats."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Moved the tcp, http, and grpc health checkers to extensions. If you use these health checkers and override extensions_build_config.bzl, you will now need to include them explicitly."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Validated upstream request header names and values. This validation can be reverted by setting the runtime flag envoy.reloadable_features.validate_upstream_headers to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Updated the OAuth filter to URL-encode URLs in query parameters, with decoded results preserving character sequences that must remain encoded. This behavioral change can be temporarily reverted by setting the runtime guard envoy.reloadable_features.oauth_use_url_encoding to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high",
+        "kind/breaking-change"
+      ],
+      "text": "Moved the REST and filesystem config subscription code into extensions. If you use these methods for config updates and override extensions_build_config.bzl, you will now need to include them explicitly."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Updated the specification of URIs for redirect policies in custom responses. URIs can now be specified as a fully qualified string or by individual components. If status_code in RedirectPolicy is not specified, Envoy will return the original response code instead of the code after redirection to the error service."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Changed Event::PostCb type from std::function to absl::AnyInvocable, allowing the capture of unique_ptrs in dispatcher callbacks. If you have used Event::PostCb as shorthand for std::function<void()> in non-post-callback-related contexts, you will need to update those instances. For mock dispatchers using std::function, switch to Event::PostCb and ensure it is moveable if necessary."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Updated ext_authz to add the x-envoy-auth-failure-mode-allowed header when failure_mode_allow is enabled. This behavior can be reverted by setting the runtime flag envoy.reloadable_features.http_ext_auth_failure_mode_allow_header_add to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high",
+        "kind/breaking-change"
+      ],
+      "text": "Made the gRPC service mandatory for ext_proc, ensuring the proper functioning of the external processing filter."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high",
+        "kind/upgrade-consideration",
+        "kind/breaking-change"
+      ],
+      "text": "Modified health checks so that if active health checking (HC) is enabled and a host is ejected by outlier detection, a successful active health check will uneject the host and mark it as healthy, clearing all outlier detection counters. This behavior can be reverted by setting the runtime flag envoy.reloadable_features_successful_active_health_check_uneject_host to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Prohibited route refresh after response headers have been sent and cleared the cached route table more aggressively to free memory. Attempting to refresh or clear the route cache when it is blocked will result in an error. This behavior can be reverted by setting the runtime flag envoy.reloadable_features.prohibit_route_refresh_after_response_headers_sent to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Extended the lifetime of the protocol-agnostic stream object to correct discrepancies between access logging and protocol-specific stream behavior. This change can be reverted by setting the runtime flag envoy_reloadable_features_expand_agnostic_stream_lifetime to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Changed HTTP/2 metadata parsing to use the QUICHE HPACK library instead of nghttp2. This behavior can be reverted by setting the runtime flag envoy.reloadable_features.http2_decode_metadata_with_quiche to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Updated HTTP/2 request authorities to be validated using a QUICHE library function instead of nghttp2. This change can be reverted by setting the runtime flag envoy.reloadable_features.http2_validate_authority_with_quiche to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Converted HTTP/3 extended connect to and from HTTP/1 upgrade. This behavior can be reverted by setting the runtime flag envoy.reloadable_features.use_http3_header_normalisation to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Changed local rate limiting to burn tokens from local descriptor’s token buckets before using tokens from the default token bucket."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added dynamic metadata to the MatchingData object in matchers, enabling matcher_tree input objects to parse provided dynamic metadata."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Moved all network input matchers to extensions. If you use network matchers and override extensions_build_config.bzl, you will need to include them explicitly."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Deferred access logging in QUIC to the QUIC ack listener, with roundtrip response time added as a downstream timing metric. This behavior can be reverted using the runtime flag envoy.reloadable_features.quic_defer_logging_to_ack_listener."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Modified the Universal Header Validator (UHV) to translate backslashes to slashes in the default header validator. This behavior can be reverted by setting the runtime flag envoy.reloadable_features.uhv_translate_backslash_to_slash to false, in which case requests with backslashes in the path are rejected. This setting applies only when the Universal Header Validator is enabled."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Changed HTTP/1 and HTTP/3 upstream streams to not disable reading until the full response headers are received, even if the downstream buffer reaches a high watermark. This fixes a bug where upstream timeouts were not correctly adjusting after response headers were sent. This behavior can be reverted by setting envoy.reloadable_features.upstream_wait_for_response_headers_before_disabling_read to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added envoy.reloadable_features.multiplex_eds to disable EDS multiplexing. EDS multiplexing is enabled by default, so that all subscriptions for the same resource type and management server reuse a single channel/mux. When EDS multiplexing is disabled, each subscription uses a dedicated channel/mux."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a possible illegal memory access in the header_mutation filter that could occur when the request is aborted before the request headers are fully received."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a bug where the OAuth2 filter would crash if it received a redirect URL without a state query parameter set."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.admin_stats_filter_use_re2 and envoy.reloadable_features.combine_sds_requests along with their legacy code paths from the configuration."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.cares_accept_nodata and legacy code paths from DNS handling."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.dns_multiple_addresses runtime flag and legacy code paths."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.allow_concurrency_for_alpn_pool and its legacy code path from HTTP handling."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.http2_delay_keepalive_timeout and legacy code paths."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.http_skip_adding_content_length_to_upgrade and associated legacy code paths."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.local_ratelimit_match_all_descriptors and legacy code paths."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.lua_respond_with_send_local_reply and its legacy code path."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.use_rfc_connect and the associated legacy code path."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.conn_pool_new_stream_with_early_data_and_http3 and envoy.reloadable_features.http3_sends_early_data along with their legacy code paths."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.postpone_h3_client_connect_to_next_loop and legacy code paths."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.get_route_config_factory_by_type runtime flag from the router, as its behavior is now the default."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated ext_authz.v3.AuthorizationRequest.allowed_headers in favor of ext_authz.v3.ExtAuthz.allowed_headers starting from version 1.25.0."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated flush access log on new request in favor of the updated method flush access log on new request as of version 1.25.0."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated periodic access logging in favor of the updated periodic access logging configuration starting from version 1.25.0."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated access_log_flush_interval in favor of the new access_log_flush_interval configuration as of version 1.25.0."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated flush_access_log_on_connected in favor of the updated flush_access_log_on_connected setting starting from version 1.25.0."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "addonName": "envoy",
+  "version": "v1.25.10",
+  "releaseDate": "2023-10-10",
+  "notes": [
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Added a runtime flag http.max_requests_per_io_cycle to set a limit on the number of HTTP requests processed from a single connection in a single I/O cycle. Requests that exceed this limit are processed in subsequent I/O cycles, mitigating CPU starvation caused by high-traffic connections and allowing requests from other connections to progress. This value can be set to 1 to manage abusive HTTP/2 or HTTP/3 connections. By default, this limit is disabled."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Enhanced handling of HTTP/2 and HTTP/3 connections by closing those that prematurely reset streams. The runtime key overload.premature_reset_min_stream_lifetime_seconds specifies the time interval (default 1 second) during which a stream reset is considered premature. The runtime key overload.premature_reset_total_stream_count (default 500) sets the number of requests that must be received before premature reset checks are applied. Connections are disconnected if more than 50% of resets are considered premature. To completely disable this check, set the runtime key envoy.restart_features.send_goaway_for_premature_rst_streams to false."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where the handshake could fail when both a private key provider and certificate validation were set."
+    }
+  ]
+}

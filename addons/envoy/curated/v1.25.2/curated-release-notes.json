@@ -1,0 +1,11 @@
+{
+  "addonName": "envoy",
+  "version": "v1.25.2",
+  "releaseDate": "2023-03-02",
+  "notes": [
+    {
+      "label": ["kind/deprecation", "impact/high"],
+      "text": "Deprecated ext_authz.v3.AuthorizationRequest.allowed_headers in favor of ext_authz.v3.ExtAuthz.allowed_headers."
+    }
+  ]
+}

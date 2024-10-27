@@ -1,0 +1,11 @@
+{
+  "addonName": "envoy",
+  "version": "v1.23.11",
+  "releaseDate": "2023-07-13",
+  "notes": [
+    {
+      "label": ["kind/bug-fix", "impact/high"],
+      "text": "Fix memory leak in nghttp2 when scheduled requests are cancelled due to the GOAWAY frame being received from the upstream service."
+    }
+  ]
+}

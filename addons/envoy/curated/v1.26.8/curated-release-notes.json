@@ -1,0 +1,14 @@
+{
+  "addonName": "envoy",
+  "version": "v1.26.8",
+  "releaseDate": "2024-04-04",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added an off-by-default runtime flag envoy.reloadable_features.google_grpc_disable_tls_13 to disable TLSv1.3 usage by gRPC SDK for google_grpc services."
+    }
+  ]
+}

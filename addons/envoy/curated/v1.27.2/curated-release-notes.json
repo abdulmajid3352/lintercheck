@@ -1,0 +1,13 @@
+{
+  "addonName": "envoy",
+  "version": "v1.27.2",
+  "releaseDate": "2023-10-17",
+  "notes": [ {
+    "label": ["kind/bug-fix", "impact/medium"],
+    "text": "Fixed a bug where processing of deferred streams with the value of http.max_requests_per_io_cycle more than 1 could cause a crash."
+  },
+  {
+    "label": ["kind/bug-fix", "impact/medium"],
+    "text": "Fixed a bug in the Datadog tracer where Datadog’s “operation name” field would contain what should be in the “resource name” field."
+  }]
+}

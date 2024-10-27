@@ -1,0 +1,21 @@
+{
+  "addonName": "envoy",
+  "version": "v1.26.3",
+  "releaseDate": "2023-07-14",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "http2: Fixed a memory leak in nghttp2 when scheduled requests are cancelled due to the GOAWAY frame being received from the upstream service."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "original_dst: Fixed an issue with the ORIGINAL_DST cluster cleanup timer lifetime, which could occur if the cluster is removed while the timer is armed."
+    }
+  ]
+}

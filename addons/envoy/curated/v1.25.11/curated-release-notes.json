@@ -1,0 +1,14 @@
+{
+  "addonName": "envoy",
+  "version": "v1.25.11",
+  "releaseDate": "2023-10-17",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a bug where processing deferred streams with http.max_requests_per_io_cycle set to a value greater than 1 could cause a crash."
+    }
+  ]
+}

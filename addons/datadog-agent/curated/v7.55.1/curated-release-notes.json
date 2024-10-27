@@ -1,0 +1,14 @@
+{
+  "addonName": "datadog-agent",
+  "version": "v7.55.1",
+  "releaseDate": "2024-07-15",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a regression where the agent would fail to start on systems with SysVinit."
+    }
+  ]
+}

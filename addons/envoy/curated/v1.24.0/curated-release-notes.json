@@ -1,0 +1,111 @@
+{
+  "addonName": "envoy",
+  "version": "v1.24.0",
+  "releaseDate": "2022-10-19",
+  "notes": [
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "impact/high"],
+      "text": "Fixed resource tracking when using the Incremental (Delta-xDS) protocol. The protocol state is now updated after the resources are successfully ingested and an ACK is sent. This behavior can be reverted by setting the envoy.reloadable_features.delta_xds_subscription_state_tracking_fix runtime flag to false."
+    },
+    {
+      "label": ["kind/feature", "kind/upgrade-consideration","kind/breaking-change", "impact/high"],
+      "text": "Added GCP Authentication filter to fetch authentication tokens from the Google Compute Engine (GCE) metadata server."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "impact/high"],
+      "text": "Modified Envoy to no longer add the content-length: 0 header when proxying UPGRADE requests without content-length and transfer-encoding headers. This behavior can be reverted by setting the envoy.reloadable_features.http_skip_adding_content_length_to_upgrade runtime flag to false."
+    },
+    {
+      "label": ["kind/feature", "kind/upgrade-consideration","kind/breaking-change", "impact/high"],
+      "text": "Updated clients to continue sending data upstream after receiving an end of the server stream, supporting server half-close semantics for TCP tunneling with CONNECT and bi-directional streaming calls. This behavior can be reverted by setting the envoy.reloadable_features.http_response_half_close runtime flag to false."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "impact/high"],
+      "text": "Prevented the ORIGINAL_DST cluster from removing and draining stale hosts during cleanup if they are still used by connection pools. For HTTP pools, set idle_timeout to limit the duration of upstream connections (default is 1h, recommended is 5min). This behavior can be reverted by setting the runtime guard envoy.reloadable_features.original_dst_rely_on_idle_timeout."
+    },
+    {
+      "label": ["kind/bug-fix", "kind/upgrade-consideration", "kind/breaking-change", "impact/high"],
+      "text": "Fixed metric tag extraction to properly extract stat_prefix, changing the Prometheus metric name from envoy_http_local_rate_limit_myprefix_rate_limited{} to envoy_http_local_rate_limit_rate_limited{envoy_local_http_ratelimit_prefix=\"myprefix\"}."
+    },
+    {
+      "label": ["kind/bug-fix", "kind/upgrade-consideration", "kind/breaking-change", "impact/high"],
+      "text": "Corrected metric tag extraction to ensure stat_prefix is properly extracted, updating the Prometheus metric name from envoy_local_rate_limit_myprefix_rate_limited{} to envoy_local_rate_limit_rate_limited{envoy_local_ratelimit_prefix=\"myprefix\"}."
+    },
+    {
+      "label": ["kind/feature", "kind/upgrade-consideration", "kind/breaking-change",  "impact/high"],
+      "text": "Enabled support for asynchronous certificate validation extensions. This behavior can be reverted by setting the runtime guard envoy.reloadable_features.tls_async_cert_validation to false."
+    },
+    {
+      "label": ["kind/bug-fix", "impact/high"],
+      "text": "Fixed a bug in TLS where, when the runtime guard envoy.reloadable_features.tls_async_cert_validation is set to false, the wrong TLS alerts would sometimes be sent in response to certificate validation failures."
+    },
+    {
+      "label": ["kind/bug-fix", "impact/medium"],
+      "text": "Fixed a bug in transport sockets that prevented TCP stats from being retrieved when running on kernels different from the one where Envoy was built."
+    },
+    {
+      "label": ["kind/bug-fix", "impact/medium"],
+      "text": "Fixed a bug where custom transport socket hashes might not be respected by wrapper passthrough sockets. This change can be temporarily reverted by setting the runtime guard envoy.reloadable_features.fix_hash_key to false."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.correctly_validate_alpn and associated legacy code paths from auto configuration."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.enable_grpc_async_client_cache and associated legacy code paths from gRPC."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.handle_stream_reset_during_hcm_encoding and associated legacy code paths from HCM."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.http2_allow_capacity_increase_by_settings and associated legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.proxy_120_103 and associated legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.sanitize_http_header_referer and associated legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed the Lightstep tracer integration, paving the way for the native OpenTelemetry integration."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.internal_address and associated legacy code paths from listeners."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.update_expected_rq_timeout_on_retry and associated legacy code paths from the router."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.update_grpc_response_error_tag and associated legacy code paths from tracing."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Deprecated the cors field of the virtual host and route action. Please use VirtualHost.typed_per_filter_config, Route.typed_per_filter_config, or WeightedCluster.ClusterWeight.typed_per_filter_config to configure the CORS HTTP filter using the CorsPolicy type."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Deprecated append in HTTP configurations; please use append_action first."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Deprecated the total weight setting for weighted clusters. The sum of the clusters' weights will now be used as the total weight."
+    },
+    {
+      "label": ["kind/feature", "impact/medium"],
+      "text": "Added new /heap_dump endpoint to dump heap profile of Envoy."
+    },
+    {
+      "label": ["kind/feature", "impact/medium"],
+      "text": "Added thrift health check as a custom health check."
+    }
+  ]
+}

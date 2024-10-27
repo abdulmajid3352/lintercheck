@@ -1,0 +1,11 @@
+{
+  "addonName": "envoy",
+  "version": "v1.25.5",
+  "releaseDate": "2023-04-13",
+  "notes": [
+    {
+      "label": ["kind/bug-fix", "impact/medium"],
+      "text": "Amended the fix for x-envoy-original-path to ensure that the header is removed only at the edge. Previously, this fix removed the header at any Envoy instance upstream of an external request, including those that added the header themselves. The updated behavior confines the header removal to edge Envoy instances, preserving modifications made by upstream Envoy instances."
+    }    
+  ]
+}

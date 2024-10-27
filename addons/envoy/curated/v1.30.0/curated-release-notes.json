@@ -1,0 +1,299 @@
+{
+  "addonName": "envoy",
+  "version": "v1.30.0",
+  "releaseDate": "2024-04-16",
+  "notes": [
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed the hop-by-hop TE header from downstream request headers unless it is set to trailers; otherwise, it is kept. This change can be temporarily reverted by setting envoy.reloadable_features.sanitize_te to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Changed the default value of envoy.reloadable_features.http2_use_oghttp2 to false, altering the codec used for HTTP/2 requests and responses. This change addresses issues reported by users."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Enabled the runtime flag envoy.reloadable_features.enable_include_histograms by default, causing the includeHistogram() method on Stats::SinkPredicates to filter histograms that are flushed to stat sinks."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Multiplied the gradient value stat in adaptive concurrency by 1000 to make it more granular, with values now ranging between 500 and 2000."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Updated AWS region retrieval in aws_request_signer and grpc_credentials/aws_iam extensions to consistently use the environment and profile. The region field in aws_request_signer is now optional, with an explicitly configured xDS region taking precedence. Documentation has been updated to reflect the region retrieval chain."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a bug in the getaddrinfo resolver where it did not re-resolve on EAI_AGAIN. This change can be temporarily reverted by setting envoy.reloadable_features.dns_reresolve_on_eai_again to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Updated Golang to not implicitly clear the route cache in HeaderMap.Set and introduced a new API ClearRouteCache for this purpose."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled obsolete line folding in BalsaParser for HTTP, achieving behavior parity with the previously used http-parser for HTTP/1."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Modified HTTP behavior so that when the HTTP CONNECT request method is enabled via RouteAction.UpgradeConfig, CONNECT requests will now be proxied to the upstream unless connect_config is also set. Previously, Envoy would terminate CONNECT requests if connect_config was unset. This change aligns with the existing documentation and can be reverted by setting envoy.reloadable_features.http_route_connect_proxy_by_default to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Simplified integration with the codec in HTTP/2 by removing translation between nghttp2 callbacks and Http2VisitorInterface events. This change is guarded by envoy.reloadable_features.http2_skip_callback_visitor."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Disabled recvmmsg (multi-message) for reading packets from a client QUIC UDP socket in HTTP/3 when GRO is not set or supported, using recvmsg instead. This behavior can be reverted by setting envoy.reloadable_features.disallow_quic_client_udp_mmsg to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Made GRO (Generic Receive Offload) configurable for reading packets from a client QUIC UDP socket in HTTP/3. This behavior can be enabled by setting envoy.reloadable_features.prefer_quic_client_udp_gro to true."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added more conversion options in the proxy status utility, which can be disabled by the runtime guard envoy.reloadable_features.proxy_status_mapping_more_core_response_flags."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled sending server-preferred addresses to non-QUICHE QUIC clients when configured. This behavior can be disabled with the runtime flag envoy.reloadable_features.quic_send_server_preferred_address_to_all_clients."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled QUIC upstream connections to read up to 32 packets per event loop. This can be disabled by setting envoy.reloadable_features.quic_upstream_reads_fixed_number_packets to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Turned off port migration by default for QUIC clients, preventing connections from migrating to a new port when degrading. This can be manually enabled via port_migration."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/medium"
+      ],
+      "text": "Changed the handling of upstream socket creation failures to result in a clean connection failure rather than triggering a release assert. This can be temporarily reverted by setting envoy.restart_features_.allow_client_socket_creation_failure to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Updated parsing of thread_local_cluster_manager.worker_0.* metrics to use the worker_id tag like other metrics when use_all_default_tags is true."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Excluded hosts in DRAINING state via EDS from load balancing and panic routing threshold calculation in upstream. This can be disabled by setting envoy.reloadable_features.exclude_host_in_eds_status_draining to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/medium"
+      ],
+      "text": "Modified xDS so that Delta SDS removals no longer result in a “Missing SDS resources” NACK and will instead be ignored."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in HTTP when idle and per-try timeouts occurred within the backoff interval."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in proxy protocol due to an uncaught exception when the operating system did not support an address type (such as IPv6) received in a proxy protocol header. Connections will now be dropped or reset."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in proxy protocol when Envoy was configured for PROXY protocol on both a listener and a cluster, and the listener received a PROXY protocol header with address type LOCAL, typically used for health checks."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash bug in QUIC when using QUIC upstream with X.509v1 certificates."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in TLS due to an uncaught exception when the operating system did not support an address type (such as IPv6) received in an mTLS client certificate IP SAN. These SANs will now be ignored when using the formatter %DOWNSTREAM_PEER_IP_SAN%."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the envoy.reloadable_features.keep_endpoint_active_hc_status_on_locality_update runtime flag and legacy code paths from active health check."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the envoy.reloadable_features.enable_aws_credentials_file runtime flag and legacy code paths from AWS."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the envoy.reloadable_features.allow_absolute_url_with_mixed_scheme runtime flag and legacy code paths from HTTP."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the envoy_reloadable_features_append_xfh_idempotent runtime flag and legacy code paths from HTTP."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the envoy.reloadable_features.http1_allow_codec_error_response_after_1xx_headers runtime flag and legacy code paths from HTTP/1."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the envoy.reloadable_features.overload_manager_error_unknown_action runtime flag and legacy code paths from overload manager."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the envoy.reloadable_features.count_unused_mapped_pages_as_free runtime flag and legacy code paths from resource monitors."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the envoy_reloadable_features_initialize_upstream_filters runtime flag and legacy code paths from upstream."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enhanced the aws_lambda filter to support the credentials_profile parameter, allowing users to select different credential profiles for each filter instance."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the grpc_initial_metadata configuration API to the ext_proc filter, allowing the extension and customization of inherited metadata from ExternalProcessor.grpc_service and ExtProcOverrides.grpc_service."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enhanced the /stats/prometheus admin endpoint to emit Prometheus summary metric types when the histogram_buckets query parameter is explicitly set to summary."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated the runtime key overload.global_downstream_max_connections in favor of the downstream connections monitor in the listener."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated split_spans_for_request in tracing in favor of spawn_upstream_span."
+    }
+  ]
+}
