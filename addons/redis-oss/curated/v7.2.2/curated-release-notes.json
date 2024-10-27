@@ -1,0 +1,49 @@
+{
+  "addonName": "redis-oss",
+  "version": "v7.2.2",
+  "releaseDate": "2023-10-18",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where WAITAOF could time out in the absence of write traffic when a new AOF was created, and an AOF rewrite couldn't immediately start."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash when running the rebalance command in a mixed Redis cluster of 7.0 and 7.2 nodes."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed the return type of the slot number in cluster shards to integer, making it consistent with past behavior."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed CLUSTER commands called from modules or scripts to return TLS info appropriately."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in redis-cli on reconnect when in SUBSCRIBE mode."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed an overflow calculation for the next timer event."
+    }
+  ]
+}

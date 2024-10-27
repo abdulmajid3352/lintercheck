@@ -1,0 +1,21 @@
+{
+  "addonName": "redis-oss",
+  "version": "v7.2.3",
+  "releaseDate": "2023-11-01",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a file descriptor leak that was preventing deleted files from freeing disk space on replicas."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a possible crash after cluster node removal."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+source: https://github.com/redis/redis/releases/tag/7.4-rc2
+7.4-rc2 Pre-release
+@YaacovHazan YaacovHazan released this Jun 27
+· 30 commits to 7.4 since this release
+ 7.4-rc2
+ 0637b4e 
+This is the second Release Candidate for Redis Community Edition 7.4.
+
+Performance and resource utilization improvements
+-  #13296 Optimize CPU cache efficiency
+-  Changes to new 7.4 new features (compared to 7.4 RC1)
+-  #13343 Hash - expiration of individual fields: when key does not exist - reply with an array (nonexisting code for each field)
+-  #13329 Hash - expiration of individual fields: new keyspace event: hexpired
+Modules API - Potentially breaking changes to new 7.4 features (compared to 7.4 RC1)
+-  #13326 Hash - expiration of individual fields: avoid lazy expire when called from a Modules API function

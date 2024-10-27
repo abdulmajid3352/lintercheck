@@ -1,0 +1,23 @@
+{
+    "addonName": "redis-oss",
+    "version": "v7.2.4",
+    "releaseDate": "2024-01-09",
+    "notes": [
+        {
+            "label": ["kind/bug-fix", "impact/high"],
+            "text": "Fixed a bug where Redis incorrectly handled memory buffer resizing, potentially leading to incorrect buffer size accounting, heap overflow, and remote code execution."
+        },
+        {
+            "label": ["kind/bug-fix", "impact/high"],
+            "text": "Fixed crashes in mixed Redis clusters (versions 7.0 and 7.2) by aligning shard-ids and setting replicas' shard-id to match their master's, ensuring consistency during upgrades."
+        },
+        {
+            "label": ["kind/bug-fix", "impact/medium"],
+            "text": "Fixed an issue where slot ownership wasn't properly handled when deleting a slot from a node, ensuring receiving nodes immediately recognize a loss of slot ownership to prevent slots from going missing during migrations or failovers."
+        },
+        {
+            "label": ["kind/bug-fix", "impact/medium"],
+            "text": "Fixed atomicity issues with the `RedisModuleEvent_Key` module API event, ensuring post notification jobs are executed atomically with key removal operations (delete, expire, evict, overwrite) and are safely replicated within a Multi/Exec transaction."
+        }
+    ]
+}
