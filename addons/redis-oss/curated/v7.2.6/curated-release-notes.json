@@ -1,0 +1,14 @@
+{
+  "addonName": "redis-oss",
+  "version": "v7.2.6",
+  "releaseDate": "2024-10-02",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed crashes caused by missing slotToKeyInit() when using flushdb async under cluster mode and by missing expires_cursor reset when stopping active defrag in the middle of defragment."
+    }
+  ]
+}

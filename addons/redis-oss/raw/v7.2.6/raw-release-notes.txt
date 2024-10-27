@@ -1,0 +1,15 @@
+source: https://github.com/redis/redis/releases/tag/7.2.6
+
+Upgrade urgency SECURITY: See security fixes below.
+
+Security fixes
+==============
+
+* (CVE-2024-31449) Lua library commands may lead to stack overflow and potential RCE.
+* (CVE-2024-31227) Potential Denial-of-service due to malformed ACL selectors.
+* (CVE-2024-31228) Potential Denial-of-service due to unbounded pattern matching.
+
+Bug fixes
+=========
+
+* Fixed crashes in cluster mode (#13315)

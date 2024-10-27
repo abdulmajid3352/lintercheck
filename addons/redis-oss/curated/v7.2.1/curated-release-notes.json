@@ -1,0 +1,21 @@
+{
+  "addonName": "redis-oss",
+  "version": "v7.2.1",
+  "releaseDate": "2023-09-06",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed crashes when joining a node to an existing 7.0 Redis Cluster."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Corrected request_policy and response_policy command tips for some admin and configuration commands."
+    }
+  ]
+}

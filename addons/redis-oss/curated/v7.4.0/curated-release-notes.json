@@ -1,0 +1,190 @@
+{
+  "addonName": "redis-oss",
+  "version": "v7.4.0",
+  "releaseDate": "2024-07-29",
+  "notes": [
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Introduced support for field-level expiration within hashes. This enhancement introduces new commands to manage field-level expirations, including HEXPIRE, HEXPIREAT, HEXPIRETIME, HPERSIST, HPEXPIRE, HPEXPIREAT, HPEXPIRETIME, HTTL, and HPTTL."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for using `+` as a special ID in the XREAD command to read the last available entry in a Redis stream. This feature allows users to start reading from the last message in a stream, in contrast to `$`, which reads the next message."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Introduced a new NOVALUES option to the HSCAN command, allowing users to scan a hash and retrieve only the field names without their associated values."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled BY/GET options for SORT(_RO) in cluster mode when the pattern maps to the same slot as the key."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Implemented CLIENT KILL MAXAGE <maxage>, adding the ability to terminate clients older than a specified age."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed the inconsistency of entries_read propagation between master and replicas in XREADGROUP ACK by calling streamPropagateGroupID unconditionally."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed the SORT STORE command to correctly apply list compression and packing configurations when creating quicklists."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed race condition issues between the main thread and module threads by making RM_Yield thread-safe."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed an issue where clients on replicas would continue receiving data from shard channels after the master ownership changed."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue where WAITAOF could hang or timeout if a module command propagated effects only to replicas and not to AOF, by updating fsynced_reploff_pending even when there's nothing to fsync."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue where BITCOUNT and BITPOS commands would incorrectly return 0 instead of an error when used with non-existing keys and illegal arguments."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Updated the BITCOUNT command to check for incorrect arguments before checking the existence of the key, aligning its behavior with other commands like GETRANGE and SETBIT."
+    },
+    {
+      "label": [
+        "kind/deprecation",
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Reverted the MULTI OOM limit that blocked transactions in OOM state and added a multi buffer limit using the client-query-buffer-limit to prevent abuse. This limit includes the query buffer and commands queued in MULTI/EXEC. If exceeded, the client disconnects. Unauthenticated clients have a 1MB query buffer limit."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash that occurs when a client is affected by its own user permission changes, requiring it to be disconnected. The fix uses the CLIENT_CLOSE_AFTER_COMMAND flag to disconnect such clients asynchronously after their command execution. The changes also unify the handling of client disconnections through a new deauthenticateAndCloseClient function."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a server crash that occurred during cluster slot migration when unblocking a client without resetting the command duration, particularly affecting clients using blocking commands like streams that received a redirection."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Updated the ACL LOAD command behavior to avoid disconnecting all clients. Instead, only clients whose user is deleted or who are subscribed to channels they no longer have access to will be disconnected, aligning it with the behavior of ACL SETUSER and ACL DELUSER."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled the use of XREAD and XREADGROUP commands with the BLOCK option in scripts, allowing these commands to be used as long as they don't end up blocking. This aligns their behavior with other commands like BLPOP, which are now permitted in scripts but will fail if they result in blocking."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added pubsub_clients metric to the INFO CLIENTS section, allowing the monitoring of the number of clients connected via Pub/Sub."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed modules to declare new ACL categories by introducing the RM_AddACLCategory API. This enables modules to create custom ACL categories for their commands."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Introduced two new configurations: max-new-connections-per-cycle and max-new-tls-connections-per-cycle, which limit the number of new TCP and TLS connections accepted per event loop cycle. The default settings are 10 for TCP and 1 for TLS."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a connection timeout option to redis-cli via the new -t switch, allowing users to specify a timeout value for opening TCP connections. The default timeout is 0, which means no limit and relies on the OS's default behavior."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed redis-benchmark to distribute operations across all slots owned by a node instead of sending requests to just a single slot. Previously, redis-benchmark would always target the first slot owned by the node due to an unupdated current_slot_index. This update ensures that operations are randomly distributed across different slots."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Updated HFE commands to return an array of 'no field' error codes (-2) when the key does not exist, instead of an empty array. This change aligns with Redis logic where non-existing keys and empty keys are treated the same, indicating that fields specified in the command do not exist."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Introduced a new hexpired notification for Hash Field Expiration (HFE) to alert when a hash field expires. This notification triggers in three scenarios: active expiration, lazy expiration, and during h(p)expire(at) commands. Additionally, if multiple fields expire in an hmget command, only one notification is sent."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Optimized the RDB_TYPE_HASH_METADATA format by storing expiration times relative to the minimum expiration time, which is saved as an absolute value at the start."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a possible crash caused by an OOM panic when invalid arguments are provided in commands like COMMAND GETKEYSANDFLAGS and during ACL key name validation."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "addonName": "redis-oss",
+  "version": "v7.2.0",
+  "releaseDate": "2023-08-15",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in redis-cli to handle unknown endpoints in cluster mode, ensuring proper redirection when the cluster-preferred-endpoint-type is unknown."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Ensured that the function load timeout is disabled during loading from RDB/AOF and on replicas."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a false success and a memory leak for ACL selector with incorrect parenthesis combinations."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an assertion issue when script timeout occurred after signaling a blocked client."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Updated the MONITOR client's memory correctly for INFO and client-eviction."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where the response of cluster nodes was unnecessarily adding an extra comma when no hostname is present."
+    }
+  ]
+}
