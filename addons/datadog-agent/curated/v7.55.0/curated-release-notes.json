@@ -5,7 +5,7 @@
   "notes": [
     {
       "label": [
-        "kind/bug-fix",
+        "kind/bag-fix",
         "impact/medium"
       ],
       "text": "Fixed a bug where the Datadog agent service failed to start on systems using SysVInit, showing a datadog-agent: unrecognized service error."

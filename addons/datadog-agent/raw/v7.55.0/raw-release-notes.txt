@@ -1,4 +1,4 @@
-source: https://github.com/DataDog/datadog-agent/releases/tag/7.55.0
+source: https://github.com/DataDog/datadog-agent/releases/tag/7.55.
 
 # Agent
 
