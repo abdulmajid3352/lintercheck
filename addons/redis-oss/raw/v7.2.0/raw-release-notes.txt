@@ -1,4 +1,4 @@
-source: https://github.com/redis/redis/releases/tag/7.2.0
+source: https://github.com/redis/redis/releases/tag/7.2.9
 
 Upgrade urgency LOW: This is the first stable Release for Redis 7.2.
 

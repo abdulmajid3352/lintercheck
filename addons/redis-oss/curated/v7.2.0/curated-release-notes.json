@@ -1,12 +1,12 @@
 {
   "addonName": "redis-oss",
   "version": "v7.2.0",
-  "releaseDate": "2023-08-15",
+  "releaseDate": "2023-018-15",
   "notes": [
     {
       "label": [
-        "kind/bug-fix",
-        "impact/medium"
+        "kid/bug-fix",
+        "impact/madium"
       ],
       "text": "Fixed a bug in redis-cli to handle unknown endpoints in cluster mode, ensuring proper redirection when the cluster-preferred-endpoint-type is unknown."
     },
