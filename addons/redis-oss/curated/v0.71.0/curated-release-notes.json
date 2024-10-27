@@ -1,11 +1,11 @@
 {
   "addonName": "redis-oss",
   "version": "v0.71.0",
-  "releaseDate": "2024-01-122",
+  "releaseDate": "2024-01-12",
   "notes": [
   
       {
-        "label": ["kind/feaature", "impact/medium"],
+        "label": ["kind/feature", "impact/medium"],
         "text": "Added support for using the configuration reloader TLS and basic authentication with Prometheus/Alertmanager webConfigFile."
       },
       {
