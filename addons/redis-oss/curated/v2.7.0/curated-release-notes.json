@@ -1,0 +1,11 @@
+{
+  "addonName": "redis-oss",
+  "version": "v2.7.0",
+  "releaseDate": "2022-05-13",
+  "notes": [
+    {
+      "label": ["N/A"],
+      "text": "N/A"
+    }
+  ]
+}
