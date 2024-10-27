@@ -1,0 +1,73 @@
+{
+  "addonName": "redis-oss",
+  "version": "v0.71.0",
+  "releaseDate": "2024-01-12",
+  "notes": [
+  
+      {
+        "label": ["kind/feature", "impact/medium"],
+        "text": "Added support for using the configuration reloader TLS and basic authentication with Prometheus/Alertmanager webConfigFile."
+      },
+      {
+        "label": [
+          "kind/feature",
+          "impact/medium"
+        ],
+        "text": "Added support for OpenStack Service Discovery to the ScrapeConfig CRD."
+      },
+      {
+        "label": [
+          "kind/feature",
+          "impact/medium"
+        ],
+        "text": "Added support for all settings of the Kubernetes Service Discovery to the ScrapeConfig CRD."
+      },
+      {
+        "label": [
+          "kind/feature",
+          "impact/medium"
+        ],
+        "text": "Added support for proxy settings to the ScrapeConfig CRD."
+      },
+      {
+        "label": [
+          "kind/feature",
+          "impact/medium"
+        ],
+        "text": "Added the enableHTTP2 field to remote-write configuration."
+      },
+      {
+        "label": [
+          "kind/feature",
+          "impact/medium"
+        ],
+        "text": "Added .spec.maximumStartupDurationSeconds to the Prometheus and PrometheusAgent CRDs."
+      },
+      {
+        "label": ["kind/feature", "impact/medium"],
+        "text": "Added the ability to emit events for invalid configurations in the Prometheus Operator. The operator now generates Kubernetes events when a resource is rejected due to an invalid configuration."
+      },
+      {
+        "label": [
+          "kind/feature",
+          "impact/medium"
+        ],
+        "text": "Added additionalLabels field to topology spread constraints for Prometheus and PrometheusAgent CRD."
+      },
+      {
+        "label": [
+          "kind/feature",
+          "impact/medium"
+        ],
+        "text": "Added .spec.clusterLabel to the Alertmanager CRD."
+      }
+      {
+        "label": [
+          "kind/feature",
+          "impact/medium"
+        ],
+        "text": "Added prometheus_operator_status_update_errors_total and prometheus_operator_status_update_operations_total metrics."
+      }
+    
+  ]
+}
