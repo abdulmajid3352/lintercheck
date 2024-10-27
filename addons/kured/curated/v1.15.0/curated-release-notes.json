@@ -1,0 +1,23 @@
+{
+    "addonName": "kured",
+    "version": "v1.15.0",
+    "releaseDate": "2024-01-17",
+    "notes": [
+        {
+            "label": ["kind/breaking-change", "kind/upgrade-consideration", "impact/high"],
+            "text": "Kured's reboot-mode changes require updating the full YAML manifest, not just the version. Two variants are now available: `kured-ds.yaml` (old reboot-command) and `kured-ds-signal.yaml` (new reboot-signal with reduced permissions)."
+          },
+          {
+            "label": ["kind/feature", "impact/high"],
+            "text": "Introduced a feature with a `--reboot-method` flag, offering 'command' and 'signal' options, enabling non-privileged mode for kured pods using signals to reboot nodes."
+          },
+          {
+            "label": ["kind/feature", "impact/medium"],
+            "text": "Introduced a `--drain-delay` flag to delay node draining, allowing time for load balancer controllers to remove nodes from traffic flow before draining begins."
+          },
+          {
+            "label": ["kind/upgrade-consideration", "impact/high"],
+            "text": "The daemon image includes k8s.io/{client-go, kubectl} version 1.29.x for managing locks and draining nodes, ensuring compatibility with Kubernetes versions 1.28.x to 1.30.x."
+          }
+    ]
+}
