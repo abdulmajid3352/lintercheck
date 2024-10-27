@@ -1,0 +1,11 @@
+{
+  "addonName": "datadog-agent",
+  "version": "v7.55.3",
+  "releaseDate": "2024-08-05",
+  "notes": [
+    {
+      "label": ["N/A"],
+      "text": "N/A"
+    }
+  ]
+}

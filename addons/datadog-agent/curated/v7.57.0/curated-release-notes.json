@@ -1,0 +1,315 @@
+{
+  "addonName": "datadog-agent",
+  "version": "v7.57.0",
+  "releaseDate": "2024-09-09",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue where ECS Fargate deployments in v7.57.0 caused increased RAM and CPU usage."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a --json option to the agent diagnose command for JSON output."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for device metadata integration."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a securityContext option for initContainers in Kubernetes clusters with a Restricted Pod Security Standard."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a kube_runtime_class tag to Kubernetes pod and container metrics."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Exposed the get_host_tags function to Python checks via datadog_agent.get_host_tags."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Implemented a static allowlist for Kubernetes events, enabled when filtering_enabled is set to true."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Introduced a new launcher for handling logs from integrations."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added reverse DNS enrichment of private IP addresses to NDM NetFlow."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled service inference by default on Windows."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Turned on Orchestrator Explorer by default in the core agent."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added source_host tag to TCP/UDP logs for better log origin tracking."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for handling TCP/UDP logs in the containerized agent."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed custom HTTP client configuration for trace-agent, primarily for OpenTelemetry."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added default UDS listeners for traces and dogstatsd, improving Single Step APM Instrumentation onboarding."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "APM stats aggregation now uses _dd.base_service tag for internal service overrides and peer tags."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Improved IP address quantization on peer tags for better stats aggregation."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added option to disable HTTP receiver in trace-agent for OpenTelemetry extensions."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added options to collect BGP neighbors and cloud application metrics from Cisco SD-WAN."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature to report Kubernetes event hostnames based on related pods."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Introduced a parser for extracting tags from integration logs."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added External Data environment variable injection for Origin Detection in Admission Controller."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature to set default limit of 10,000 network traffic paths, configurable by the user."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled language detection on the core Agent without gRPC server."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added hostname and extra tags to CollectorECSTask and collected system info for Pods and ECS Tasks."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Implemented API for Python checks to send logs."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Allowed tagging of interface metrics with user-defined tags."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed runtime config sync for Datadog Agent services, ensuring all services read environment variables from /etc/datadog-agent/environment."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed accuracy of container.net.* metrics on Linux, preventing incorrect values for containers in host networks and shared network namespaces."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed duplicate logging in Process Agent's Enabled() method."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a kubelet check bug that incorrectly reported kubernetes.kubelet.container.log_filesystem.used_bytes for excluded/non-existing containers."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in Windows driver installation preventing rollback on failure."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed incorrect durations for Oracle cloud databases."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed JSON parsing in manual checks for container and process discovery."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed pod status for pods with native sidecars."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a regression causing Agent start failures on systems with SysVinit."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed issue with incorrect HTTP decoder count in APM when setting GOMAXPROCS to milli-cpu values."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added metrics origins for the vLLM and AWS Neuron integrations."
+    },
+    {
+      "label": [
+        "kind/deprecation",
+        "impact/medium"
+      ],
+      "text": "Added deprecation warnings for process checks in the Process Agent on Linux, preparing for future deprecation of process and container collection."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for activating Continuous Profiling in the Cluster Agent using Admission Controller."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "The orchestrator check now collects LimitRange and StorageClass resources."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Updated the auto-instrumentation webhook (beta) with a new injector library."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where some Kubernetes events were emitted without a timestamp, causing them to be dropped."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed APIServer error logs when the external metrics endpoint is activated."
+    }
+  ]
+}

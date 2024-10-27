@@ -1,0 +1,15 @@
+{
+  "addonName": "envoy",
+  "version": "v1.24.11",
+  "releaseDate": "2023-10-10",
+  "notes": [
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "impact/high"],
+      "text": "Added a runtime flag http.max_requests_per_io_cycle to set the limit on the number of HTTP requests processed from a single connection in a single I/O cycle. Requests exceeding this limit are processed in subsequent cycles, mitigating CPU starvation by preventing high-traffic connections from monopolizing resources and allowing other connections to make progress. This limit can be set to 1 to manage abusive HTTP/2 or HTTP/3 connections. By default, this limit is disabled."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "impact/high"],
+      "text": "Enhanced HTTP/2 and HTTP/3 handling to close connections that prematurely reset streams. The runtime key overload.premature_reset_min_stream_lifetime_seconds determines the interval (default 1 second) for when a received stream reset is considered premature. The key overload.premature_reset_total_stream_count (default 500) sets the number of requests needed before applying the check for premature resets. Connections will be disconnected if more than 50% of resets are considered premature. Setting the runtime key envoy.restart_features.send_goaway_for_premature_rst_streams to false disables this check entirely."
+    }
+  ]
+}

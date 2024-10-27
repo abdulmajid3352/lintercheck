@@ -1,0 +1,15 @@
+{
+  "addonName": "envoy",
+  "version": "v1.24.2",
+  "releaseDate": "2023-02-07",
+  "notes": [
+    {
+      "label": ["kind/bug-fix", "impact/high"],
+      "text": "Fixed a crash that could occur when the optional engine_type is not provided in regex configurations."
+    },
+    {
+      "label": ["kind/feature", "impact/medium"],
+      "text": "Added attributes for looking up xDS configuration information, enhancing the ability to query and understand xDS settings."
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "addonName": "datadog-agent",
+  "version": "v7.56.0",
+  "releaseDate": "2024-08-21",
+  "notes": [
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Changed the default bind address in OTLP ingest from 0.0.0.0 to localhost."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature allowing the core Agent to support multiple configuration files, with the -E flag used to load additional configuration files sequentially after datadog.yaml."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added full support for CIS Amazon Linux 2 and 2023 Benchmarks in CSPM."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for tracking and reporting failed TCP connections to the Datadog backend (disabled by default)."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature to reduce pressure on etcd by introducing the use_apiserver_cache option in the kubernetes_state_metrics check (requires Kubernetes 1.19+)."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added obfuscation support for OpenSearch statements in span metadata, enabled by default."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added configuration kubernetes_events_source_detection.enabled to detect the source of Kubernetes events based on controller names."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Introduced bundle_unspecified_events configuration for Docker and Kubernetes apiserver integrations to manage unbundling and bundling of events based on collected and filtered event types."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "The Agent will now ignore empty configuration files in conf.d, preventing issues during deployment with provisioning systems."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Improved handling of SERVICE_START_PENDING and SERVICE_STOP_PENDING states in Windows Agent service transitions."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature in the OOM kill check to capture OOM score and score adjustment of killed processes."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enhanced the Oracle integration to auto-adjust SQL substring size to better handle multi-byte character sets."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled zstd compression by default on trace payloads in APM."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added kubernetes_persistent_volume_claims_as_tags configuration to allow disabling PersistentVolumeClaim for Kubernetes resources."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Set the cloud-provided hostname as default when running the Agent in AKS."
+    },
+    {
+      "label": [
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated DD_APM_MAX_TPS in favor of DD_APM_TARGET_TPS for more accurate trace rate configuration."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a Windows-only bug with ICMP packet size in the pro-bing library."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed ExtraTags mapping for CollectorManifest."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Re-enabled checks metadata printing in the datadog-agent status collector section."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed OTLP status output not being displayed in the GUI."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed oracle.tablespace.offline metric to emit 1 when tablespace is offline."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed probabilistic sampling configuration display in the Agent status for APM."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed an issue where file tailing position was always set to the beginning, now allowing explicit starting position."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Reduced the idle timeout for Datadog public endpoints from 90 to 30 seconds."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Added rollback properties for services and drivers in Windows to ensure proper uninstallation or rollback after installation or upgrade failure."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Disabled the default injection of the .NET profiler dependency for Kubernetes auto-instrumentation."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Marked the NetworkPolicy collector as stable in the Cluster Agent."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled automatic language detection in the injected agent sidecar on EKS Fargate when APM SSI is enabled (available for users using the admission controller for sidecar injection)."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature where the orchestrator now scrubs sensitive data from probes in pod specifications."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where the external metrics server sometimes returned outdated metrics as valid if they had not been updated within the configured external_metrics_provider.max_age. Added a new configuration, external_metrics_provider.query_validity_period, set to 30 seconds by default, to account for the delay between metrics resolution and querying by autoscaling controllers."
+    }
+  ]
+}

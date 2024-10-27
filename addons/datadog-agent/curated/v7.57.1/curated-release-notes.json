@@ -1,0 +1,21 @@
+{
+  "addonName": "datadog-agent",
+  "version": "v7.57.1",
+  "releaseDate": "2024-09-18",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a bug in APM where the trace-agent now logs an error instead of crashing when the UDS listener fails to be created."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a memory leak caused by the container check."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "addonName": "envoy",
+  "version": "v1.25.9",
+  "releaseDate": "2023-07-26",
+  "notes": [
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "impact/high"],
+      "text": "Envoy will now lowercase scheme values by default for consistency. This behavioral change can be temporarily reverted by setting the runtime guard envoy.reloadable_features.lowercase_scheme to false."
+    }
+  ]
+}

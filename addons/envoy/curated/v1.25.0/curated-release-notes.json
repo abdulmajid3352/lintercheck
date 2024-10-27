@@ -1,0 +1,203 @@
+{
+  "addonName": "envoy",
+  "version": "v1.25.0",
+  "releaseDate": "2023-01-18",
+  "notes": [
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Moved the strict_dns, original_dst, logical_dns, static, and eds clusters to extensions. If you use these clusters and override extensions_build_config.bzl, you will now need to include them explicitly."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed the c-ares and apple resolvers as required extensions. Envoy now creates DNS resolvers only when necessary (e.g., for logical DNS clusters), so these resolvers are no longer required by default. If your Envoys perform DNS resolution and override extensions_build_config.bzl, you will need to explicitly include c-ares or the apple resolver."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Fixed a bug in listeners where updates to fields like transparent, freebind, tcp_fast_open_queue_length, or socket_options were previously ignored. Now, when these fields are updated, a new socket will be created for the listener with the updated values if enable_reuse_port is true. If enable_reuse_port is false, the update will be rejected. This behavior can be reverted by setting the runtime flag envoy.reloadable_features.enable_update_listener_socket_options to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Updated load balancing to ensure that when active health checking is enabled per cluster, slow start calculations begin after the first passing health check. The cluster membership duration condition has been removed from the slow start calculation, and endpoints can now re-enter slow start on each unhealthy to healthy transition if active health checking is configured per cluster."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed ext_authz metric tag extraction for stats in HTTP, ensuring stat_prefix is correctly extracted. The Prometheus metric name has changed from envoy_http_ext_authz_prefixval_denied{} to envoy_http_ext_authz_denied{envoy_ext_authz_prefix=\"prefixval\"}, with envoy_cluster_X_ext_authz_Y_denied following the same pattern."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a completion callback to the updateHeaders interface in cache_filter. External cache implementations should be updated to match this new interface. Refer to changes in simple_http_cache in PR #23666 for an example."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/medium"
+      ],
+      "text": "Changed the API path of the work-in-progress extension cache_filter from api/extensions/cache/simple_http_cache to api/extensions/http/cache/simple_http_cache, and moved the source code to match the extension category."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for Thrift connection draining in configuration. This feature can be disabled by setting the runtime guard envoy.reloadable_features.thrift_connection_draining to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/medium"
+      ],
+      "text": "Reverted the behavioral change that prevented CONNECT and upgrade requests over HTTP/1.1 from delaying close. Delay close for upgrades can be reinstated by setting envoy.reloadable_features.no_delay_close_for_upgrades to true."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Modified the HTTP filter to avoid re-entrant filter invocations when executing decoder filters if a local reply is generated via the filter chain. This change can be temporarily reverted by setting the runtime flag envoy_reloadable_features_http_filter_avoid_reentrant_local_reply to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Changed StreamEncoderFilter::encode1xxHeaders to use its own enum class Http::Filter1xxHeadersStatus, rather than the general headers enum class, which lacked support for most use cases. This update also ensures encode1xxHeaders sends local replies without trailing 1xx headers afterward."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Adjusted the refetch time for remote_jwks in jwt_authn with the async_fetch feature. For successful fetches, the system now refetches 5 seconds before the JWKS cache duration expires. For failed fetches, the refetch time can be specified using failed_refetch_duration, which defaults to 1 second."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Updated the oauth2 filter so that requests matching the passthrough header now have their own metric oauth_passthrough and are no longer included in oauth_success. Additionally, query parameters in the authorization_endpoint are now preserved."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Expanded the rate limit feature by adding MONTH and YEAR as units of time for rate limiting."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Modified the router so that virtual cluster statistics are no longer created for routes without any virtual_clusters. Previously, statistics were created for a catch-all virtual cluster but were never updated."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added idle_timeout to the TCP connection pool to support per-client idle timeouts. This timeout is guarded by envoy.reloadable_features.tcp_pool_idle_timeout and defaults to 10 minutes if the runtime flag is enabled."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for using intermediate CAs as trusted CAs in TLS. Peer certificates issued by an intermediate CA will now be trusted by building a valid partial chain, even without trusting the ancestor root CA. This change can be reverted using the runtime flag envoy.reloadable_features.enable_intermediate_ca."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Updated upstream behavior to use detailed health status for overriding host selection. This behavior can be reverted by setting the runtime flag envoy.reloadable_features.validate_detailed_override_host_statuses to false."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash that could occur when the Skywalking tracer is enabled and an illegal sw8 header is received."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash that could occur when the optional engine_type is not provided in regex configurations."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.top_level_ecds_stats and associated legacy code paths from ECDS."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.support_locality_update_on_eds_cluster_endpoints and associated legacy code paths from EDS."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.allow_adding_content_type_in_local_replies and associated legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.allow_upstream_inline_write and associated legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.append_or_truncate and associated legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.deprecate_global_ints and associated legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.http_100_continue_case_insensitive and associated legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.override_request_timeout_by_gateway_timeout and associated legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.skip_delay_close and associated legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.use_new_codec_wrapper, envoy.reloadable_features.append_to_accept_content_encoding_only_once, and envoy.reloadable_features.http1_lazy_read_disable along with their legacy code paths."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.strict_check_on_ipv4_compat and associated legacy code paths from the listener."
+    },
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "kind/deprecation", "impact/high"],
+      "text": "Removed envoy.reloadable_features.do_not_await_headers_on_upstream_timeout_to_emit_stats and associated legacy code paths from the router."
+    }
+  ]
+}

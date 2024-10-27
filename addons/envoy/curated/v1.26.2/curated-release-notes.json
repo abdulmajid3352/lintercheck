@@ -1,0 +1,21 @@
+{
+  "addonName": "envoy",
+  "version": "v1.26.2",
+  "releaseDate": "2023-06-05",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "boringssl: Fixed the crash that occurs when contrib is compiled with boringssl=fips defined."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "ext_authz: Fixed a bug where the ext_authz filter would ignore the request body when the pack_as_bytes is set to true and HTTP authorization service is configured."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "addonName": "datadog-agent",
+  "version": "v7.56.1",
+  "releaseDate": "2024-08-29",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a nil pointer dereference issue in the Tailer.DidRotate function that was causing the Agent to panic."
+    }
+  ]
+}

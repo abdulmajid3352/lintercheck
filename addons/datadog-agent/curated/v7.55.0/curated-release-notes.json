@@ -1,0 +1,315 @@
+{
+  "addonName": "datadog-agent",
+  "version": "v7.55.0",
+  "releaseDate": "2024-07-11",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where the Datadog agent service failed to start on systems using SysVInit, showing a datadog-agent: unrecognized service error."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature to enable Data Jobs Monitoring with the new parameter djm_config.enabled."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature to configure Lambda Logs API buffering using DD_LOGS_CONFIG_LAMBDA_LOGS_BUFFERING_TIMEOUT_MS, DD_LOGS_CONFIG_LAMBDA_LOGS_BUFFERING_MAX_BYTES, and DD_LOGS_CONFIG_LAMBDA_LOGS_BUFFERING_MAX_ITEMS."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a new service_discovery check, currently supported only on Linux."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added an API in pkg/trace/stats to convert eligible OTLP spans for APM stats concentrator."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added experimental support for SBOM generation on Windows."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Exposed MongoDB command string obfuscation to Python checks using the new datadog_agent.obfuscate_mongodb_string method."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature to traceroute network connections in the network path."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Implemented OpenTelemetry SDK resource attributes as unified service tags."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "CSM now captures and generates events based on IMDS traffic."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for kubernetes_namespace_annotations_as_tags to enrich tagging based on namespace annotations."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a feature to display device profile parsing errors in the Agent status."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added Go execution traces to the Agent Flare."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Introduced the port conflict suite to the Agent diagnose command for MacOS."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added an option to collect hardware status from Cisco SD-WAN in NDM."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed concurrency handling issues in the Agent restart-service CLI command during installation or upgrade."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Improved concurrency handling for Agent start/restart during installation or upgrade."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for parsing pool and peer directives in locally defined configuration files in the NTP check."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Improved error handling in the Lambda Logs API handler."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the kube_service tag to pods running with hostNetwork: true."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a new -l flag to the datadog-agent status command to print all available sections."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Improved error messages in the NTP check to show specific failing hosts."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Stored SNMP device tags on disk to prevent data loss on agent restarts."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/medium"
+      ],
+      "text": "Updated the Datadog agent container image to use Ubuntu 24.04 as the base image."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Improved security authorization flow in the GUI."
+    },
+    {
+      "label": [
+        "kind/deprecation",
+        "impact/medium"
+      ],
+      "text": "Deprecated the datadog-agent status component [section] in favor of datadog-agent status [section]."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in permission validation for the secret backend helper."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Renamed the APM Stats type is_trace_root flag to trilean."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in go-sqllexer that caused incorrect collection of table names in CREATE TABLE IF NOT EXISTS statements."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Corrected the log level for the trace writer log message."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in Agent 7.51 for Windows that caused a panic during shutdown if the etwtracer component failed to initialize."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed issues where datadog-agent status and datadog-agent flare commands could hang while reaching other agent processes."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed incorrect JMX integration issue reporting in the Agent."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a leader election error when manually running checks from the Cluster Agent."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed missing query metrics in the Oracle integration."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed metric reporting for process checks in the core Agent."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Corrected the status date computation for every request."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where containerd container metrics and tags were not collected for containers with arbitrary container IDs."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added metrics origins for the most recent Python integrations."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for namespace labels as tags on Kubernetes events."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added reason:backofflimitexceeded,deadlineexceeded to the kubernetes_state.job.failed metric to help users understand job failures."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Reduced memory usage for storing tags."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/medium"
+      ],
+      "text": "Updated the Datadog cluster-agent container image to use Ubuntu 24.04 as the base image."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug where the Cluster Agent failed to collect all tags in large clusters when cluster_agent.collect_kubernetes_tags was enabled."
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "addonName": "envoy",
+  "version": "v1.28.0",
+  "releaseDate": "2023-10-19",
+  "notes": [
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Enabled the Universal Header Validator (UHV) with a new runtime flag envoy.reloadable_features.enable_universal_header_validator. This flag is off by default and is only available when the ENVOY_ENABLE_UHV build flag is enabled."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Added caching of EDS (Endpoint Discovery Service) assignments when used with ADS (Aggregated Discovery Service). Envoy now waits for an EDS assignment until initial_fetch_timeout times out and then applies the cached assignment. This feature is disabled by default and can be enabled by setting the runtime flag envoy.restart_features.use_eds_cache_for_ads to true."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Added a runtime flag http.max_requests_per_io_cycle to set a limit on the number of HTTP requests processed from a single connection in one I/O cycle. This helps mitigate CPU starvation caused by high-volume connections. By default, this limit is disabled."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Introduced the runtime flag envoy.reloadable_features.no_downgrade_to_canonical_name to disable the downgrade to canonical names during per filter config searching."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Switched the HTTP/1.1 parser from http_parser to BalsaParser. This change improves performance but can be reverted by setting the runtime flag envoy.reloadable_features.http1_use_balsa_parser to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Changed the behavior of JWT extraction to pass the entire token for validation instead of cutting it at non-Base64 characters. This change can be temporarily reverted with the runtime guard envoy.reloadable_features.token_passed_entirely set to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Updated UDP proxy behavior so that upstream host selection and socket creation only occur after processing all onNewSession() calls for session filters. This change affects how upstream host health checks and per-packet load balancing are handled when session filters are present."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Enabled zone-aware routing even when the originating and upstream clusters have different numbers of zones. Previously, this scenario disabled zone-aware routing. This behavior can be reverted by setting envoy.reloadable_features.enable_zone_routing_different_zone_counts to false. Additionally, this update ensures correct zone-aware routing even when the originating and upstream clusters have different zone sets, with the option to revert using envoy.reloadable_features.locality_routing_use_new_routing_logic."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Emitted gRPC logs now use both downstream and upstream HTTP filter states to find keys configured in filter_state_objects_to_log."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Changed the alternate protocols cache filter to get the cache from cluster config rather than filter config, allowing one downstream HTTP filter to be used with multiple clusters with different caches. This can be reverted by setting runtime guard envoy.reloadable_features.use_cluster_cache_for_alt_protocols_filter to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Removed appending of the local address to the x-forwarded-for header when sending an HTTP (not gRPC) auth request. This behavior can be reverted by setting runtime flag envoy.reloadable_features.ext_authz_http_send_original_xff to false."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Removed query parameters without dropping repeated query parameter keys when duplicates are present."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Ignored mode_override except when waiting for header responses in ext_proc processing."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Aborted the HTTP filter chain iteration when the stream is reset by resetStream() of filter callbacks. This behavior can be reverted by setting runtime flag envoy.reloadable_features.abort_filter_chain_on_stream_reset to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Changed the proxy status for UpstreamRequestTimeout to HttpResponseTimeout. This can be disabled by the runtime guard envoy.reloadable_features.proxy_status_upstream_request_timeout."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Changed HMAC cookie encoding to base64-encoded only in the OAuth2 filter. This change can be reverted temporarily by setting runtime guard envoy.reloadable_features.hmac_base64_encoding_only to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the configuration field always_consume_default_token_bucket to allow setting if the default token bucket should always be consumed or only when there is no matching descriptor."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Ensured nodes stay in a healthy state for at least one check interval period before the ejection time multiplier is decremented."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Respected max_ejection_percent in outlier detection, which can be reverted by setting runtime guard envoy.reloadable_features.check_mep_on_first_eject to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled QUICHE request and response headers validation. This behavior can be reverted by setting runtime flag envoy.reloadable_features.FLAGS_envoy_quic_reloadable_flag_quic_act_upon_invalid_header to false."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/medium"
+      ],
+      "text": "Rejected Redis network filter configurations with connection_rate_limit_per_sec set to 0, enforcing a minimum value greater than 0."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled copying of response_code from upstream stream_info onto downstream stream_info, which can be reverted by setting runtime guard envoy.reloadable_features.copy_response_code_to_downstream_stream_info to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enabled environment_variable in router direct response."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Changed the SSL failure reason format in SSL socket for improved handling, which can be disabled by setting runtime guard envoy.reloadable_features.ssl_transport_failure_reason_format."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Updated the TLS inspector listener filter’s security posture to be robust against untrusted downstreams and upstreams."
+    },
+    {
+      "label": [
+        "kind/deprecation",
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Deprecated the legacy upstream load balancer code path. Revert if issues arise by setting runtime flag envoy_reloadable_features_convert_legacy_lb_config to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Set the lower bound of fill_rate to once per year, automatically adjusting values lower than this limit."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a bug in Extension Discovery Service (ECDS) that caused a crash when used with upstream HTTP filters."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash on some versions of macOS when using a listener on a Unix-domain socket."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.restart_features.use_apple_api_for_dns_lookups and legacy code paths from DNS."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.http_ext_auth_failure_mode_allow_header_add runtime option and substituted it with the failure_mode_allow_header_add configuration flag in ext_authz."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features_successful_active_health_check_uneject_host runtime option and substituted it with the outlier_detection.successful_active_health_check_uneject_host outlier detection configuration flag in health checks."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy_reloadable_features_http_filter_avoid_reentrant_local_reply runtime flag and legacy code paths from HTTP filters."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.enable_update_listener_socket_options runtime flag and legacy code paths from the listener."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.reject_require_client_certificate_with_quic and legacy code paths from QUIC."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.restart_features.remove_runtime_singleton and legacy code paths from runtime."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy_reloadable_features_append_query_parameters_path_rewriter and legacy code paths from runtime."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed runtime key envoy.reloadable_features.tcp_pool_idle_timeout from TCP."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy_reloadable_features_finish_reading_on_decode_trailers runtime flag and legacy code paths from TCP proxy."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.restart_features.explicit_wildcard_resource and legacy code paths from xDS."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a new skip_exit query parameter to the /drain_listeners endpoint, allowing the option to skip exiting after the drain period."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added the capability to defer the broadcasting of certain cluster (CDS, EDS) updates to worker threads from the main thread. This optimization can save significant memory in scenarios with many worker threads and large amounts of configuration that are mostly unused. This feature is controlled by the enable_deferred_cluster_creation setting."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a fallback mechanism to support private key providers by falling back to BoringSSL’s TLS handshake if the private key provider is unavailable, such as when required hardware capabilities are missing. The fallback behavior is controlled by a setting, with the default value being false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated the runtime key overload.global_downstream_max_connections in favor of the downstream connections monitor in the listener."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated start_child_span in tracing, replacing it with spawn_upstream_span. Use the new field to control whether to create a separate upstream span for upstream requests."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated OpenTracing in tracing, which will be removed in version 1.30, as the upstream project has been abandoned."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated OpenCensus in tracing, which will be removed in version 1.30, as the upstream project has been abandoned."
+    }
+  ]
+}

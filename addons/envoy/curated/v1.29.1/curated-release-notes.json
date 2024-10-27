@@ -1,0 +1,56 @@
+{
+  "addonName": "envoy",
+  "version": "v1.29.1",
+  "releaseDate": "2024-02-10",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in HTTP when idle and per-try timeouts occurred within the backoff interval."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in the proxy protocol when Envoy was configured for PROXY protocol on both a listener and cluster, and the listener received a PROXY protocol header with address type LOCAL (typically used for health checks)."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in proxy protocol due to an uncaught exception when the operating system did not support an address type (such as IPv6) received in a proxy protocol header. Connections will now be dropped or reset."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in proxy protocol where TLVs with non-UTF8 characters were inserted as protobuf values into filter metadata, circumventing ext_authz checks when failure_mode_allow was set to true."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in TLS due to an uncaught exception when the operating system did not support an address type (such as IPv6) received in an mTLS client cert IP SAN. These SANs will now be ignored, specifically when using the formatter %DOWNSTREAM_PEER_IP_SAN%."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for configuring resource detectors on the OpenTelemetry tracer in tracing."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a race condition in Postgres proxy that could result when upstream servers refused to switch to TLS/SSL. This fix first appeared in the v1.29.0 release."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "addonName": "envoy",
+  "version": "v1.30.3",
+  "releaseDate": "2024-06-26",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Bumped the version of Datadog to resolve a crashing bug present in earlier versions of the library."
+    }
+  ]
+}

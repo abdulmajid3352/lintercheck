@@ -1,0 +1,15 @@
+{
+  "addonName": "envoy",
+  "version": "v1.27.4",
+  "releaseDate": "2024-04-04",
+  "notes": [
+    {
+      "label": ["kind/breaking-change", "kind/upgrade-consideration", "impact/high"],
+      "text": "Discarded the Host header if the :authority header was received in HTTP/2, bringing Envoy into compliance with RFC 9113 Section 8.3.1. This behavioral change can be reverted by setting the runtime flag envoy.reloadable_features.http2_discard_host_header to false."
+    },
+    {
+      "label": ["kind/feature", "impact/medium"],
+      "text": "Added an off-by-default runtime flag envoy.reloadable_features.google_grpc_disable_tls_13 to disable TLSv1.3 usage by the gRPC SDK for google_grpc services."
+    }
+  ]
+}

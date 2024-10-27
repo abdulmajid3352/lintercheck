@@ -1,0 +1,262 @@
+{
+  "addonName": "envoy",
+  "version": "v1.29.0",
+  "releaseDate": "2024-01-16",
+  "notes": [
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Added the issuer in certificate_properties to the gRPC access log service (ALS) in access logs."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Handled empty response bodies in grpc_http1_reverse_bridge. This change may affect clients that expect the filter to crash on empty responses. The behavior can be temporarily reverted by setting the runtime guard envoy.reloadable_features.grpc_http1_reverse_bridge_handle_empty_response to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Flipped the runtime flag envoy.reloadable_features.no_downgrade_to_canonical_name to true, disabling name downgrading in per-filter config searching by default. This behavior can be temporarily reverted by setting the flag to false. For more details and examples, see the documentation."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Removed the hop-by-hop TE header from downstream request headers in HTTP. This change can be temporarily reverted by setting envoy.reloadable_features.sanitize_te to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Changed the default value of envoy.reloadable_features.http2_use_oghttp2 to true, updating the codec used for HTTP/2 requests and responses. This behavior can be reverted by setting the feature to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Discarded the Host header if the :authority header was received in HTTP/2 to comply with RFC 9113, Section 8.3.1. This change can be reverted by setting the runtime flag envoy.reloadable_features.http2_discard_host_header to false."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Reverted the deprecation of the runtime key overload.global_downstream_max_connections until the downstream connections monitor extension becomes stable in the listener."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Fixed tag extraction for the stats connection_limit so that stat_prefix is properly extracted. This changes the Prometheus name from envoy_connection_limit_myprefix_limited_connections{} to envoy_connection_limit_limited_connections{envoy_connection_limit_prefix=\"myprefix\"}."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Fixed tag extraction for the stats dns_filter so that stat_prefix is properly extracted. This changes the Prometheus name from dns_filter_myprefix_local_a_record_answers{} to dns_filter_local_a_record_answers{envoy.dns_filter_prefix=\"myprefix\"}."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Fixed tag extraction for the stats rbac so that stat_prefix is properly extracted. This changes the Prometheus name from envoy_myprefixrbac_allowed{} to envoy_rbac_allowed{envoy_rbac_prefix=\"myprefix\"}."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support in AWS to use the HTTP async client to fetch credentials from EC2 instance metadata and ECS task metadata providers instead of using libcurl, which is deprecated. By default, this behavior is disabled. To enable, set envoy.reloadable_features.use_http_client_to_fetch_aws_credentials to true."
+    },
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Replaced Protobuf hashing with a dedicated deterministic hashing algorithm in config parsing and the HTTP cache filter. This improves hash performance by 2-10x depending on message structure, reducing config update or startup time by 10-25%. The new algorithm will cause a one-time cache flush on update for users with a persistent cache. Enable this by setting envoy.restart_features.use_fast_protobuf_hash to true."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Updated the stats prefix of the generic proxy from <stats_prefix> to generic_proxy.<stats_prefix>."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Applied header mutations across all specified levels (route, virtual host, and route table) when per-route configuration is set at multiple levels. The default order of application is from least to most specific, with the most specific level winning."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Flipped the runtime guard envoy.reloadable_features.defer_processing_backedup_streams to be on by default in HTTP/2. This feature improves flow control within the proxy by deferring work on the receiving end if the other end is backed up."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added a new configuration field rate_limited_as_resource_exhausted in local rate limit, allowing rate limit gRPC responses to be set as RESOURCE_EXHAUSTED instead of the default UNAVAILABLE."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a race condition in DNS where multiple requests with the same authority header sent to Envoy could result in some requests receiving a 503 response with no_healthy_upstream. This fix is controlled by the runtime guard envoy.reloadable_features.dns_cache_set_first_resolve_complete, which defaults to true."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a bug in the buffer where the internal listener caused undefined behavior due to the unintended release of buffer memory."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a bug in Redis that caused a crash when an incoming Redis key did not match a prefix_route and catch_all_route was not defined."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the deprecated envoy.reloadable_features.format_ports_as_numbers runtime flag and legacy code path in access logs."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the deprecated envoy.reloadable_features.service_sanitize_non_utf8_strings runtime flag and legacy code path in gRPC."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.expand_agnostic_stream_lifetime and legacy code paths in HTTP."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.sanitize_original_path and legacy code paths in HTTP."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed envoy.reloadable_features.allow_compact_maglev and legacy code paths in Maglev."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the deprecated envoy.reloadable_features.ignore_optional_option_from_hcm_for_route_config runtime flag and legacy code path in the router."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the deprecated envoy.reloadable_features.prohibit_route_refresh_after_response_headers_sent runtime flag and legacy code path in the router."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Removed the deprecated envoy.reloadable_features.validate_detailed_override_host_statuses runtime flag and legacy code path in upstream."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for AWS common utility to fetch metadata credentials from AWS STS using WebIdentityToken. To enable this feature, set envoy.reloadable_features.use_http_client_to_fetch_aws_credentials to true, allowing the web identity credentials provider to use the HTTP async client for fetching credentials. This update moves away from the deprecated libcurl credentials fetcher, which is incompatible with the Grpc Credentials AWS IAM plugin."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Enhanced the set_metadata filter with support for injecting both typed and untyped dynamic metadata. This update also allows the configuration of multiple namespaces within a single filter and adds an option to overwrite existing metadata, which is opt-in. The untyped_metadata configuration can now be used with the set_metadata filter."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support in TCP Proxy to record latency in UpstreamTiming, measuring the time from the initial connection attempt to an upstream cluster until the connection is either successfully established or fails during initialization."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated metadata_namespace and value in set_metadata. Use the new field untyped_metadata to configure static metadata to inject."
+    },
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "kind/deprecation",
+        "impact/high"
+      ],
+      "text": "Deprecated Wasm-specific configuration attributes in favor of xDS attributes."
+    }
+  ]
+}

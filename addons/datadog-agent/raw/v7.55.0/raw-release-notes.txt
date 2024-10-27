@@ -1,0 +1,93 @@
+source: https://github.com/DataDog/datadog-agent/releases/tag/7.55.0
+
+# Agent
+
+### Known bug
+
+The `datadog-agent` service fails to start on systems using the [SysVInit](https://wiki.archlinux.org/title/SysVinit) init system, with a `datadog-agent: unrecognized service` error. See https://github.com/DataDog/datadog-agent/issues/27523 for details.
+
+### Prelude
+
+Release on: 2024-07-11
+
+-   Please refer to the [7.55.0 tag on integrations-core](https://github.com/DataDog/integrations-core/blob/master/AGENT_CHANGELOG.md#datadog-agent-version-7550) for the list of changes on the Core Checks
+
+### New Features
+
+-   Add new parameter `djm_config.enabled` to enable Data Jobs Monitoring
+-   You can now set the buffering configuration of Lambda Logs API using `DD_LOGS_CONFIG_LAMBDA_LOGS_BUFFERING_TIMEOUT_MS`, `DD_LOGS_CONFIG_LAMBDA_LOGS_BUFFERING_MAX_BYTES`, and `DD_LOGS_CONFIG_LAMBDA_LOGS_BUFFERING_MAX_ITEMS`.
+-   Adds the new service\_discovery check, which is currently only supported on Linux.
+-   APM: OTLP: Added an API in pkg/trace/stats that converts eligible OTLP spans to the input to APM stats concentrator.
+-   Experimental support of SBOM generation on Windows.
+-   Expose the Agent's MongoDB command string obfuscation to Python checks using the new <span class="title-ref">datadog\_agent.obfuscate\_mongodb\_string</span> method.
+-   \[network path\] Add feature to traceroute network connections.
+-   Implement OpenTelemetry SDK resource attributes as unified service rags.
+-   CSM captures and generates events based on IMDS traffic
+-   Add support for <span class="title-ref">kubernetes\_namespace\_annotations\_as\_tags</span>. This new option is equivalent to the existing <span class="title-ref">kubernetes\_namespace\_labels\_as\_tags</span>, but it considers namespace annotations instead of namespace labels. With this new option, users can enrich tagging based namespace annotations.
+
+### Enhancement Notes
+
+-   Add a section in the Agent status to show device profile parsing errors.
+-   Add Go execution traces to Agent Flare.
+-   Introducing the port conflict suite to the Agent diagnose command. Adding this for MacOS only first. Will incrementally add support for Linux and Windows. The Agent might need particular permissions to read information about processes using ports.
+-   Agents are now built with Go `1.21.11`.
+-   \[NDM\] Add option to collect hardware status from Cisco SD-WAN.
+-   Fix concurrency handling by Agent restart-service CLI command when the Agent starts and simultaneously restarts. The Agent may start and restart concurrently during the Agent's installation or upgrade.
+-   OOM kill events in the OOM kill check are now reported at ERROR level instead of INFO level.
+-   Improve concurrency handling for Agent start/simultaneous restart. Agent starting and restarting concurrent execution may happen during the Agent's installation or upgrade.
+-   Add support for parsing <span class="title-ref">pool</span> and <span class="title-ref">peer</span> directives in locally defined configuration files in the NTP check.
+-   Improve error handling in the Lambda Logs API handler not to ignore error details
+-   Improve NTP check log messages.
+-   Also add <span class="title-ref">kube\_service</span> tag to pods that run with <span class="title-ref">hostNetwork: true</span>.
+-   Added a new `-l` flag to the `datadog-agent status` command. This flag allows users to print all available sections.
+-   Improve NTP check error messages to show the specific hosts that are failing.
+-   Store SNMP device tags on disk to avoid losing them when the agent restarts.
+-   The Datadog agent container image is now using Ubuntu 24.04 noble as the base image.
+-   Improve GUI security authorization flow.
+
+### Deprecation Notes
+
+-   Deprecated `datadog-agent status component [section]` in favor of `datadog-agent status [section]`.
+
+### Security Notes
+
+-   Current GPG keys that are used to sign new releases of the Agent package are about to expire. Following our 2024 GPG key rotation plan, we rotated RPM and APT GPG keys.
+
+### Bug Fixes
+
+-   Fixes the validation of permissions for the secret backend helper.
+-   APM Stats type for is\_trace\_root flag is now renamed to trilean.
+-   \[DBM\] Bump go-sqllexer to 0.0.12 to fix a bug where table name is incorrectly collected on statement `CREATE TABLE IF NOT EXISTS`.
+-   Correct log level of trace writer log message
+-   Fix an issue introduced in Agent 7.51 for Windows that would cause a panic during Agent shutdown if the etwtracer component failed to initialize.
+-   Fixed an issue where the `datadog-agent status` and `datadog-agent flare` commands could hang while trying to reach other agent processes.
+-   Fix an issue where the Agent incorrectly reports JMX integrations as having issues.
+-   Fix leader election error when running checks manually from the Cluster Agent.
+-   \[oracle\] Fix missing query metrics.
+-   Fix metric reporting for process checks on the core Agent.
+-   Fix the status date so that it is computed for every request.
+-   Fix a bug where containerd container metrics and container tags were not being collected for containers with arbitrary container IDs.
+
+### Other Notes
+
+-   Added metrics origins for python integrations.
+-   Added metrics origins for the most recent python integrations.
+
+# Datadog Cluster Agent
+
+Released on: 2024-07-11 Pinned to datadog-agent v7.55.0: [CHANGELOG](https://github.com/DataDog/datadog-agent/blob/main/CHANGELOG.rst#7550).
+
+### New Features
+
+-   Add support for <span class="title-ref">kubernetes\_namespace\_annotations\_as\_tags</span>. This new option is equivalent to the existing <span class="title-ref">kubernetes\_namespace\_labels\_as\_tags</span>, but it considers namespace annotations instead of namespace labels. With this new option, users can enrich tagging based on namespace annotations.
+-   Support namespace labels as tags on kubernetes events.
+
+### Enhancement Notes
+
+-   Add `reason:backofflimitexceeded,deadlineexceeded` to the `kubernetes_state.job.failed` metric to help users understand why a job failed.
+-   Reduced the memory used to store the tags.
+-   The Datadog cluster-agent container image is now using Ubuntu 24.04 noble as the base image.
+
+### Bug Fixes
+
+-   Fixes an issue with large clusters where the Cluster Agent fails to collect all tags when <span class="title-ref">cluster\_agent.collect\_kubernetes\_tags</span> is enabled.

@@ -1,0 +1,11 @@
+{
+  "addonName": "envoy",
+  "version": "v1.23.9",
+  "releaseDate": "2023-04-26",
+  "notes": [
+    {
+      "label": ["kind/bug-fix", "impact/medium"],
+      "text": "Fixed a build issue to ensure FIPS compliance when using both FIPS mode and Wasm extensions (--define boringssl=fips and --define wasm=v8)."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "addonName": "envoy",
+  "version": "v1.23.2",
+  "releaseDate": "2022-10-18",
+  "notes": [
+    {
+      "label": ["kind/bug-fix", "impact/medium"],
+      "text": "Fixed a bug that caused response headers set by a Lua script to not be sent in the response."
+    }
+  ]
+}

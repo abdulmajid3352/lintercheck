@@ -1,0 +1,15 @@
+{
+  "addonName": "envoy",
+  "version": "v1.24.10",
+  "releaseDate": "2023-07-25",
+  "notes": [
+    {
+      "label": [
+        "kind/breaking-change",
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Changed the HTTP handling in Envoy to automatically lower case scheme values by default. This behavioral change ensures consistency but can be temporarily reverted by setting the runtime guard envoy.reloadable_features.lowercase_scheme to false."
+    }
+  ]
+}

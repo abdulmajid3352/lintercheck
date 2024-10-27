@@ -1,0 +1,14 @@
+{
+  "addonName": "envoy",
+  "version": "v1.27.5",
+  "releaseDate": "2024-04-18",
+  "notes": [
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a RELEASE_ASSERT issue that occurred when using auto_sni if the downstream request :authority header exceeded 255 characters, ensuring stable operation even with long authority headers."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+source: https://github.com/DataDog/datadog-agent/releases/tag/7.57.1
+
+# Agent
+
+## 7.57.1
+
+### Prelude
+
+Release on: 2024-09-17
+
+-   Please refer to the [7.57.1 tag on integrations-core](https://github.com/DataDog/integrations-core/blob/master/AGENT_CHANGELOG.md#datadog-agent-version-7571) for the list of changes on the Core Checks
+
+### Bug Fixes
+
+-   APM: When the UDS listener cannot be created on the trace-agent, the process will log the error, instead of crashing.
+-   Fixes memory leak caused by container check.
+
+# Datadog Cluster Agent
+
+## 7.57.1
+
+### Prelude
+
+Released on: 2024-09-17 Pinned to datadog-agent v7.57.1: [CHANGELOG](https://github.com/DataDog/datadog-agent/blob/main/CHANGELOG.rst#7571).

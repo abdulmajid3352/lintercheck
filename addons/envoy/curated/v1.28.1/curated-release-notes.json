@@ -1,0 +1,85 @@
+{
+  "addonName": "envoy",
+  "version": "v1.28.1",
+  "releaseDate": "2024-02-09",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Reverted the deprecation of the runtime key overload.global_downstream_max_connections until the downstream connections monitor extension becomes stable."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in the buffer where the internal listener caused undefined behavior due to the unintended release of buffer memory."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in HTTP when request idle and per-try timeouts occurred within the backoff interval."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in proxy protocol when Envoy was configured for PROXY protocol on both a listener and cluster, and the listener received a PROXY protocol header with address type LOCAL, typically used for health checks."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in proxy protocol due to an uncaught exception when the operating system did not support an address type (such as IPv6) received in a proxy protocol header. Connections will now be dropped or reset instead."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in proxy protocol where TLVs with non-UTF8 characters were inserted as protobuf values into filter metadata, circumventing ext_authz checks when failure_mode_allow was set to true."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a use-after-free bug in QUIC and HCM interaction during asynchronous certificates retrieval. The fix is guarded by the runtime envoy.reloadable_features.quic_fix_filter_manager_uaf."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a crash in TLS due to an uncaught exception when the operating system did not support an address type (such as IPv6) received in an mTLS client cert IP SAN. These SANs will now be ignored, specifically when using the formatter %DOWNSTREAM_PEER_IP_SAN%."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in tracing that caused the Datadog tracing extension to drop traces that should be kept based on an extracted sampling decision."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in tracing where Datadog spans tagged as errors did not have the appropriate error property set."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed a bug in tracing where child spans produced by the Datadog tracer had an incorrect operation name."
+    }
+  ]
+}

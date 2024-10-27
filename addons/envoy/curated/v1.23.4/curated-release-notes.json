@@ -1,0 +1,11 @@
+{
+  "addonName": "envoy",
+  "version": "v1.23.4",
+  "releaseDate": "2023-02-08",
+  "notes": [
+    {
+      "label": ["kind/bug-fix", "impact/high"],
+      "text": "Fixed a crash that could occur when the optional engine_type is not specified in regex configurations."
+    }
+  ]
+}

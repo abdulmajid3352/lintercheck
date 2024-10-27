@@ -1,0 +1,11 @@
+{
+  "addonName": "envoy",
+  "version": "v1.23.10",
+  "releaseDate": "2023-06-02",
+  "notes": [
+    {
+      "label": ["kind/bug-fix", "impact/high"],
+      "text": "Fixed the crash that occurs when contrib is compiled with boringssl=fips defined."
+    }
+  ]
+}

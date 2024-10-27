@@ -1,0 +1,19 @@
+{
+  "addonName": "envoy",
+  "version": "v1.23.7",
+  "releaseDate": "2023-04-05",
+  "notes": [
+    {
+      "label": ["kind/bug-fix", "impact/medium"],
+      "text": "Fixed an issue where Envoy, when configured with ext_authz, ext_proc, tap, ratelimit filters, and gRPC access log service, would generate an invalid protobuf message if an HTTP header with non-UTF-8 data was received. This caused errors in the receiving service when decoding the protobuf message. For ext_authz with failure_mode_allow: true, the request would be allowed, while other services could experience unforeseen errors, such as missing request logs. Envoy now sanitizes non-UTF-8 values in gRPC service calls, replacing invalid data with a '!' character. This behavior can be temporarily reverted by setting the runtime guard envoy.reloadable_features.service_sanitize_non_utf8_strings to false."
+    },
+    {
+      "label": ["kind/bug-fix", "impact/medium"],
+      "text": "Fixed a bug where x-envoy-original-path was not being sanitized when sent from untrusted users. This change enhances security by sanitizing the path to prevent potential misuse. The behavioral change can be temporarily reverted by setting envoy.reloadable_features.sanitize_original_path to false."
+    },
+    {
+      "label": ["kind/bug-fix", "impact/high"],
+      "text": "Fixed a bug where the OAuth2 filter would crash if it received a redirect URL without a state query parameter set."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "addonName": "envoy",
+  "version": "v1.23.12",
+  "releaseDate": "2023-07-25",
+  "notes": [
+    {
+      "label": ["N/A"],
+      "text": "N/A"
+    }
+  ]
+}

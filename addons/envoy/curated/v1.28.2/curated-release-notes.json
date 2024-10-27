@@ -1,0 +1,36 @@
+{
+  "addonName": "envoy",
+  "version": "v1.28.2",
+  "releaseDate": "2024-04-04",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/breaking-change",
+        "impact/high"
+      ],
+      "text": "Discarded the Host header if the :authority header was received in HTTP/2 to bring Envoy into compliance with RFC 9113, Section 8.3.1. This behavior can be reverted by setting the runtime flag envoy.reloadable_features.http2_discard_host_header to false."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/high"
+      ],
+      "text": "Enabled obsolete line folding in BalsaParser for behavior parity with http-parser, the previously used HTTP/1 parser."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed the JWT extractor in jwt_authn, which incorrectly concatenated headers with a comma, resulting in invalid tokens."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added an off-by-default runtime flag envoy.reloadable_features.google_grpc_disable_tls_13 to disable TLSv1.3 usage by the gRPC SDK for google_grpc services."
+    }
+  ]
+}
