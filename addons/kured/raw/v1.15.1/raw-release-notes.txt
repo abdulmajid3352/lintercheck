@@ -1,0 +1,25 @@
+source: https://github.com/kubereboot/kured/releases/tag/1.15.1
+## Build and Testing
+
+- update build-tools
+- build(deps): bump lycheeverse/lychee-action from 1.9.1 to 1.9.2
+- build(deps): bump alpine from 3.19.0 to 3.19.1
+- build(deps): bump lycheeverse/lychee-action from 1.9.2 to 1.9.3
+- build(deps): bump docker/metadata-action from 5.5.0 to 5.5.1 (#893)
+- build(deps): bump nick-invision/retry from 2.9.0 to 3.0.0 (#892)
+- build(deps): bump aquasecurity/trivy-action from 0.16.1 to 0.17.0
+- build(deps): bump helm/kind-action from 1.8.0 to 1.9.0
+- build(deps): bump github.com/prometheus/common from 0.46.0 to 0.47.0
+- build(deps): bump github.com/prometheus/common from 0.47.0 to 0.48.0
+- build(deps): bump github.com/prometheus/client_golang
+- build(deps): bump aquasecurity/trivy-action from 0.17.0 to 0.18.0 (#905)
+- build(deps): bump github.com/stretchr/testify from 1.8.4 to 1.9.0
+- build(deps): bump guyarb/golang-test-annoations from 0.7.0 to 0.8.0
+- build(deps): bump google.golang.org/protobuf from 1.32.0 to 1.33.0
+
+
+## Kubernetes Version Compatibility
+
+The daemon image contains a 1.28.x k8s.io/{client-go,kubectl} for the purposes of maintaining the lock and draining worker nodes. Kubernetes aims to provide forwards & backwards compatibility of one minor version between client and server, so this should work on 1.27.x, 1.28.x and 1.29.x
+
+Thanks a lot to everyone who contributed to kured since 1.15.0.
