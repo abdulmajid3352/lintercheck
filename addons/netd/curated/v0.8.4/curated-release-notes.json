@@ -1,0 +1,14 @@
+{
+  "addonName": "netd",
+  "version": "v0.8.4",
+  "releaseDate": "2024-05-27",
+  "notes": [
+    {
+      "label": [
+        "kind/bag-fix",
+        "impact/high"
+      ],
+      "text": "Implemented watching the node object for podCIDR instead of crashing and waiting for a restart."
+    }
+  ]
+}
