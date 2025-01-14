@@ -1,0 +1,48 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.4.2
+
+
+Overall Status: No longer recommended
+Cautions
+edge-24.4.4 contains an important fix for a Gateway API issue, so we recommend it instead of this release.
+
+Changes
+This edge release fixes an issue where the service mirror controller would panic if it encountered an error listing mirror services while fixing its list of endpoints, and continues work on upcoming IPv6 support. It also allows correctly setting policy controller resources via Helm, instead of just defaulting them to the same as the destination controller (thanks, Grigoriy Mikhalkin!), allows relabeling metrics to customize how high-cardinality metrics get handled (thanks, Heiko Voigt!), and does a little cleanup of documentation in the code (thanks, hanghuge!). Finally, it adds a new linkerd diagnostics profile command which gives low-level visibility into which ServiceProfile is attached to a given address.
+
+What's Changed
+build(deps): bump h2 from 0.3.25 to 0.3.26 by @dependabot in #12388
+feat(cli): Add a 'diagnostics profile' command by @olix0r in #12383
+build(deps): bump DavidAnson/markdownlint-cli2-action from 15.0.0 to 16.0.0 by @dependabot in #12403
+build(deps): bump @fortawesome/fontawesome-svg-core from 6.5.1 to 6.5.2 in /web/app by @dependabot in #12397
+build(deps): bump cc from 1.0.90 to 1.0.91 by @dependabot in #12399
+build(deps): bump prost-types from 0.12.3 to 0.12.4 by @dependabot in #12402
+build(deps-dev): bump webpack from 5.90.3 to 5.91.0 in /web/app by @dependabot in #12372
+build(deps): bump core-js from 3.36.0 to 3.36.1 in /web/app by @dependabot in #12373
+build(deps-dev): bump webpack-dev-server from 5.0.3 to 5.0.4 in /web/app by @dependabot in #12375
+build(deps-dev): bump @babel/preset-react from 7.23.3 to 7.24.1 in /web/app by @dependabot in #12374
+build(deps): bump pem from 3.0.3 to 3.0.4 by @dependabot in #12408
+build(deps): bump codecov/codecov-action from 4.1.1 to 4.3.0 by @dependabot in #12414
+build(deps): bump github.com/prometheus/client_model from 0.6.0 to 0.6.1 by @dependabot in #12387
+build(deps): bump golang.org/x/net from 0.22.0 to 0.24.0 by @dependabot in #12393
+build(deps): bump docker/setup-buildx-action from 3.2.0 to 3.3.0 by @dependabot in #12412
+build(deps): bump rustversion from 1.0.14 to 1.0.15 by @dependabot in #12401
+build(deps): bump bumpalo from 3.15.4 to 3.16.0 by @dependabot in #12409
+build(deps): bump getrandom from 0.2.12 to 0.2.14 by @dependabot in #12411
+build(deps): bump google.golang.org/grpc from 1.62.1 to 1.63.2 by @dependabot in #12407
+build(deps): bump tj-actions/changed-files from 44.0.0 to 44.0.1 by @dependabot in #12419
+build(deps): bump anyhow from 1.0.81 to 1.0.82 by @dependabot in #12417
+build(deps): bump itertools from 0.11.0 to 0.12.1 by @dependabot in #12416
+chore: fix function name in comment by @hanghuge in #12396
+build(deps): bump cc from 1.0.91 to 1.0.92 by @dependabot in #12410
+Change injector overriding logic to be more generic by @mateiidavid in #12405
+proxy: v2.226.0 by @l5d-bot in #12418
+fix panic in service mirror controller by @adleong in #12406
+build(deps): bump golang.org/x/tools from 0.19.0 to 0.20.0 by @dependabot in #12394
+build(deps): bump github.com/prometheus/common from 0.51.1 to 0.52.2 by @dependabot in #12384
+Policy controller should index services by clusterIPs by @alpeb in #12420
+Default Policy controller resources to destination resources in manifest by @GrigoriyMikhalkin in #12191
+build(deps): bump quote from 1.0.35 to 1.0.36 by @dependabot in #12421
+build(deps): bump helm.sh/helm/v3 from 3.14.3 to 3.14.4 by @dependabot in #12422
+build(deps): bump github.com/prometheus/common from 0.52.2 to 0.52.3 by @dependabot in #12423
+linkerd-viz helm: add support for metric_relabel_configs by @hvoigt in #12248
+
+

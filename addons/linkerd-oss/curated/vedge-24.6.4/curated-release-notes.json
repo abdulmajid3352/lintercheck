@@ -1,0 +1,21 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.6.4",
+  "releaseDate": "2024-06-27",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "impact/high"
+      ],
+      "text": "Updated the proxy-init container in edge-24.6.4 to request the same memory and CPU as the proxy, removing the need to explicitly set proxy-init's resource requests."
+    },
+    {
+      "label": [
+        "kind/feature",
+        "impact/medium"
+      ],
+      "text": "Added support for GrpcRoute resources in the policy-controller's status controller, allowing the policy controller to watch GrpcRoute resources in the cluster and keep their status up to date, similar to how it handles HttpRoute resources."
+    }
+  ]
+}

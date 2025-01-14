@@ -1,0 +1,30 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.7.4
+
+
+Overall status: RECOMMENDED
+Cautions
+N/A
+
+Changes
+This release correctly supports IPv6 in the Linkerd CNI network-validator and repair-controller containers, and continues ongoing authorization policy work and upcoming GRPCRoute support.
+
+What's Changed
+build(deps): bump k8s.io/endpointslice from 0.30.2 to 0.30.3 by @dependabot in #12860
+Add accessPolicy field to Server CRD by @alpeb in #12845
+build(deps): bump github.com/mattn/go-runewidth from 0.0.15 to 0.0.16 by @dependabot in #12876
+build(deps): bump tj-actions/changed-files from 44.5.5 to 44.5.6 by @dependabot in #12862
+build(deps): bump openssl from 0.10.64 to 0.10.66 by @dependabot in #12870
+build(deps): bump clap from 4.5.9 to 4.5.10 by @dependabot in #12878
+build(deps): bump tokio from 1.38.1 to 1.39.1 by @dependabot in #12877
+build(deps): bump softprops/action-gh-release from 2.0.7 to 2.0.8 by @dependabot in #12861
+Configure network-validator and repair-controller to work with IPv6 by @alpeb in #12874
+build(deps): bump cc from 1.1.5 to 1.1.6 by @dependabot in #12872
+build(deps-dev): bump webpack from 5.92.1 to 5.93.0 in /web/app by @dependabot in #12865
+proxy: v2.242.0 by @l5d-bot in #12880
+build(deps-dev): bump eslint-plugin-promise from 6.4.0 to 6.5.1 in /web/app by @dependabot in #12869
+build(deps): bump @fortawesome/free-regular-svg-icons from 6.5.2 to 6.6.0 in /web/app by @dependabot in #12868
+Trigger policy tests on Rust files changes by @alpeb in #12881
+proxy: v2.243.0 by @l5d-bot in #12886
+build(deps): bump github.com/linkerd/linkerd2-proxy-api from 0.13.1 to 0.14.0 by @dependabot in #12882
+build(deps-dev): bump eslint-plugin-react from 7.34.4 to 7.35.0 in /web/app by @dependabot in #12866
+build(deps): bump @fortawesome/fontawesome-svg-core from 6.5.2 to 6.6.0 in /web/app by @dependabot in #12867

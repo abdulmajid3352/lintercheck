@@ -1,0 +1,28 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.6.1
+
+
+Overall status: RECOMMENDED
+Cautions
+N/A
+
+Changes
+This release adds support for JSON output to linkerd install and related commands.
+
+What's Changed
+build(deps): bump proc-macro2 from 1.0.84 to 1.0.85 by @dependabot in #12675
+build(deps): bump google.golang.org/grpc/cmd/protoc-gen-go-grpc from 1.3.0 to 1.4.0 by @dependabot in #12676
+build(deps-dev): bump @babel/preset-react from 7.24.1 to 7.24.6 in /web/app by @dependabot in #12674
+build(deps-dev): bump eslint-webpack-plugin from 4.1.0 to 4.2.0 in /web/app by @dependabot in #12673
+build(deps): bump core-js from 3.37.0 to 3.37.1 in /web/app by @dependabot in #12671
+refactor(status): make route types generic by @the-wondersmith in #12661
+Add json output to install and related commands by @adleong in #12641
+build(deps): bump openssl-src from 300.3.0+3.3.0 to 300.3.1+3.3.1 by @dependabot in #12684
+proxy: v2.234.0 by @l5d-bot in #12685
+refactor(policy): generalize route types in outbound index by @the-wondersmith in #12664
+build(deps-dev): bump eslint-plugin-react from 7.34.1 to 7.34.2 in /web/app by @dependabot in #12672
+build(deps-dev): bump @babel/preset-env from 7.24.5 to 7.24.6 in /web/app by @dependabot in #12670
+build(deps): bump github.com/prometheus/common from 0.53.0 to 0.54.0 by @dependabot in #12678
+build(deps): bump golang.org/x/net from 0.25.0 to 0.26.0 by @dependabot in #12682
+build(deps): bump golang.org/x/tools from 0.21.0 to 0.22.0 by @dependabot in #12683
+build(deps): bump clap from 4.5.4 to 4.5.6 by @dependabot in #12691
+build(deps): bump clap_lex from 0.7.0 to 0.7.1 by @dependabot in #12690

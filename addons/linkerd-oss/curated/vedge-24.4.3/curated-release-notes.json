@@ -1,0 +1,22 @@
+{
+  "addonName": "linkerd-oss",
+  "version": "vedge-24.4.3",
+  "releaseDate": "2024-04-19",
+  "notes": [
+    {
+      "label": [
+        "kind/upgrade-consideration",
+        "kind/bug-fix",
+        "impact/high"
+      ],
+      "text": "Fixed a metrics-naming regression introduced in edge-24.4.3, with edge-24.4.4 recommended as the preferred release."
+    },
+    {
+      "label": [
+        "kind/bug-fix",
+        "impact/medium"
+      ],
+      "text": "Fixed the issue where policy.linkerd.io HTTPRoutes could be endlessly patched even when they weren't changing."
+    }
+  ]
+}

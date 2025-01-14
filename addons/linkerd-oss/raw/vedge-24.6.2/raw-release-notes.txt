@@ -1,0 +1,40 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.6.2
+
+
+Overall status: RECOMMENDED
+Cautions
+This release includes one breaking change: the proxy's /shutdown endpoint is now disabled by default. See Changes for how to reenable it.
+
+Changes
+This release disables the proxy's /shutdown endpoint by default; it can be reenabled by using --set proxy.enableShutdownEndpoint=true when installing or upgrading. Beyond that, it fixes several bugs: EndpointSlices with no hostname field are supported (thanks, Adrian Callejas!), DNS resolution errors are correctly logged (and the resolver's log level can be configured), the proxy's administration endpoints function correctly on systems using IPv4-mapped IPv6, and the init container and CNI plugin will not attempt to start on systems that configure IPv6 but don't support ip6tables. Finally, it supports controlling whether or not HTTP headers are logged in debug output (with the default being "not"), JSON output for the link, unlink, allow, and allow-scrapes CLI commands, and fixes a typo in the output of linkerd diagnostics (thanks, John Howard!)
+
+What's Changed
+build(deps): bump cc from 1.0.98 to 1.0.99 by @dependabot in #12699
+build(deps): bump regex from 1.10.4 to 1.10.5 by @dependabot in #12698
+add nil check when reading endpoint hostname by @adleong in #12689
+build(deps): bump @babel/eslint-plugin from 7.24.6 to 7.24.7 in /web/app by @dependabot in #12692
+build(deps-dev): bump @babel/preset-env from 7.24.6 to 7.24.7 in /web/app by @dependabot in #12693
+build(deps-dev): bump @babel/eslint-parser from 7.24.6 to 7.24.7 in /web/app by @dependabot in #12694
+build(deps-dev): bump eslint-plugin-promise from 6.1.1 to 6.2.0 in /web/app by @dependabot in #12696
+build(deps): bump braces from 3.0.2 to 3.0.3 in /web/app by @dependabot in #12700
+build(deps-dev): bump @babel/core from 7.24.6 to 7.24.7 in /web/app by @dependabot in #12695
+build(deps): bump httparse from 1.8.0 to 1.9.2 by @dependabot in #12703
+build(deps): bump clap from 4.5.6 to 4.5.7 by @dependabot in #12701
+Add config to disable HTTP proxy logging by @adleong in #12665
+proxy: v2.235.0 by @l5d-bot in #12707
+Bump proxy-init to v2.4.1 and cni-plugin to v1.5.1 by @alpeb in #12711
+build(deps): bump k8s.io/kube-aggregator from 0.30.1 to 0.30.2 by @dependabot in #12715
+build(deps): bump helm.sh/helm/v3 from 3.15.1 to 3.15.2 by @dependabot in #12714
+build(deps): bump httparse from 1.9.2 to 1.9.3 by @dependabot in #12708
+build(deps): bump memchr from 2.7.2 to 2.7.4 by @dependabot in #12725
+build(deps): bump url from 2.5.0 to 2.5.1 by @dependabot in #12702
+build(deps): bump backtrace from 0.3.72 to 0.3.73 by @dependabot in #12716
+build(deps): bump codecov/codecov-action from 4.4.1 to 4.5.0 by @dependabot in #12730
+build(deps): bump k8s.io/endpointslice from 0.30.1 to 0.30.2 by @dependabot in #12729
+build(deps): bump google.golang.org/protobuf from 1.34.1 to 1.34.2 by @dependabot in #12706
+chore: Update deny.toml to allow the Unicode license by @olix0r in #12732
+proxy: v2.236.0 by @l5d-bot in #12731
+Fix typo in diagnostics command by @howardjohn in #12723
+Properly set log level for hickory_resolver in proxy by @alpeb in #12722
+feat(cli): Add json output to link, unlink, allow, and allow-scrapes commands by @adleong in #12658
+feat!: Add config to disable proxy /shutdown admin endpoint by @adleong in #12705

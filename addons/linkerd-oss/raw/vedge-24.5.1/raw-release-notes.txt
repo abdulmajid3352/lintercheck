@@ -1,0 +1,47 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.5.1
+
+
+Overall status: NOT RECOMMENDED; use edge-24.5.5 instead
+Cautions
+This release introduced a bug that prevents Linkerd from functioning on GKE with the default configuration; we recommend edge-24.5.5 instead. Additionally, this release has one breaking change: the patchs metric introduced in edge-24.3.4 is now correctly named patches.
+
+Changes
+This release adds configurable HTTP/2 server keepalives, fixes CLI issues and opaque-port issues when using native sidecars (issue #12395), restores Server v1beta1 to ease migrations after it was mistakenly removed in edge-24.1.2, fixes an issue that could cause the endpoints gauge to report incorrect numbers of endpoints, and continues ongoing work on upcoming IPv6 support.
+
+Additionally, it avoids unnecessary cleanup of headless endpoint mirrors during garbage collection (thanks, Marwan Ahmed!) and cleans up some documentation in the code (thanks, knowmost!).
+
+What's Changed
+build(deps): bump lock_api from 0.4.11 to 0.4.12 by @dependabot in #12511
+build(deps): bump parking_lot from 0.12.1 to 0.12.2 by @dependabot in #12510
+fix: avoid unnecessary headless endpoint mirrors cleanups during GC by @marwanad in #12500
+Fix issues with native sidecars by @alpeb in #12453
+build(deps): bump serde from 1.0.198 to 1.0.199 by @dependabot in #12515
+build(deps): bump rustls from 0.21.11 to 0.21.12 by @dependabot in #12517
+build(deps): bump schemars from 0.8.16 to 0.8.17 by @dependabot in #12518
+build(deps): bump parking_lot_core from 0.9.9 to 0.9.10 by @dependabot in #12509
+Remove upgrade-stable integration test, refactor helm-upgrade by @alpeb in #12519
+chore: fix function names in comment by @knowmost in #12512
+feat: Configure default HTTP/2 server keep-alives by @olix0r in #12498
+build(deps-dev): bump eslint-plugin-react-hooks from 4.6.0 to 4.6.2 in /web/app by @dependabot in #12513
+build(deps): bump make-plural from 7.3.0 to 7.4.0 in /web/app by @dependabot in #12514
+Downgrade zeroize by @adleong in #12520
+build(deps): bump kubert from 0.21.1 to 0.21.2 by @dependabot in #12526
+build(deps): bump linkerd2-proxy-api from 0.13.0 to 0.13.1 by @dependabot in #12527
+build(deps): bump github.com/linkerd/linkerd2-proxy-api from 0.13.0 to 0.13.1 by @dependabot in #12523
+build(deps): bump socket2 from 0.5.6 to 0.5.7 by @dependabot in #12524
+build(deps): bump libc from 0.2.153 to 0.2.154 by @dependabot in #12525
+feat(destination): Add meshed HTTP/2 keep-alive settings by @olix0r in #12504
+Add native sidecar deep integration test by @alpeb in #12452
+Update to latest version of kube_codegen.sh by @klingerf in #12528
+build(deps): bump data-encoding from 2.5.0 to 2.6.0 by @dependabot in #12516
+proxy: v2.230.0 by @l5d-bot in #12532
+build(deps): bump cc from 1.0.95 to 1.0.96 by @dependabot in #12530
+build(deps): bump google.golang.org/protobuf from 1.33.0 to 1.34.0 by @dependabot in #12531
+fix(policy)!: Rename "patchs" metric to "patches" by @olix0r in #12533
+Restore Server v1beta1 Go API definition by @klingerf in #12529
+Update values.go to better align with Helm by @siggy in #12534
+build(deps): bump pest_derive from 2.7.9 to 2.7.10 by @dependabot in #12539
+build(deps): bump codecov/codecov-action from 4.3.0 to 4.3.1 by @dependabot in #12538
+build(deps): bump serde from 1.0.199 to 1.0.200 by @dependabot in #12537
+chore: Fix whitespace and typos by @olix0r in #12540
+Enable forwarding IPv6 connections through the proxy by @alpeb in #12495

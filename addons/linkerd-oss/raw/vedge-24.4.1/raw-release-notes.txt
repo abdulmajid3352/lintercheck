@@ -1,0 +1,22 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.4.1
+
+
+Overall Status: RECOMMENDED
+Cautions
+None.
+
+Changes
+This edge release continues work on upcoming IPv6 support.
+
+What's Changed
+ci: Fix rust test compilation by @olix0r in #12366
+Clean up go.mod require blocks by @siggy in #12367
+build(deps): bump tokio from 1.36.0 to 1.37.0 by @dependabot in #12369
+build(deps): bump openssl-sys from 0.9.101 to 0.9.102 by @dependabot in #12368
+build(deps): bump pest_derive from 2.7.8 to 2.7.9 by @dependabot in #12380
+build(deps): bump drain from 0.1.1 to 0.1.2 by @dependabot in #12379
+build(deps): bump pin-project-lite from 0.2.13 to 0.2.14 by @dependabot in #12378
+Upgrade to proxy-init:v2.3.0 and linkerd-cni:1.4.0 by @alpeb in #12361
+Use IPv6-enabled proxy-init by @alpeb in #12249
+proxy: v2.225.0 by @l5d-bot in #12381
+build(deps): bump security-framework from 2.9.2 to 2.10.0 by @dependabot in #12377

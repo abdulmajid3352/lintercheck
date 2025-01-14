@@ -1,0 +1,35 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.3.1
+
+With this release we're changing our Helm charts versioning scheme, to match the release version going forward. All the charts corresponding to this release are versioned as 2024.3.1.
+Note the -edge suffix has been dropped, so no need to use the --devel flag for performing Helm installs or upgrades anymore.
+These changes are fully backwards compatible.
+
+What's Changed
+build(deps): bump http from 0.2.9 to 0.2.11 by @dependabot in #12137
+build(deps): bump itertools from 0.10.5 to 0.11.0 by @dependabot in #12140
+build(deps): bump scopeguard from 1.1.0 to 1.2.0 by @dependabot in #12141
+build(deps): bump serde_yaml from 0.9.29 to 0.9.32 by @dependabot in #12147
+build(deps): bump hermit-abi from 0.3.1 to 0.3.8 by @dependabot in #12150
+build(deps): bump google-github-actions/auth from 2.1.1 to 2.1.2 by @dependabot in #12151
+build(deps): bump codecov/codecov-action from 4.0.1 to 4.0.2 by @dependabot in #12152
+build(deps): bump url from 2.3.1 to 2.5.0 by @dependabot in #12149
+build(deps): bump rustls-pemfile from 1.0.1 to 1.0.4 by @dependabot in #12148
+build: Update fetch-proxy to support alternate repos by @olix0r in #12135
+build(deps): bump serde from 1.0.196 to 1.0.197 by @dependabot in #12139
+Export CRD templates by @mateiidavid in #12166
+build(deps): bump openssl-src from 300.2.1+3.2.0 to 300.2.3+3.2.1 by @dependabot in #12156
+build(deps): bump thread_local from 1.1.7 to 1.1.8 by @dependabot in #12157
+build(deps): bump base64 from 0.21.5 to 0.21.7 by @dependabot in #12159
+build(deps): bump codecov/codecov-action from 4.0.2 to 4.1.0 by @dependabot in #12161
+build(deps): bump actions/download-artifact from 4.1.2 to 4.1.3 by @dependabot in #12162
+build(deps): bump github.com/prometheus/common from 0.47.0 to 0.48.0 by @dependabot in #12146
+Simplify update-codegen script by @mateiidavid in #12165
+build(deps): bump extractions/setup-just from 1.6.0 to 2.0.0 by @dependabot in #12174
+build(deps): bump docker/setup-buildx-action from 3.0.0 to 3.1.0 by @dependabot in #12173
+Update steering committee membership requirements by @kflynn in #11942
+build(deps): bump bumpalo from 3.14.0 to 3.15.3 by @dependabot in #12168
+Add support for loadBalancerCluster to multi-cluster gateway service by @atoy3731 in #12116
+destination: Fix flakey TestEndpointProfileTranslator by @olix0r in #12182
+build(deps): bump openssl from 0.10.62 to 0.10.64 by @dependabot in #12158
+Fix CodeQL check with go v1.22 by @alpeb in #12183
+Automate edge releases by @alpeb in #12175

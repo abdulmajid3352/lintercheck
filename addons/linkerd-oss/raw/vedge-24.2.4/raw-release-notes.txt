@@ -1,0 +1,7 @@
+source: https://github.com/linkerd/linkerd2/releases/tag/edge-24.2.4
+
+edge-24.2.4
+Updated the ExternalWorkload CRD to v1beta1, renaming the meshTls field to
+meshTLS (#12098)
+Updated the proxy to address some logging and metrics inconsistencies
+(#12099)
