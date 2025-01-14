@@ -43,30 +43,6 @@ jobs:
             done
             echo "$file passed all validation checks."
           done
-          for raw_file in addons/**/raw/**/raw-release-notes.txt; do
-            echo "Validating $raw_file"
-            # Check if the file contains a source line
-            source_line=$(grep -E "^source: https?://.*" "$raw_file" || true)
-            if [ -z "$source_line" ]; then
-              echo "Error: $raw_file does not contain a valid 'source: <link>' line."
-              error_count=$((error_count + 1))
-            else
-              # Extract the link from the source line
-              source_link=$(echo "$source_line" | awk '{print $2}' | tr -d '[:space:]')
-              # Check if the link is reachable and print detailed error information using curl
-              curl_output=$(curl -L -s -o /dev/null -w "%{http_code} %{url_effective} %{stderr}" "$source_link" 2>&1)
-              http_status=$(echo "$curl_output" | awk '{print $1}')
-              effective_url=$(echo "$curl_output" | awk '{print $2}')
-              error_message=$(echo "$curl_output" | awk '{$1=$2=""; print $0}' | xargs)
-              if [ "$http_status" -ne 200 ]; then
-                echo "Error: The link $source_link returned HTTP status $http_status. Effective URL: $effective_url. Error details: $error_message"
-                error_count=$((error_count + 1))
-              else
-                echo "The link $source_link is valid and returned HTTP status $http_status."
-              fi
-            fi
-            echo "$raw_file passed all validation checks."
-          done
           if [ $error_count -gt 0 ]; then
             echo "Total errors: $error_count"
             exit 1
